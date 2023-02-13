@@ -1,0 +1,58 @@
+:root {
+  --primary-color: #ee4d2d;
+  --white-color: #fff;
+  --black-color: #000;
+  --text-color: #333;
+  --border-color: #dbdbdb;
+  --start-gold-color: #FFCE3e;
+
+  --header-height: 120px;
+  --navbar-height: 34px;
+  --header-with-search-height: calc(
+    var(--header-height) - var(--navbar-height)
+  );
+  --header-sort-bar-height: 46px;
+}
+
+html {
+  font-size: 80.5%;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+.btn {
+  min-width: 124px;
+  height: 34px;
+  text-decoration: none;
+  border: none;
+  border-radius: 2px;
+  font-size: 1.5rem;
+  padding: 0 12px;
+  outline: none;
+  cursor: pointer;
+  color: var(--text-color);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.6rem;
+  background-color: #fff;
+}
+
+.btn.btn--normal:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.btn.btn--primary {
+  color: var(--white-color);
+  background-color: var(--primary-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
