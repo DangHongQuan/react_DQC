@@ -1,9 +1,11 @@
+import Admin from "./pages/Admin";
+import Signup from "./pages/Signup";
 import Login from "./pages/Login";
-import Signup from './pages/Signup';
 
-const routes = [ 
-    {path: "login", component: <Login/>},
-    {path: "signup", component: <Signup/>},
+const routes = [
+  { path: "Admin", component: <Admin /> },
+  { path: "signup", component: <Signup /> },
+  { path: "sigup", component: <Login /> },
 ];
 
 export default routes;
