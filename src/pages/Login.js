@@ -65,26 +65,14 @@ const StyledLogin = styled.div`
   }
 `;
 const Login = () => {
-  // const [username, setUsername] = useState('');
-  // const [password, setPassword] = useState('');
-  // const history = useHistory();
 
-  // function handleLogin() {
-  //   const user = data.find(user => user.username === username && user.password === password);
-  //   if(user){
-  //     alert("Đăng nhập thành công !");
-  //     history.push('/home'); // Chuyển hướng đến component '/home'
-  //   } else {
-  //     alert("Tài khoản hoặc mật khẩu sai !!!");
-  //   }
-  // }
   return (
     <>
       <Helmet>
         <script src="../main.js" />
       </Helmet>
       <StyledLogin>
-        <header>
+        <header className="bg-white">
           <div className="container">
             <div className="row p-4">
               <div className="col">

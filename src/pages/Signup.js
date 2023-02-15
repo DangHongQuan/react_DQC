@@ -86,7 +86,7 @@ const Signup = () => {
     </Helmet>
     <StyledSignin>
     <div>
-  <header>
+  <header className='bg-white'>
     <div className="container">
       <div className="row p-4">
         <div className="col">

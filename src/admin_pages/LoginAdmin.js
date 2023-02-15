@@ -22,22 +22,9 @@ function LoginAdmin(props) {
   };
 
   return (
-    // <form onSubmit={handleSubmit}>
-    //   <label>
-    //     Username:
-    //     <input type="text" value={username} onChange={handleUsernameChange} />
-    //   </label>
-    //   <label>
-    //     Password:
-    //     <input type="password" value={password} onChange={handlePasswordChange} />
-    //   </label>
-    //   <button type="submit">Login</button>
-    // </form>
-    <div
-      className="container position-absolute top-50 start-50 translate-middle"
-      id="trangtri"
-    >
-      <div className="row justify-content-center">
+    <div >
+      <div className="container position-absolute top-50 start-50 translate-middle " id="bg-img">
+      <div className="row  justify-content-center" id="canchinh">
         <div className="datgoldshop-main col-lg-6 col-md-6">
           <div className="row">
             <div className="col">
@@ -82,6 +69,7 @@ function LoginAdmin(props) {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
