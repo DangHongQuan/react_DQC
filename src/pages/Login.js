@@ -1,10 +1,9 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import styled from "styled-components";
-import {login} from '../main.js'
+import { login } from "../main.js";
 
 const StyledLogin = styled.div`
-
   #background-login {
     background-image: url(https://cf.shopee.vn/file/sg-11134004-23010-qacwpnvb05lve3);
     background-repeat: no-repeat;
@@ -81,9 +80,9 @@ const Login = () => {
   // }
   return (
     <>
-    <Helmet>
-    <script src="../main.js"/>
-    </Helmet>
+      <Helmet>
+        <script src="../main.js" />
+      </Helmet>
       <StyledLogin>
         <header>
           <div className="container">
