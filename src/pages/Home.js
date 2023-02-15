@@ -273,21 +273,21 @@ const Home = () => {
                 <div className="carousel-inner h-100">
                   <div className="carousel-item active h-100">
                     <img
-                      src="assets/slider/3.png"
+                      src={`${process.env.PUBLIC_URL}/assets/images/slider/3.png`}
                       className="d-block w-100 h-100"
                       alt="..."
                     />
                   </div>
                   <div className="carousel-item h-100">
                     <img
-                      src="assets/slider/4.png"
+                      src={`${process.env.PUBLIC_URL}/assets/images/slider/4.png`}
                       className="d-block w-100 h-100"
                       alt="..."
                     />
                   </div>
                   <div className="carousel-item h-100">
                     <img
-                      src="assets/slider/5.png"
+                      src={`${process.env.PUBLIC_URL}/assets/images/slider/5.png`}
                       className="d-block w-100 h-100"
                       alt="..."
                     />
@@ -321,10 +321,10 @@ const Home = () => {
             </div>
             <div className="col-4 h-100 pl-0">
               <div className="h-50">
-                <img className="w-100 h-100" src="assets/chuyentien.png" alt="" />
+                <img className="w-100 h-100" src={`${process.env.PUBLIC_URL}/assets/images/chuyentien.png`} alt="" />
               </div>
               <div className="h-50 pt-1">
-                <img className="w-100 h-100" src="assets/trend.jpg" alt="" />
+                <img className="w-100 h-100" src={`${process.env.PUBLIC_URL}/assets/images/chuyentien.png`} alt="" />
               </div>
             </div>
           </div>
