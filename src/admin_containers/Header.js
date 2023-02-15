@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./../admin_containers/header.css";
 import "./../admin_containers/fontawesome-free/css/all.min.css";
 import LoginAdmin from "./../admin_pages/LoginAdmin";
+import { NavLink } from "react-router-dom";
 
 function Header(props) {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -239,15 +240,15 @@ function Header(props) {
                           Hoạt Động Đăng Nhập
                         </a>
                         <div className="dropdown-divider" />
-                        <a
+                        <NavLink
                           className="dropdown-item"
-                          href="#"
+                          to={"/Layout"}
                           data-toggle="modal"
                           data-target="#logoutModal"
                         >
                           <i className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400" />
-                          Đăng Xuất
-                        </a>
+                          Đăng xuất
+                        </NavLink>
                       </div>
                     </li>
                   </ul>
