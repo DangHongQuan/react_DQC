@@ -201,11 +201,13 @@ const Header = () => {
                 </div>
               </div>
 
+              <NavLink to={'/shopcart'} >
               <img
                 className="icon-shop"
                 src={`${process.env.PUBLIC_URL}/assets/images/shop.png`}
                 alt=""
               />
+              </NavLink>
             </div>
           </div>
         </div>
