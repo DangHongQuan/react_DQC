@@ -1,16 +1,54 @@
-import React, { useState } from "react";
+import React from "react";
+import { Helmet } from "react-helmet";
+import  styled  from 'styled-components';
+import {cong, tru} from '../cart.js'
 
 const Shopcart = (props) => {
+  const StyledCart = styled.div`
+  .hr1 {
+    width: 1px;
+    height: 35px;
+    background-color: #ee4d2d;
+  }
+
+.form-control{
+    border: 2px solid #ee4d2d;
+}
+.btn{
+    width: 90px;
+}
+
+body{
+    background-color: #f5f5f5;
+}
+#header{
+    background-color: #ffffff;
+    height: 100px;
+}
+.img-small{
+    width: 100px;
+    height: 100px;
+}
+.btn-color{
+    background-color: #ee4d2d;
+    width: 200px;
+    color: white;
+}
+
+  `;
   return (
     <>
-      <div>
+    <Helmet>
+      <script src="../cart.js"/>
+    </Helmet>
+      <StyledCart>
         <header id="header">
           <div className="container">
             <div className="row">
               <div className="col">
                 <div className="row d-flex">
                   <div className="col-4">
-                    <img src="assets/logoshopee.png" alt />
+                    <img src="assets/logoshopee.png" alt="" />
                   </div>
                   <div className="col mt-3">
                     <div className="hr1 text-end" />
@@ -72,7 +110,7 @@ const Shopcart = (props) => {
               <div className="col">
                 <img
                   src="assets/asd.png"
-                  
+                  alt=""
                   className="float-start img-small"
                 />
                 <p>
@@ -95,7 +133,7 @@ const Shopcart = (props) => {
                         className="btn border btn-outline-danger"
                         style={{ width: 40, height: 40 }}
                         id="tru"
-                        onclick="tru()"
+                        onClick={tru}
                       >
                         -
                       </button>
@@ -111,7 +149,7 @@ const Shopcart = (props) => {
                         className="btn border btn-outline-danger"
                         style={{ width: 40, height: 40 }}
                         id="cong"
-                        onclick="cong()"
+                        onClick={cong}
                       >
                         +
                       </button>
@@ -136,7 +174,7 @@ const Shopcart = (props) => {
             </button>
           </div>
         </div>
-      </div>
+      </StyledCart>
     </>
   );
 };
