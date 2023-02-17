@@ -1,7 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import  styled  from 'styled-components';
-import {cong, tru} from '../cart.js'
 
 const Shopcart = (props) => {
   const StyledCart = styled.div`
@@ -133,7 +132,7 @@ body{
                         className="btn border btn-outline-danger"
                         style={{ width: 40, height: 40 }}
                         id="tru"
-                        onClick={tru}
+                      //tru
                       >
                         -
                       </button>
@@ -149,7 +148,7 @@ body{
                         className="btn border btn-outline-danger"
                         style={{ width: 40, height: 40 }}
                         id="cong"
-                        onClick={cong}
+                       //cong
                       >
                         +
                       </button>
