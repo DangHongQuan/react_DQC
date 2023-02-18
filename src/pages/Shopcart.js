@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import  styled  from 'styled-components';
-import {cong, tru} from '../cart.js'
+import {cong, tru} from '../cart'
 
 const Shopcart = (props) => {
   const StyledCart = styled.div`

@@ -1,6 +1,5 @@
 import React from 'react'
 import Footer from './Footer';
-import Header from './Header';
 import Home from './../pages/Home';
 import { Route, Routes } from 'react-router-dom';
 import routes from './../routes';
@@ -9,7 +8,6 @@ import routes from './../routes';
 const Layout = () => {
   return (
     <>
-    <Header />
     <Home />
     <Footer />
 

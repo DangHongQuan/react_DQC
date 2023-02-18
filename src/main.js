@@ -18,8 +18,7 @@ function handleLogin(data){
     const user = data.find(user => user.username === username && user.password === password);
     if(user){
         alert("Đăng nhập thành công !");
-        
-        
+                
     }else{
         alert("Tài khoản hoặc mật khẩu sai !!!")
     }

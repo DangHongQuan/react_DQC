@@ -1,5 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useState, useEffect } from "react";
+import SearchFilter from 'react-filter-search';
+import { Row } from 'react-bootstrap';
+import ProductCard from '../user_components/ProductCard';
+import { NavLink } from "react-router-dom";
+import { FormControl, InputGroup } from "react-bootstrap";
+import { BiSearch} from 'react-icons/bi'
+
+
+
 
 const StyledHome = styled.div`
 /* carousel */
@@ -221,9 +231,227 @@ const StyledHome = styled.div`
   border-bottom: 3px solid #f53d2d !important;
 }
 `;
+const StyledHeader = styled.div`
+  body {
+    background-color: #e1e1e1;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .header {
+    background: linear-gradient(-180deg, #f53d2d, #f63);
+    height: 150px;
+    width: 100%;
+    position: fixed;
+    color: #ffffff;
+    padding-top: 10px;
+    z-index: 999;
+  }
+
+  .container {
+    max-width: 1200px;
+    padding: 0;
+  }
+
+  .navbar {
+    padding: 0;
+  }
+
+  .navbar span {
+    font-size: 14px;
+  }
+
+  .icon-media {
+    width: 17px;
+    height: 17px;
+  }
+
+  .hr1 {
+    width: 1px;
+    height: 15px;
+    background-color: #ffffff;
+  }
+
+  .wrap-search {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 6px;
+  }
+
+  .wrap-icon-s {
+    position: absolute;
+    background: linear-gradient(-180deg, #f53d2d, #f63);
+    border-radius: 3px;
+    width: 60px;
+    height: 87%;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-control {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border: none;
+    background-color: transparent;
+  }
+
+  .form-control:focus {
+    box-shadow: none;
+    border-radius: 6px;
+  }
+
+  .icon-shop {
+    width: 30px;
+    height: 30px;
+    margin-left: 60px;
+  }
+
+  .brand-img {
+    width: 45px;
+    height: 55px;
+  }
+
+  .text-brand {
+    font-size: 30px;
+    font-weight: 400;
+  }
+
+  .under-input span {
+    font-size: 12px;
+    font-weight: 100;
+  }
+
+  .wrap-navbar-input {
+    margin-left: 50px;
+    width: 67%;
+  }
+`;
 const Home = () => {
+  const [productData, setProductData] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
+
+
+
+  async function getResponse(){
+    const res = await fetch('https://fakestoreapi.com/products').then(res => res.json());
+    setProductData(await res);
+  };
+
+  useEffect(() => {
+    getResponse();
+  }, []);
+
   return (
     <>
+    <StyledHeader>
+        <div className="header">
+          <div className="container">
+            {/* navbar  */}
+            <nav className="navbar d-flex justify-content-between align-items-center">
+              <div className="d-flex align-items-center">
+                <span>Tải ứng dụng</span>
+                <div className="hr1 mx-2" />
+                <span className="me-2">Kết nối</span>
+                <img
+                  className="icon-media me-2 ml-2"
+                  src={`${process.env.PUBLIC_URL}/assets/images/facebook.png`}
+                  alt=""
+                />
+                <img
+                  className="icon-media me-2"
+                  src={`${process.env.PUBLIC_URL}/assets/images/instagram.png`}
+                  alt=""
+                />
+                <img
+                  className="icon-media me-2"
+                  src={`${process.env.PUBLIC_URL}/assets/images/pendidikan.png`}
+                  alt=""
+                />
+                <img
+                  className="icon-media me-2"
+                  src={`${process.env.PUBLIC_URL}/assets/images/line.png`}
+                  alt=""
+                />
+              </div>
+              <div className="d-flex align-items-center">
+                <img
+                  className="icon-media me-2"
+                  src={`${process.env.PUBLIC_URL}/assets/images/notif.png`}
+                  alt=""
+                />
+                <span className="me-2">Thông báo</span>
+                <img
+                  className="icon-media me-2"
+                  src={`${process.env.PUBLIC_URL}/assets/images/bantuan.png`}
+                  alt=""
+                />
+                <span className="me-4">Hỗ trợ</span>
+                <NavLink to={"/login"} className="nav-link">
+                  Đăng nhập
+                </NavLink>
+                <div className="hr1 mx-2" />
+                <NavLink to={"/signup"} className="font-weight-bold">
+                  Đăng kí
+                </NavLink>
+              </div>
+            </nav>
+            {/* input search brand */}
+            <div className="d-flex align-items-center mt-4">
+              <div className="d-flex align-items-center">
+                <img
+                  className="brand-img mr-2"
+                  src={`${process.env.PUBLIC_URL}/assets/images/brand.png`}
+                  alt=""
+                />
+                <span className="text-brand">Shopee</span>
+              </div>
+              <div className="wrap-navbar-input">
+
+
+                <div>
+                <InputGroup className="mb-3">
+                  <InputGroup.Text>
+                    <BiSearch size="2rem"/>
+                  </InputGroup.Text>
+                  <FormControl placeholder="Nhanh tay săn voucher lên đến 50%" className="bg-white" value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
+                </InputGroup>
+                </div>
+
+
+                <div className="under-input d-inline mt-2">
+                  <span className="me-2">Áo Khoác</span>
+                  <span className="me-2">Dép</span>
+                  <span className="me-2">LEGO</span>
+                  <span className="me-2">Túi xách</span>
+                  <span className="me-2">Ốp iPhone</span>
+                  <span className="me-2">Áo Croptop</span>
+                  <span className="me-2">Tai nghe Bluetoth</span>
+                  <span className="me-2">Son</span>
+                </div>
+              </div>
+
+              <NavLink to={'/shopcart'} >
+              <img
+                className="icon-shop"
+                src={`${process.env.PUBLIC_URL}/assets/images/shop.png`}
+                alt=""
+              />
+              </NavLink>
+            </div>
+          </div>
+        </div>
+      </StyledHeader>
       <StyledHome>
       <div className="content">
         <img
@@ -1341,977 +1569,13 @@ const Home = () => {
             </div>
           </div>
           {/* rekomendasi */}
-          <div className="row mx-0 flex-column mt-4">
-            <nav style={{ backgroundColor: "#ffffff" }}>
-              <div className="nav nav-tabs" id="nav-tab" role="tablist">
-                <a
-                  className="nav-link active"
-                  id="nav-home-tab"
-                  data-toggle="tab"
-                  href="#nav-home"
-                  role="tab"
-                  aria-controls="nav-home"
-                  aria-selected="true"
-                  style={{ color: "#f53d2d", borderRight: "none" }}
-                >
-                  <h6>REKOMENDASI</h6>
-                </a>
-                <a
-                  className="
-            nav-link
-            d-flex
-            justify-content-center
-            align-items-center
-          "
-                  id="nav-profile-tab"
-                  data-toggle="tab"
-                  href="#nav-profile"
-                  role="tab"
-                  aria-controls="nav-profile"
-                  aria-selected="false"
-                  style={{ color: "#f53d2d", borderRight: "none", width: 100 }}
-                >
-                  <img src="assets/gratis.png" alt="" width={50} />
-                </a>
-              </div>
-            </nav>
-            <div className="tab-content mt-2" id="nav-tabContent">
-              <div
-                className="tab-pane fade show active"
-                id="nav-home"
-                role="tabpanel"
-                aria-labelledby="nav-home-tab"
-              >
-                <div className="row mx-0 mt-2" style={{ height: 200 }}>
-                  <div className="col-2 pl-0">
-                    <div
-                      className="d-flex flex-column h-100"
-                      style={{ backgroundColor: "#ffffff" }}
-                    >
-                      <div
-                        className="w-100 h-75 position-relative"
-                        style={{ backgroundColor: "#f53d2d" }}
-                      >
-                        <img
-                          className="w-100 h-100 position-absolute"
-                          src="assets/55.png"
-                          alt=""
-                        />
-                      </div>
-                      <div className="w-100 d-flex flex-column px-2">
-                        <span>Total Bag Alice Mini</span>
-                        <div
-                          className="
-                    w-100
-                    pb-2
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                    mt-2
-                  "
-                        >
-                          <span style={{ color: "#f53d2d", fontSize: 14 }}>
-                            Rp 4.900
-                          </span>
-                          <span style={{ color: "#888", fontSize: 12 }}>
-                            10+ Terjual
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-2 pl-0">
-                    <div
-                      className="d-flex flex-column h-100"
-                      style={{ backgroundColor: "#ffffff" }}
-                    >
-                      <div
-                        className="w-100 h-75 position-relative"
-                        style={{ backgroundColor: "#f53d2d" }}
-                      >
-                        <img
-                          className="w-100 h-100 position-absolute"
-                          src="assets/55.png"
-                          alt=""
-                        />
-                      </div>
-                      <div className="w-100 d-flex flex-column px-2">
-                        <span>Total Bag Alice Mini</span>
-                        <div
-                          className="
-                    w-100
-                    pb-2
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                    mt-2
-                  "
-                        >
-                          <span style={{ color: "#f53d2d", fontSize: 14 }}>
-                            Rp 4.900
-                          </span>
-                          <span style={{ color: "#888", fontSize: 12 }}>
-                            10+ Terjual
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-2 pl-0">
-                    <div
-                      className="d-flex flex-column h-100"
-                      style={{ backgroundColor: "#ffffff" }}
-                    >
-                      <div
-                        className="w-100 h-75 position-relative"
-                        style={{ backgroundColor: "#f53d2d" }}
-                      >
-                        <img
-                          className="w-100 h-100 position-absolute"
-                          src="assets/55.png"
-                          alt=""
-                        />
-                      </div>
-                      <div className="w-100 d-flex flex-column px-2">
-                        <span>Total Bag Alice Mini</span>
-                        <div
-                          className="
-                    w-100
-                    pb-2
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                    mt-2
-                  "
-                        >
-                          <span style={{ color: "#f53d2d", fontSize: 14 }}>
-                            Rp 4.900
-                          </span>
-                          <span style={{ color: "#888", fontSize: 12 }}>
-                            10+ Terjual
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-2 pl-0">
-                    <div
-                      className="d-flex flex-column h-100"
-                      style={{ backgroundColor: "#ffffff" }}
-                    >
-                      <div
-                        className="w-100 h-75 position-relative"
-                        style={{ backgroundColor: "#f53d2d" }}
-                      >
-                        <img
-                          className="w-100 h-100 position-absolute"
-                          src="assets/55.png"
-                          alt=""
-                        />
-                      </div>
-                      <div className="w-100 d-flex flex-column px-2">
-                        <span>Total Bag Alice Mini</span>
-                        <div
-                          className="
-                    w-100
-                    pb-2
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                    mt-2
-                  "
-                        >
-                          <span style={{ color: "#f53d2d", fontSize: 14 }}>
-                            Rp 4.900
-                          </span>
-                          <span style={{ color: "#888", fontSize: 12 }}>
-                            10+ Terjual
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-2 pl-0">
-                    <div
-                      className="d-flex flex-column h-100"
-                      style={{ backgroundColor: "#ffffff" }}
-                    >
-                      <div
-                        className="w-100 h-75 position-relative"
-                        style={{ backgroundColor: "#f53d2d" }}
-                      >
-                        <img
-                          className="w-100 h-100 position-absolute"
-                          src="assets/55.png"
-                          alt=""
-                        />
-                      </div>
-                      <div className="w-100 d-flex flex-column px-2">
-                        <span>Total Bag Alice Mini</span>
-                        <div
-                          className="
-                    w-100
-                    pb-2
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                    mt-2
-                  "
-                        >
-                          <span style={{ color: "#f53d2d", fontSize: 14 }}>
-                            Rp 4.900
-                          </span>
-                          <span style={{ color: "#888", fontSize: 12 }}>
-                            10+ Terjual
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-2 pl-0">
-                    <div
-                      className="d-flex flex-column h-100"
-                      style={{ backgroundColor: "#ffffff" }}
-                    >
-                      <div
-                        className="w-100 h-75 position-relative"
-                        style={{ backgroundColor: "#f53d2d" }}
-                      >
-                        <img
-                          className="w-100 h-100 position-absolute"
-                          src="assets/55.png"
-                          alt=""
-                        />
-                      </div>
-                      <div className="w-100 d-flex flex-column px-2">
-                        <span>Total Bag Alice Mini</span>
-                        <div
-                          className="
-                    w-100
-                    pb-2
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                    mt-2
-                  "
-                        >
-                          <span style={{ color: "#f53d2d", fontSize: 14 }}>
-                            Rp 4.900
-                          </span>
-                          <span style={{ color: "#888", fontSize: 12 }}>
-                            10+ Terjual
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="row mx-0 mt-2" style={{ height: 200 }}>
-                  <div className="col-2 pl-0">
-                    <div
-                      className="d-flex flex-column h-100"
-                      style={{ backgroundColor: "#ffffff" }}
-                    >
-                      <div
-                        className="w-100 h-75 position-relative"
-                        style={{ backgroundColor: "#f53d2d" }}
-                      >
-                        <img
-                          className="w-100 h-100 position-absolute"
-                          src="assets/55.png"
-                          alt=""
-                        />
-                      </div>
-                      <div className="w-100 d-flex flex-column px-2">
-                        <span>Total Bag Alice Mini</span>
-                        <div
-                          className="
-                    w-100
-                    pb-2
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                    mt-2
-                  "
-                        >
-                          <span style={{ color: "#f53d2d", fontSize: 14 }}>
-                            Rp 4.900
-                          </span>
-                          <span style={{ color: "#888", fontSize: 12 }}>
-                            10+ Terjual
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-2 pl-0">
-                    <div
-                      className="d-flex flex-column h-100"
-                      style={{ backgroundColor: "#ffffff" }}
-                    >
-                      <div
-                        className="w-100 h-75 position-relative"
-                        style={{ backgroundColor: "#f53d2d" }}
-                      >
-                        <img
-                          className="w-100 h-100 position-absolute"
-                          src="assets/55.png"
-                          alt=""
-                        />
-                      </div>
-                      <div className="w-100 d-flex flex-column px-2">
-                        <span>Total Bag Alice Mini</span>
-                        <div
-                          className="
-                    w-100
-                    pb-2
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                    mt-2
-                  "
-                        >
-                          <span style={{ color: "#f53d2d", fontSize: 14 }}>
-                            Rp 4.900
-                          </span>
-                          <span style={{ color: "#888", fontSize: 12 }}>
-                            10+ Terjual
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-2 pl-0">
-                    <div
-                      className="d-flex flex-column h-100"
-                      style={{ backgroundColor: "#ffffff" }}
-                    >
-                      <div
-                        className="w-100 h-75 position-relative"
-                        style={{ backgroundColor: "#f53d2d" }}
-                      >
-                        <img
-                          className="w-100 h-100 position-absolute"
-                          src="assets/55.png"
-                          alt=""
-                        />
-                      </div>
-                      <div className="w-100 d-flex flex-column px-2">
-                        <span>Total Bag Alice Mini</span>
-                        <div
-                          className="
-                    w-100
-                    pb-2
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                    mt-2
-                  "
-                        >
-                          <span style={{ color: "#f53d2d", fontSize: 14 }}>
-                            Rp 4.900
-                          </span>
-                          <span style={{ color: "#888", fontSize: 12 }}>
-                            10+ Terjual
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-2 pl-0">
-                    <div
-                      className="d-flex flex-column h-100"
-                      style={{ backgroundColor: "#ffffff" }}
-                    >
-                      <div
-                        className="w-100 h-75 position-relative"
-                        style={{ backgroundColor: "#f53d2d" }}
-                      >
-                        <img
-                          className="w-100 h-100 position-absolute"
-                          src="assets/55.png"
-                          alt=""
-                        />
-                      </div>
-                      <div className="w-100 d-flex flex-column px-2">
-                        <span>Total Bag Alice Mini</span>
-                        <div
-                          className="
-                    w-100
-                    pb-2
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                    mt-2
-                  "
-                        >
-                          <span style={{ color: "#f53d2d", fontSize: 14 }}>
-                            Rp 4.900
-                          </span>
-                          <span style={{ color: "#888", fontSize: 12 }}>
-                            10+ Terjual
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-2 pl-0">
-                    <div
-                      className="d-flex flex-column h-100"
-                      style={{ backgroundColor: "#ffffff" }}
-                    >
-                      <div
-                        className="w-100 h-75 position-relative"
-                        style={{ backgroundColor: "#f53d2d" }}
-                      >
-                        <img
-                          className="w-100 h-100 position-absolute"
-                          src="assets/55.png"
-                          alt=""
-                        />
-                      </div>
-                      <div className="w-100 d-flex flex-column px-2">
-                        <span>Total Bag Alice Mini</span>
-                        <div
-                          className="
-                    w-100
-                    pb-2
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                    mt-2
-                  "
-                        >
-                          <span style={{ color: "#f53d2d", fontSize: 14 }}>
-                            Rp 4.900
-                          </span>
-                          <span style={{ color: "#888", fontSize: 12 }}>
-                            10+ Terjual
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-2 pl-0">
-                    <div
-                      className="d-flex flex-column h-100"
-                      style={{ backgroundColor: "#ffffff" }}
-                    >
-                      <div
-                        className="w-100 h-75 position-relative"
-                        style={{ backgroundColor: "#f53d2d" }}
-                      >
-                        <img
-                          className="w-100 h-100 position-absolute"
-                          src="assets/55.png"
-                          alt=""
-                        />
-                      </div>
-                      <div className="w-100 d-flex flex-column px-2">
-                        <span>Total Bag Alice Mini</span>
-                        <div
-                          className="
-                    w-100
-                    pb-2
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                    mt-2
-                  "
-                        >
-                          <span style={{ color: "#f53d2d", fontSize: 14 }}>
-                            Rp 4.900
-                          </span>
-                          <span style={{ color: "#888", fontSize: 12 }}>
-                            10+ Terjual
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="w-100 d-flex justify-content-center mt-4">
-                  <button
-                    className="btn w-50"
-                    style={{
-                      color: "#888",
-                      border: "1px solid #888",
-                      backgroundColor: "#ffffff",
-                    }}
-                  >
-                    Lihat Lainnya
-                  </button>
-                </div>
-              </div>
-              <div
-                className="tab-pane fade"
-                id="nav-profile"
-                role="tabpanel"
-                aria-labelledby="nav-profile-tab"
-              >
-                <div className="row mx-0 mt-2" style={{ height: 200 }}>
-                  <div className="col-2 pl-0">
-                    <div
-                      className="d-flex flex-column h-100"
-                      style={{ backgroundColor: "#ffffff" }}
-                    >
-                      <div
-                        className="w-100 h-75 position-relative"
-                        style={{ backgroundColor: "#f53d2d" }}
-                      >
-                        <img
-                          className="w-100 h-100 position-absolute"
-                          src="assets/55.png"
-                          alt=""
-                        />
-                      </div>
-                      <div className="w-100 d-flex flex-column px-2">
-                        <span>Total Bag Alice Mini</span>
-                        <div
-                          className="
-                    w-100
-                    pb-2
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                    mt-2
-                  "
-                        >
-                          <span style={{ color: "#f53d2d", fontSize: 14 }}>
-                            Rp 4.900
-                          </span>
-                          <span style={{ color: "#888", fontSize: 12 }}>
-                            10+ Terjual
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-2 pl-0">
-                    <div
-                      className="d-flex flex-column h-100"
-                      style={{ backgroundColor: "#ffffff" }}
-                    >
-                      <div
-                        className="w-100 h-75 position-relative"
-                        style={{ backgroundColor: "#f53d2d" }}
-                      >
-                        <img
-                          className="w-100 h-100 position-absolute"
-                          src="assets/55.png"
-                          alt=""
-                        />
-                      </div>
-                      <div className="w-100 d-flex flex-column px-2">
-                        <span>Total Bag Alice Mini</span>
-                        <div
-                          className="
-                    w-100
-                    pb-2
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                    mt-2
-                  "
-                        >
-                          <span style={{ color: "#f53d2d", fontSize: 14 }}>
-                            Rp 4.900
-                          </span>
-                          <span style={{ color: "#888", fontSize: 12 }}>
-                            10+ Terjual
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-2 pl-0">
-                    <div
-                      className="d-flex flex-column h-100"
-                      style={{ backgroundColor: "#ffffff" }}
-                    >
-                      <div
-                        className="w-100 h-75 position-relative"
-                        style={{ backgroundColor: "#f53d2d" }}
-                      >
-                        <img
-                          className="w-100 h-100 position-absolute"
-                          src="assets/55.png"
-                          alt=""
-                        />
-                      </div>
-                      <div className="w-100 d-flex flex-column px-2">
-                        <span>Total Bag Alice Mini</span>
-                        <div
-                          className="
-                    w-100
-                    pb-2
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                    mt-2
-                  "
-                        >
-                          <span style={{ color: "#f53d2d", fontSize: 14 }}>
-                            Rp 4.900
-                          </span>
-                          <span style={{ color: "#888", fontSize: 12 }}>
-                            10+ Terjual
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-2 pl-0">
-                    <div
-                      className="d-flex flex-column h-100"
-                      style={{ backgroundColor: "#ffffff" }}
-                    >
-                      <div
-                        className="w-100 h-75 position-relative"
-                        style={{ backgroundColor: "#f53d2d" }}
-                      >
-                        <img
-                          className="w-100 h-100 position-absolute"
-                          src="assets/55.png"
-                          alt=""
-                        />
-                      </div>
-                      <div className="w-100 d-flex flex-column px-2">
-                        <span>Total Bag Alice Mini</span>
-                        <div
-                          className="
-                    w-100
-                    pb-2
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                    mt-2
-                  "
-                        >
-                          <span style={{ color: "#f53d2d", fontSize: 14 }}>
-                            Rp 4.900
-                          </span>
-                          <span style={{ color: "#888", fontSize: 12 }}>
-                            10+ Terjual
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-2 pl-0">
-                    <div
-                      className="d-flex flex-column h-100"
-                      style={{ backgroundColor: "#ffffff" }}
-                    >
-                      <div
-                        className="w-100 h-75 position-relative"
-                        style={{ backgroundColor: "#f53d2d" }}
-                      >
-                        <img
-                          className="w-100 h-100 position-absolute"
-                          src="assets/55.png"
-                          alt=""
-                        />
-                      </div>
-                      <div className="w-100 d-flex flex-column px-2">
-                        <span>Total Bag Alice Mini</span>
-                        <div
-                          className="
-                    w-100
-                    pb-2
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                    mt-2
-                  "
-                        >
-                          <span style={{ color: "#f53d2d", fontSize: 14 }}>
-                            Rp 4.900
-                          </span>
-                          <span style={{ color: "#888", fontSize: 12 }}>
-                            10+ Terjual
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-2 pl-0">
-                    <div
-                      className="d-flex flex-column h-100"
-                      style={{ backgroundColor: "#ffffff" }}
-                    >
-                      <div
-                        className="w-100 h-75 position-relative"
-                        style={{ backgroundColor: "#f53d2d" }}
-                      >
-                        <img
-                          className="w-100 h-100 position-absolute"
-                          src="assets/55.png"
-                          alt=""
-                        />
-                      </div>
-                      <div className="w-100 d-flex flex-column px-2">
-                        <span>Total Bag Alice Mini</span>
-                        <div
-                          className="
-                    w-100
-                    pb-2
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                    mt-2
-                  "
-                        >
-                          <span style={{ color: "#f53d2d", fontSize: 14 }}>
-                            Rp 4.900
-                          </span>
-                          <span style={{ color: "#888", fontSize: 12 }}>
-                            10+ Terjual
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="row mx-0 mt-2" style={{ height: 200 }}>
-                  <div className="col-2 pl-0">
-                    <div
-                      className="d-flex flex-column h-100"
-                      style={{ backgroundColor: "#ffffff" }}
-                    >
-                      <div
-                        className="w-100 h-75 position-relative"
-                        style={{ backgroundColor: "#f53d2d" }}
-                      >
-                        <img
-                          className="w-100 h-100 position-absolute"
-                          src="assets/55.png"
-                          alt=""
-                        />
-                      </div>
-                      <div className="w-100 d-flex flex-column px-2">
-                        <span>Total Bag Alice Mini</span>
-                        <div
-                          className="
-                    w-100
-                    pb-2
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                    mt-2
-                  "
-                        >
-                          <span style={{ color: "#f53d2d", fontSize: 14 }}>
-                            Rp 4.900
-                          </span>
-                          <span style={{ color: "#888", fontSize: 12 }}>
-                            10+ Terjual
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-2 pl-0">
-                    <div
-                      className="d-flex flex-column h-100"
-                      style={{ backgroundColor: "#ffffff" }}
-                    >
-                      <div
-                        className="w-100 h-75 position-relative"
-                        style={{ backgroundColor: "#f53d2d" }}
-                      >
-                        <img
-                          className="w-100 h-100 position-absolute"
-                          src="assets/55.png"
-                          alt=""
-                        />
-                      </div>
-                      <div className="w-100 d-flex flex-column px-2">
-                        <span>Total Bag Alice Mini</span>
-                        <div
-                          className="
-                    w-100
-                    pb-2
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                    mt-2
-                  "
-                        >
-                          <span style={{ color: "#f53d2d", fontSize: 14 }}>
-                            Rp 4.900
-                          </span>
-                          <span style={{ color: "#888", fontSize: 12 }}>
-                            10+ Terjual
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-2 pl-0">
-                    <div
-                      className="d-flex flex-column h-100"
-                      style={{ backgroundColor: "#ffffff" }}
-                    >
-                      <div
-                        className="w-100 h-75 position-relative"
-                        style={{ backgroundColor: "#f53d2d" }}
-                      >
-                        <img
-                          className="w-100 h-100 position-absolute"
-                          src="assets/55.png"
-                          alt=""
-                        />
-                      </div>
-                      <div className="w-100 d-flex flex-column px-2">
-                        <span>Total Bag Alice Mini</span>
-                        <div
-                          className="
-                    w-100
-                    pb-2
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                    mt-2
-                  "
-                        >
-                          <span style={{ color: "#f53d2d", fontSize: 14 }}>
-                            Rp 4.900
-                          </span>
-                          <span style={{ color: "#888", fontSize: 12 }}>
-                            10+ Terjual
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-2 pl-0">
-                    <div
-                      className="d-flex flex-column h-100"
-                      style={{ backgroundColor: "#ffffff" }}
-                    >
-                      <div
-                        className="w-100 h-75 position-relative"
-                        style={{ backgroundColor: "#f53d2d" }}
-                      >
-                        <img
-                          className="w-100 h-100 position-absolute"
-                          src="assets/55.png"
-                          alt=""
-                        />
-                      </div>
-                      <div className="w-100 d-flex flex-column px-2">
-                        <span>Total Bag Alice Mini</span>
-                        <div
-                          className="
-                    w-100
-                    pb-2
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                    mt-2
-                  "
-                        >
-                          <span style={{ color: "#f53d2d", fontSize: 14 }}>
-                            Rp 4.900
-                          </span>
-                          <span style={{ color: "#888", fontSize: 12 }}>
-                            10+ Terjual
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-2 pl-0">
-                    <div
-                      className="d-flex flex-column h-100"
-                      style={{ backgroundColor: "#ffffff" }}
-                    >
-                      <div
-                        className="w-100 h-75 position-relative"
-                        style={{ backgroundColor: "#f53d2d" }}
-                      >
-                        <img
-                          className="w-100 h-100 position-absolute"
-                          src="assets/55.png"
-                          alt=""
-                        />
-                      </div>
-                      <div className="w-100 d-flex flex-column px-2">
-                        <span>Total Bag Alice Mini</span>
-                        <div
-                          className="
-                    w-100
-                    pb-2
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                    mt-2
-                  "
-                        >
-                          <span style={{ color: "#f53d2d", fontSize: 14 }}>
-                            Rp 4.900
-                          </span>
-                          <span style={{ color: "#888", fontSize: 12 }}>
-                            10+ Terjual
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-2 pl-0">
-                    <div
-                      className="d-flex flex-column h-100"
-                      style={{ backgroundColor: "#ffffff" }}
-                    >
-                      <div
-                        className="w-100 h-75 position-relative"
-                        style={{ backgroundColor: "#f53d2d" }}
-                      >
-                        <img
-                          className="w-100 h-100 position-absolute"
-                          src="assets/55.png"
-                          alt=""
-                        />
-                      </div>
-                      <div className="w-100 d-flex flex-column px-2">
-                        <span>Total Bag Alice Mini</span>
-                        <div
-                          className="
-                    w-100
-                    pb-2
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                    mt-2
-                  "
-                        >
-                          <span style={{ color: "#f53d2d", fontSize: 14 }}>
-                            Rp 4.900
-                          </span>
-                          <span style={{ color: "#888", fontSize: 12 }}>
-                            10+ Terjual
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="w-100 d-flex justify-content-center mt-4">
-                  <button
-                    className="btn w-50"
-                    style={{
-                      color: "#888",
-                      border: "1px solid #888",
-                      backgroundColor: "#ffffff",
-                    }}
-                  >
-                    Lihat Lainnya
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <SearchFilter value={searchInput} data={productData} renderResults= {results => (
+              <Row className='justify-content-center'>
+                 {results.map((item, i) => (
+                  <ProductCard data={item} key={i}/>
+                 ))}
+              </Row>
+          )}></SearchFilter>
         </div>
       </div>
       </StyledHome>
