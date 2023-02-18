@@ -133,7 +133,7 @@ body{
                         className="btn border btn-outline-danger"
                         style={{ width: 40, height: 40 }}
                         id="tru"
-                        onClick={tru}
+                      //tru
                       >
                         -
                       </button>
@@ -149,7 +149,7 @@ body{
                         className="btn border btn-outline-danger"
                         style={{ width: 40, height: 40 }}
                         id="cong"
-                        onClick={cong}
+                       //cong
                       >
                         +
                       </button>
