@@ -1,180 +1,101 @@
 import React from "react";
-import { Helmet } from "react-helmet";
-import  styled  from 'styled-components';
+import styled from "styled-components";
+import { BsCartX } from "react-icons/bs";
+import { useCart } from "react-use-cart";
+import { Button, Col, Container, Row, Table } from "react-bootstrap";
 
 const Shopcart = (props) => {
   const StyledCart = styled.div`
-  .hr1 {
-    width: 1px;
-    height: 35px;
-    background-color: #ee4d2d;
-  }
+    .hr1 {
+      width: 1px;
+      height: 35px;
+      background-color: #ee4d2d;
+    }
 
-.form-control{
-    border: 2px solid #ee4d2d;
-}
-.btn{
-    width: 90px;
-}
+    .form-control {
+      border: 2px solid #ee4d2d;
+    }
+    .btn {
+      width: 90px;
+    }
 
-body{
-    background-color: #f5f5f5;
-}
-#header{
-    background-color: #ffffff;
-    height: 100px;
-}
-.img-small{
-    width: 100px;
-    height: 100px;
-}
-.btn-color{
-    background-color: #ee4d2d;
-    width: 200px;
-    color: white;
-}
-
+    body {
+      background-color: #f5f5f5;
+    }
+    #header {
+      background-color: #ffffff;
+      height: 100px;
+    }
+    .img-small {
+      width: 100px;
+      height: 100px;
+    }
+    .btn-color {
+      background-color: #ee4d2d;
+      width: 200px;
+      color: white;
+    }
   `;
+  const {
+    isEmpty,
+    items,
+    cartTotal,
+    updateItemQuantity,
+    removeItem,
+    emptyCart,
+  } = useCart();
   return (
-    <>
-    <Helmet>
-      <script src="../cart.js"/>
-    </Helmet>
-      <StyledCart>
-        <header id="header">
-          <div className="container">
-            <div className="row">
-              <div className="col">
-                <div className="row d-flex">
-                  <div className="col-4">
-                    <img src="assets/logoshopee.png" alt="" />
-                  </div>
-                  <div className="col mt-3">
-                    <div className="hr1 text-end" />
-                  </div>
-                  <div
-                    className="col-7 mt-3 fs-4 text-start fw-bold"
-                    style={{ color: "#ee4d2d" }}
-                  >
-                    <p>Giỏ Hàng</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col">
-                <div className="input-group mt-3 ">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="XẢ HÀNG SALE 50%"
-                  />
-                  <button
-                    className="btn"
-                    style={{ backgroundColor: "#ee4d2d" }}
-                  >
-                    <i className="bi bi-search text-white " />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </header>
-        <section>
-          <div className="container bg-white mt-5">
-            <div className="row">
-              <div className="col">
-                <p>Sản Phẩm</p>
-              </div>
-              <div className="col">
-                <div className="row">
-                  <div className="col">
-                    <p>Đơn Giá</p>
-                  </div>
-                  <div className="col">
-                    <p>Số Lượng</p>
-                  </div>
-                  <div className="col">
-                    <p>Số Tiền</p>
-                  </div>
-                  <div className="col">
-                    <p>Thao Tác</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section>
-          <div className="container bg-white mt-5">
-            <div className="row">
-              <div className="col">
-                <img
-                  src="assets/asd.png"
-                  alt=""
-                  className="float-start img-small"
-                />
-                <p>
-                  (Hàng sẵn giao ngay) Đồ chơi ông già Noel leo dây, lộn nhào,
-                  leo than(Hàng sẵn giao ngay) Đồ chơi ông già Noel leo dây, lộn
-                  nhào, leo than
-                </p>
-              </div>
-              <div className="col">
-                <div className="row">
-                  <div className="col">₫150.000</div>
-                  <div className="col">
+    <Container>
+      <h1 className="text-center my-5">
+        {isEmpty ? "Giỏ hàng trống" : "Sản phẩm trong giỏ hàng"}
+      </h1>
+      <Row className="justify-content-center">
+        <Table responsive="sm" striped bordered hover className="mb-5">
+          <tbody>
+            {items.map((item, i) => {
+              return (
+                <tr key={i}>
+                  <td>
                     <div
-                      className="btn-group"
-                      role="group"
-                      aria-label="Basic example"
+                      style={{
+                        background: "white",
+                        height: "8rem",
+                        overflow: "hidden",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center"
+                      }}
                     >
-                      <button
-                        type="button"
-                        className="btn border btn-outline-danger"
-                        style={{ width: 40, height: 40 }}
-                        id="tru"
-                      //tru
-                      >
-                        -
-                      </button>
-                      <input
-                        type="text"
-                        id="num"
-                        defaultValue={1}
-                        className="btn border"
-                        style={{ width: 40, height: 40 }}
-                      />
-                      <button
-                        type="button"
-                        className="btn border btn-outline-danger"
-                        style={{ width: 40, height: 40 }}
-                        id="cong"
-                       //cong
-                      >
-                        +
-                      </button>
+                      <div style={{ padding: '.5rem'}}><img src={item.image} style={{width: '4rem'}} alt={item.title}/></div>
                     </div>
-                  </div>
-                  <div className="col">
-                    <p>Số Tiền</p>
-                  </div>
-                  <div className="col">
-                    <p>Xóa</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <div>
-          <div className="container text-end">
-            <p className="d-inline mx-3">Tổng thanh toán (0 Sản phẩm): ₫0</p>
-            <button type="submit" className="btn-color btn">
-              Mua Hàng
-            </button>
-          </div>
-        </div>
-      </StyledCart>
-    </>
+                  </td>
+                  <td>
+                    <h6 style={{whiteSpace: 'nowrap', width: '14rem', overflow: 'hidden', textOverflow: 'ellipsis'}}>{item.title}</h6>
+                  </td>
+                  <td>{item.price}</td>
+                  <td>Số Lượng {item.quantity}</td>
+                  <td>
+                      <Button className="ms-2" onClick={() => updateItemQuantity(item.id, item.quantity  -1)}>-</Button>
+                      <Button className="ms-2" onClick={() => updateItemQuantity(item.id, item.quantity  +1)}>+</Button>
+                      <Button onClick={() => removeItem(item.id)} variant="danger" className="ms-3">Xoá sản phẩm</Button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </Table>
+        {!isEmpty && 
+          <Row className="justify-content-center w-100" style={{position: 'fixed', bottom:0}}>
+              <Col className="py-2">
+                <h4>Thành tiền: {cartTotal}</h4>
+              </Col>
+              <Col className="p-0" md={4}>
+                <Button variant="danger" className="m-2" onClick={() => emptyCart()}><BsCartX/> Xóa tất cả </Button>
+              </Col>
+          </Row>
+        }
+      </Row>
+    </Container>
   );
 };
 

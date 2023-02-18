@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Card } from 'react-bootstrap';
 import { useCart } from 'react-use-cart';
+import {BsCartPlus} from 'react-icons/bs'
 
 const ProductCard = (props) => {
     let {image, price, title} = props.data;
@@ -18,9 +19,9 @@ const ProductCard = (props) => {
             </div>
         </div>
         <Card.Body>
-            <Card.Title>{title}</Card.Title>
+            <Card.Title style={{textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace:'nowrap'}}>{title}</Card.Title>
             <Card.Title>Giá bán: <small>{price}đ</small></Card.Title>
-            <Button variant='primary'>Thêm vào giỏ hàng</Button>
+            <Button className='d-flex align-items-center m-auto border-0' onClick={() => addToCart()}><BsCartPlus size="1.8rem"/>Thêm vào giỏ hàng</Button>
         </Card.Body>
     </Card>
   )
