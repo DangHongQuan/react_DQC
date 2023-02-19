@@ -192,7 +192,7 @@ const Footer = () => {
                 <strong className=" font-weight-bold">THANH TOÁN</strong>
                 <div className="d-flex align-items-center">
                   <img
-                    src="assets/images/thanhtoan.png"
+                    src="assets/thanhtoan.jpg"
                     alt=""
                     width="240px"
                     height="120px"
@@ -204,7 +204,7 @@ const Footer = () => {
                 </strong>
                 <div className="d-flex align-items-center">
                   <img
-                    src="assets/vanchuyen.png"
+                    src="assets/vanchuyen.jpg"
                     alt=""
                     width="240px"
                     height="120px"

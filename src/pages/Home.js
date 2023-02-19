@@ -588,7 +588,7 @@ const Home = () => {
                   <div className="wrap-img">
                     <img
                       className="w-100 h-100"
-                      src="assets/dienthoai.png"
+                      src="assets/dienthoai.jpg"
                       alt=""
                     />
                   </div>
@@ -599,7 +599,7 @@ const Home = () => {
                   <div className="wrap-img">
                     <img
                       className="w-100 h-100"
-                      src="assets/thietbidientu.png"
+                      src="assets/thietbidientu.jpg"
                       alt=""
                     />
                   </div>
@@ -609,7 +609,7 @@ const Home = () => {
                   <div className="wrap-img">
                     <img
                       className="w-100 h-100"
-                      src="assets/maytinh.png"
+                      src="assets/maytinh.jpg"
                       alt=""
                     />
                   </div>
@@ -620,7 +620,7 @@ const Home = () => {
                   <div className="wrap-img">
                     <img
                       className="w-100 h-100"
-                      src="assets/mayanh.png"
+                      src="assets/mayanh.jpg"
                       alt=""
                     />
                   </div>
@@ -631,7 +631,7 @@ const Home = () => {
                   <div className="wrap-img">
                     <img
                       className="w-100 h-100"
-                      src="assets/dongho.png"
+                      src="assets/dongho.jpg"
                       alt=""
                     />
                   </div>
@@ -641,7 +641,7 @@ const Home = () => {
                   <div className="wrap-img">
                     <img
                       className="w-100 h-100"
-                      src="assets/giaydepnam.png"
+                      src="assets/giaydepnam.jpg"
                       alt=""
                     />
                   </div>
@@ -651,7 +651,7 @@ const Home = () => {
                   <div className="wrap-img">
                     <img
                       className="w-100 h-100"
-                      src="assets/images/thietbigiadung.png"
+                      src="assets/images/thietbigiadung.jpg"
                       alt=""
                     />
                   </div>
@@ -663,7 +663,7 @@ const Home = () => {
                   <div className="wrap-img">
                     <img
                       className="w-100 h-100"
-                      src="assets/thethao.png"
+                      src="assets/images/thethao.jpg"
                       alt=""
                     />
                   </div>
@@ -675,7 +675,7 @@ const Home = () => {
                   <div className="wrap-img">
                     <img
                       className="w-100 h-100"
-                      src="assets/xemay.png"
+                      src="assets/images/xemay.jpg"
                       alt=""
                     />
                   </div>
@@ -773,7 +773,7 @@ const Home = () => {
                   <div className="wrap-img">
                     <img
                       className="w-100 h-100"
-                      src="assets/bachhoaonline.png"
+                      src="assets/bachhoaonlone.png"
                       alt=""
                     />
                   </div>
@@ -792,10 +792,10 @@ const Home = () => {
               </div>
             </div>
             {/* flash sale */}
-            <div className="row mx-0 sale mt-4">
+            {/* <div className="row mx-0 sale mt-4">
               <div className="d-flex px-4 pt-4">
                 {/* <h5 class="mr-5">FLASH SALE</h5> */}
-                <div className="fl-sale mr-3" />
+            {/* <div className="fl-sale mr-3" />
                 <span>00</span>
                 <span className="ml-3">00</span>
                 <span className="ml-3">00</span>
@@ -982,8 +982,8 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-            </div>
-            <div
+            </div> */}
+            {/* <div
               className="row mx-0 mt-4 py-1"
               style={{ backgroundColor: "#ffffff" }}
             >
@@ -1003,8 +1003,8 @@ const Home = () => {
                   style={{ borderRadius: 20 }}
                 />
               </div>
-            </div>
-            <div className="row flex-column mx-0 mt-4">
+            </div> */}
+            {/* <div className="row flex-column mx-0 mt-4">
               <div className="d-flex justify-content-between w-100 pl-5 my-3">
                 <div className="d-flex align-items-center">
                   <h4 className="mb-0" style={{ color: "#f53d2d" }}>
@@ -1282,9 +1282,9 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* pencarian populer */}
-            <div
+            {/* <div
               className="row flex-column mx-0 pt-3 mt-4"
               style={{ backgroundColor: "#ffffff" }}
             >
@@ -1366,7 +1366,7 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* produk terlaris */}
             <div
               className="row mx-0 mt-4"
@@ -1408,12 +1408,12 @@ const Home = () => {
                               className="h-100 mr-2"
                               style={{
                                 width: "60%",
-                                backgroundColor: "yellow",
+                                backgroundColor: "white",
                               }}
                             >
                               <img
                                 className="w-100 h-100"
-                                src="assets/55.png"
+                                src="assets/1.jpg"
                                 alt=""
                               />
                             </div>
@@ -1421,14 +1421,14 @@ const Home = () => {
                               <div className style={{ height: "48%" }}>
                                 <img
                                   className="w-100 h-100"
-                                  src="assets/55.png"
+                                  src="assets/3.jpg"
                                   alt=""
                                 />
                               </div>
                               <div className="mt-2" style={{ height: "48%" }}>
                                 <img
                                   className="w-100 h-100"
-                                  src="assets/55.png"
+                                  src="assets/2.jpg"
                                   alt=""
                                 />
                               </div>
@@ -1453,12 +1453,12 @@ const Home = () => {
                               className="h-100 mr-2"
                               style={{
                                 width: "60%",
-                                backgroundColor: "yellow",
+                                backgroundColor: "white",
                               }}
                             >
                               <img
                                 className="w-100 h-100"
-                                src="assets/55.png"
+                                src="assets/2.jpg"
                                 alt=""
                               />
                             </div>
@@ -1466,14 +1466,14 @@ const Home = () => {
                               <div className style={{ height: "48%" }}>
                                 <img
                                   className="w-100 h-100"
-                                  src="assets/55.png"
+                                  src="assets/3.jpg"
                                   alt=""
                                 />
                               </div>
                               <div className="mt-2" style={{ height: "48%" }}>
                                 <img
                                   className="w-100 h-100"
-                                  src="assets/55.png"
+                                  src="assets/6.jpg"
                                   alt=""
                                 />
                               </div>
@@ -1498,12 +1498,12 @@ const Home = () => {
                               className="h-100 mr-2"
                               style={{
                                 width: "60%",
-                                backgroundColor: "yellow",
+                                backgroundColor: "white",
                               }}
                             >
                               <img
                                 className="w-100 h-100"
-                                src="assets/55.png"
+                                src="assets/3.jpg"
                                 alt=""
                               />
                             </div>
@@ -1511,14 +1511,14 @@ const Home = () => {
                               <div className style={{ height: "48%" }}>
                                 <img
                                   className="w-100 h-100"
-                                  src="assets/55.png"
+                                  src="assets/4.jpg"
                                   alt=""
                                 />
                               </div>
                               <div className="mt-2" style={{ height: "48%" }}>
                                 <img
                                   className="w-100 h-100"
-                                  src="assets/55.png"
+                                  src="assets/2.jpg"
                                   alt=""
                                 />
                               </div>
@@ -1550,12 +1550,12 @@ const Home = () => {
                               className="h-100 mr-2"
                               style={{
                                 width: "60%",
-                                backgroundColor: "yellow",
+                                backgroundColor: "white",
                               }}
                             >
                               <img
                                 className="w-100 h-100"
-                                src="assets/55.png"
+                                src="assets/4.jpg"
                                 alt=""
                               />
                             </div>
@@ -1563,14 +1563,14 @@ const Home = () => {
                               <div className style={{ height: "48%" }}>
                                 <img
                                   className="w-100 h-100"
-                                  src="assets/55.png"
+                                  src="assets/6.jpg"
                                   alt=""
                                 />
                               </div>
                               <div className="mt-2" style={{ height: "48%" }}>
                                 <img
                                   className="w-100 h-100"
-                                  src="assets/55.png"
+                                  src="assets/3.jpg"
                                   alt=""
                                 />
                               </div>
@@ -1595,12 +1595,12 @@ const Home = () => {
                               className="h-100 mr-2"
                               style={{
                                 width: "60%",
-                                backgroundColor: "yellow",
+                                backgroundColor: "white",
                               }}
                             >
                               <img
                                 className="w-100 h-100"
-                                src="assets/55.png"
+                                src="assets/2.jpg"
                                 alt=""
                               />
                             </div>
@@ -1608,14 +1608,14 @@ const Home = () => {
                               <div className style={{ height: "48%" }}>
                                 <img
                                   className="w-100 h-100"
-                                  src="assets/55.png"
+                                  src="assets/4.jpg"
                                   alt=""
                                 />
                               </div>
                               <div className="mt-2" style={{ height: "48%" }}>
                                 <img
                                   className="w-100 h-100"
-                                  src="assets/55.png"
+                                  src="assets/3.jpg"
                                   alt=""
                                 />
                               </div>
@@ -1640,12 +1640,12 @@ const Home = () => {
                               className="h-100 mr-2"
                               style={{
                                 width: "60%",
-                                backgroundColor: "yellow",
+                                backgroundColor: "white",
                               }}
                             >
                               <img
                                 className="w-100 h-100"
-                                src="assets/55.png"
+                                src="assets/6.jpg"
                                 alt=""
                               />
                             </div>
@@ -1653,14 +1653,14 @@ const Home = () => {
                               <div className style={{ height: "48%" }}>
                                 <img
                                   className="w-100 h-100"
-                                  src="assets/55.png"
+                                  src="assets/2.jpg"
                                   alt=""
                                 />
                               </div>
                               <div className="mt-2" style={{ height: "48%" }}>
                                 <img
                                   className="w-100 h-100"
-                                  src="assets/55.png"
+                                  src="assets/1.jpg"
                                   alt=""
                                 />
                               </div>
