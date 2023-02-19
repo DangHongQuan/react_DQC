@@ -1,16 +1,14 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 import { useState, useEffect } from "react";
-import SearchFilter from 'react-filter-search';
-import { Row } from 'react-bootstrap';
-import ProductCard from '../user_components/ProductCard';
+import SearchFilter from "react-filter-search";
+import { Row } from "react-bootstrap";
+import ProductCard from "../user_components/ProductCard";
 import { NavLink } from "react-router-dom";
 import { FormControl, InputGroup } from "react-bootstrap";
-import { BiSearch} from 'react-icons/bi'
-
-
-
-
+import { BiSearch } from "react-icons/bi";
+import { useCart } from "react-use-cart";
+import Myconponent from "./Myconponent";
 const StyledHome = styled.div`
 /* carousel */
 .content {
@@ -229,7 +227,9 @@ const StyledHome = styled.div`
 /* rekomendasi */
 .nav-link.active {
   border-bottom: 3px solid #f53d2d !important;
-}
+}import { useCart } from 'react-use-cart';
+import { useCart } from 'react-use-cart';
+
 `;
 const StyledHeader = styled.div`
   body {
@@ -337,16 +337,17 @@ const StyledHeader = styled.div`
     width: 67%;
   }
 `;
+
 const Home = () => {
   const [productData, setProductData] = useState([]);
   const [searchInput, setSearchInput] = useState("");
 
-
-
-  async function getResponse(){
-    const res = await fetch('https://fakestoreapi.com/products').then(res => res.json());
+  async function getResponse() {
+    const res = await fetch("https://fakestoreapi.com/products").then((res) =>
+      res.json()
+    );
     setProductData(await res);
-  };
+  }
 
   useEffect(() => {
     getResponse();
@@ -354,7 +355,7 @@ const Home = () => {
 
   return (
     <>
-    <StyledHeader>
+      <StyledHeader>
         <div className="header">
           <div className="container">
             {/* navbar  */}
@@ -417,17 +418,19 @@ const Home = () => {
                 <span className="text-brand">Shopee</span>
               </div>
               <div className="wrap-navbar-input">
-
-
                 <div>
-                <InputGroup className="mb-3">
-                  <InputGroup.Text>
-                    <BiSearch size="2rem"/>
-                  </InputGroup.Text>
-                  <FormControl placeholder="Nhanh tay săn voucher lên đến 50%" className="bg-white" value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
-                </InputGroup>
+                  <InputGroup className="mb-3">
+                    <InputGroup.Text>
+                      <BiSearch size="2rem" />
+                    </InputGroup.Text>
+                    <FormControl
+                      placeholder="Nhanh tay săn voucher lên đến 50%"
+                      className="bg-white"
+                      value={searchInput}
+                      onChange={(e) => setSearchInput(e.target.value)}
+                    />
+                  </InputGroup>
                 </div>
-
 
                 <div className="under-input d-inline mt-2">
                   <span className="me-2">Áo Khoác</span>
@@ -441,503 +444,46 @@ const Home = () => {
                 </div>
               </div>
 
-              <NavLink to={'/shopcart'} >
-              <img
-                className="icon-shop"
-                src={`${process.env.PUBLIC_URL}/assets/images/shop.png`}
-                alt=""
-              />
+              <NavLink to={"/shopcart"}>
+                {/* //cart */}
+                <Myconponent />
+                {/* <Myconponent />
+                <img
+                  className="icon-shop"
+                  src={`${process.env.PUBLIC_URL}/assets/images/shop.png`}
+                  alt=""
+                /> */}
               </NavLink>
             </div>
           </div>
         </div>
       </StyledHeader>
       <StyledHome>
-      <div className="content">
-        <img
-          className="shape1"
-          src={`${process.env.PUBLIC_URL}/assets/images/shape1.png`}
-          alt=""
-        />
-        <img
-          className="shape2"
-          src={`${process.env.PUBLIC_URL}/assets/images/shape2.png`}
-          alt=""
-        />
-        <img
-          className="shape3"
-          src={`${process.env.PUBLIC_URL}/assets/images/shape1.png`}
-          alt=""
-        />
-        <img
-          className="shape4"
-          src={`${process.env.PUBLIC_URL}/assets/images/shape2.png`}
-          alt=""
-        />
-        <div className="container">
-          {/* carousel */}
-          <div className="row wrap-carousel">
-            <div className="col-8 h-100 pr-1">
-              <div
-                id="carouselExampleIndicators"
-                className="carousel slide h-100"
-                data-ride="carousel"
-              >
-                <ol className="carousel-indicators">
-                  <li
-                    data-target="#carouselExampleIndicators"
-                    data-slide-to={0}
-                    className="active"
-                  />
-                  <li
-                    data-target="#carouselExampleIndicators"
-                    data-slide-to={1}
-                  />
-                  <li
-                    data-target="#carouselExampleIndicators"
-                    data-slide-to={2}
-                  />
-                </ol>
-                <div className="carousel-inner h-100">
-                  <div className="carousel-item active h-100">
-                    <img
-                      src={`${process.env.PUBLIC_URL}/assets/images/slider/3.png`}
-                      className="d-block w-100 h-100"
-                      alt="..."
-                    />
-                  </div>
-                  <div className="carousel-item h-100">
-                    <img
-                      src={`${process.env.PUBLIC_URL}/assets/images/slider/4.png`}
-                      className="d-block w-100 h-100"
-                      alt="..."
-                    />
-                  </div>
-                  <div className="carousel-item h-100">
-                    <img
-                      src={`${process.env.PUBLIC_URL}/assets/images/slider/5.png`}
-                      className="d-block w-100 h-100"
-                      alt="..."
-                    />
-                  </div>
-                </div>
-                <a
-                  className="carousel-control-prev"
-                  href="#carouselExampleIndicators"
-                  role="button"
-                  data-slide="prev"
-                >
-                  <span
-                    className="carousel-control-prev-icon"
-                    aria-hidden="true"
-                  />
-                  <span className="sr-only" />
-                </a>
-                <a
-                  className="carousel-control-next"
-                  href="#carouselExampleIndicators"
-                  role="button"
-                  data-slide="next"
-                >
-                  <span
-                    className="carousel-control-next-icon"
-                    aria-hidden="true"
-                  />
-                  <span className="sr-only" />
-                </a>
-              </div>
-            </div>
-            <div className="col-4 h-100 pl-0">
-              <div className="h-50">
-                <img className="w-100 h-100" src={`${process.env.PUBLIC_URL}/assets/images/chuyentien.png`} alt="" />
-              </div>
-              <div className="h-50 pt-1">
-                <img className="w-100 h-100" src={`${process.env.PUBLIC_URL}/assets/images/chuyentien.png`} alt="" />
-              </div>
-            </div>
-          </div>
-          {/* kategory */}
-          <div className="row mx-0 mt-4 kategory">
-            <h5 className="p-4">DANH MỤC</h5>
-            <div className="d-flex">
-              <div className="d-flex flex-column align-items-center card-kategory">
-                <div className="wrap-img">
-                  <img
-                    className="w-100 h-100"
-                    src="assets/thoitrangnam.png"
-                    alt=""
-                  />
-                </div>
-                <p className="mb-0 flex-column mt-2">Thời Trang Nam</p>
-              </div>
-              <div className="d-flex flex-column align-items-center card-kategory">
-                <div className="wrap-img">
-                  <img className="w-100 h-100" src="assets/dienthoai.png" alt="" />
-                </div>
-                <p className="mb-0 flex-column mt-2">Điện Thoại &amp;</p>
-                <p className="mb-0 flex-column">Phụ Kiện</p>
-              </div>
-              <div className="d-flex flex-column align-items-center card-kategory">
-                <div className="wrap-img">
-                  <img
-                    className="w-100 h-100"
-                    src="assets/thietbidientu.png"
-                    alt=""
-                  />
-                </div>
-                <p className="mb-0 flex-column mt-2">Thiết Bị Điện Tử </p>
-              </div>
-              <div className="d-flex flex-column align-items-center card-kategory">
-                <div className="wrap-img">
-                  <img className="w-100 h-100" src="assets/maytinh.png" alt="" />
-                </div>
-                <p className="mb-0 flex-column mt-2">Máy tính &amp;</p>
-                <p className="mb-0 flex-column">Laptop</p>
-              </div>
-              <div className="d-flex flex-column align-items-center card-kategory">
-                <div className="wrap-img">
-                  <img className="w-100 h-100" src="assets/mayanh.png" alt="" />
-                </div>
-                <p className="mb-0 flex-column mt-2">Máy ảnh &amp; Máy</p>
-                <p className="mb-0 flex-column">Quay Phim</p>
-              </div>
-              <div className="d-flex flex-column align-items-center card-kategory">
-                <div className="wrap-img">
-                  <img className="w-100 h-100" src="assets/dongho.png" alt="" />
-                </div>
-                <p className="mb-0 flex-column mt-2">Đồng Hồ</p>
-              </div>
-              <div className="d-flex flex-column align-items-center card-kategory">
-                <div className="wrap-img">
-                  <img
-                    className="w-100 h-100"
-                    src="assets/giaydepnam.png"
-                    alt=""
-                  />
-                </div>
-                <p className="mb-0 flex-column mt-2">Giày Dép Nam</p>
-              </div>
-              <div className="d-flex flex-column align-items-center card-kategory">
-                <div className="wrap-img">
-                  <img
-                    className="w-100 h-100"
-                    src="assets/images/thietbigiadung.png"
-                    alt=""
-                  />
-                </div>
-                <p className="mb-0 text-center mt-2">Thiết Bị Điện Gia Dụng</p>
-              </div>
-              <div className="d-flex flex-column align-items-center card-kategory">
-                <div className="wrap-img">
-                  <img className="w-100 h-100" src="assets/thethao.png" alt="" />
-                </div>
-                <p className="mb-0 text-center mt-2">Thể Thao &amp; Du Lịch</p>
-              </div>
-              <div className="d-flex flex-column align-items-center card-kategory">
-                <div className="wrap-img">
-                  <img className="w-100 h-100" src="assets/xemay.png" alt="" />
-                </div>
-                <p className="mb-0 text-center mt-2">
-                  Ô Tô &amp; Xe Máy &amp; Xe Đạp
-                </p>
-              </div>
-            </div>
-            <div className="d-flex">
-              <div className="d-flex flex-column align-items-center card-kategory">
-                <div className="wrap-img">
-                  <img
-                    className="w-100 h-100"
-                    src="assets/thoitrangnu.png"
-                    alt=""
-                  />
-                </div>
-                <p className="mb-0 flex-column mt-2">Thời Trang Nữ</p>
-              </div>
-              <div className="d-flex flex-column align-items-center card-kategory">
-                <div className="wrap-img">
-                  <img className="w-100 h-100" src="assets/mevaembe.png" alt="" />
-                </div>
-                <p className="mb-0 flex-column mt-2">Mẹ &amp; Em Bé</p>
-              </div>
-              <div className="d-flex flex-column align-items-center card-kategory">
-                <div className="wrap-img">
-                  <img
-                    className="w-100 h-100"
-                    src="assets/nhacuavadoisong.png"
-                    alt=""
-                  />
-                </div>
-                <p className="mb-0 text-center mt-2">Nhà Cửa &amp; Đời Sống</p>
-              </div>
-              <div className="d-flex flex-column align-items-center card-kategory">
-                <div className="wrap-img">
-                  <img className="w-100 h-100" src="assets/sacdep.png" alt="" />
-                </div>
-                <p className="mb-0 flex-column mt-2">Sắc Đẹp</p>
-              </div>
-              <div className="d-flex flex-column align-items-center card-kategory">
-                <div className="wrap-img">
-                  <img className="w-100 h-100" src="assets/suckhoe.png" alt="" />
-                </div>
-                <p className="mb-0 flex-column mt-2">Sức Khỏe</p>
-              </div>
-              <div className="d-flex flex-column align-items-center card-kategory">
-                <div className="wrap-img">
-                  <img className="w-100 h-100" src="assets/giaydepnu.png" alt="" />
-                </div>
-                <p className="mb-0 flex-column mt-2">Giày Dép Nữ</p>
-              </div>
-              <div className="d-flex flex-column align-items-center card-kategory">
-                <div className="wrap-img">
-                  <img className="w-100 h-100" src="assets/tuivinu.png" alt="" />
-                </div>
-                <p className="mb-0 flex-column mt-2">Túi Ví Nữ</p>
-              </div>
-              <div className="d-flex flex-column align-items-center card-kategory">
-                <div className="wrap-img">
-                  <img className="w-100 h-100" src="assets/phukiennu.png" alt="" />
-                </div>
-                <p className="mb-0 text-center mt-2">
-                  Phụ Kiện &amp; Trang Sức Nữ
-                </p>
-              </div>
-              <div className="d-flex flex-column align-items-center card-kategory">
-                <div className="wrap-img">
-                  <img
-                    className="w-100 h-100"
-                    src="assets/bachhoaonline.png"
-                    alt=""
-                  />
-                </div>
-                <p className="mb-0 flex-column mt-2">Bách Hóa Online</p>
-              </div>
-              <div className="d-flex flex-column align-items-center card-kategory">
-                <div className="wrap-img">
-                  <img
-                    className="w-100 h-100"
-                    src="assets/nhasachonline.png"
-                    alt=""
-                  />
-                </div>
-                <p className="mb-0 flex-column mt-2">Nhà Sách Online</p>
-              </div>
-            </div>
-          </div>
-          {/* flash sale */}
-          <div className="row mx-0 sale mt-4">
-            <div className="d-flex px-4 pt-4">
-              {/* <h5 class="mr-5">FLASH SALE</h5> */}
-              <div className="fl-sale mr-3" />
-              <span>00</span>
-              <span className="ml-3">00</span>
-              <span className="ml-3">00</span>
-            </div>
-            <div className="row mx-0 mt-4 row-card">
-              <div className="col-2 h-100 position-relative">
-                <div className="d-flex align-items-center justify-content-center h-100">
-                  <div className="diskon">
-                    <span
-                      className="font-weight-bold"
-                      style={{ color: "#f53d2d" }}
-                    >
-                      35%
-                    </span>
-                    <span className="text-white font-weight-bold">OFF</span>
-                  </div>
-                  <div className="wrap-img-sale">
-                    <img className="w-100 h-100" src="assets/asdd.png" alt="" />
-                  </div>
-                  <div className="total w-100">
-                    <div className="text">
-                      <span>Rp</span>
-                      <span>246.250</span>
-                    </div>
-                    <div className="progresss">
-                      <span> 1 TERJUAL</span>
-                      <div className="progress-on" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-2 h-100 position-relative">
-                <div className="d-flex align-items-center justify-content-center h-100">
-                  <div className="diskon">
-                    <span
-                      className="font-weight-bold"
-                      style={{ color: "#f53d2d" }}
-                    >
-                      35%
-                    </span>
-                    <span className="text-white font-weight-bold">OFF</span>
-                  </div>
-                  <div className="wrap-img-sale">
-                    <img className="w-100 h-100" src="assets/asdd.png" alt="" />
-                  </div>
-                  <div className="total w-100">
-                    <div className="text">
-                      <span>Rp</span>
-                      <span>246.250</span>
-                    </div>
-                    <div className="progresss">
-                      <span> 1 TERJUAL</span>
-                      <div className="progress-on" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-2 h-100 position-relative">
-                <div className="d-flex align-items-center justify-content-center h-100">
-                  <div className="diskon">
-                    <span
-                      className="font-weight-bold"
-                      style={{ color: "#f53d2d" }}
-                    >
-                      35%
-                    </span>
-                    <span className="text-white font-weight-bold">OFF</span>
-                  </div>
-                  <div className="wrap-img-sale">
-                    <img className="w-100 h-100" src="assets/asdd.png" alt="" />
-                  </div>
-                  <div className="total w-100">
-                    <div className="text">
-                      <span>Rp</span>
-                      <span>246.250</span>
-                    </div>
-                    <div className="progresss">
-                      <span> 1 TERJUAL</span>
-                      <div className="progress-on" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-2 h-100 position-relative">
-                <div className="d-flex align-items-center justify-content-center h-100">
-                  <div className="diskon">
-                    <span
-                      className="font-weight-bold"
-                      style={{ color: "#f53d2d" }}
-                    >
-                      35%
-                    </span>
-                    <span className="text-white font-weight-bold">OFF</span>
-                  </div>
-                  <div className="wrap-img-sale">
-                    <img className="w-100 h-100" src="assets/asdd.png" alt="" />
-                  </div>
-                  <div className="total w-100">
-                    <div className="text">
-                      <span>Rp</span>
-                      <span>246.250</span>
-                    </div>
-                    <div className="progresss">
-                      <span> 1 TERJUAL</span>
-                      <div className="progress-on" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-2 h-100 position-relative">
-                <div className="d-flex align-items-center justify-content-center h-100">
-                  <div className="diskon">
-                    <span
-                      className="font-weight-bold"
-                      style={{ color: "#f53d2d" }}
-                    >
-                      35%
-                    </span>
-                    <span className="text-white font-weight-bold">OFF</span>
-                  </div>
-                  <div className="wrap-img-sale">
-                    <img className="w-100 h-100" src="assets/asdd.png" alt="" />
-                  </div>
-                  <div className="total w-100">
-                    <div className="text">
-                      <span>Rp</span>
-                      <span>246.250</span>
-                    </div>
-                    <div className="progresss">
-                      <span> 1 TERJUAL</span>
-                      <div className="progress-on" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-2 h-100 position-relative">
-                <div className="d-flex align-items-center justify-content-center h-100">
-                  <div className="diskon">
-                    <span
-                      className="font-weight-bold"
-                      style={{ color: "#f53d2d" }}
-                    >
-                      35%
-                    </span>
-                    <span className="text-white font-weight-bold">OFF</span>
-                  </div>
-                  <div className="wrap-img-sale">
-                    <img className="w-100 h-100" src="assets/asdd.png" alt="" />
-                  </div>
-                  <div className="total w-100">
-                    <div className="text">
-                      <span>Rp</span>
-                      <span>246.250</span>
-                    </div>
-                    <div className="progresss">
-                      <span> 1 TERJUAL</span>
-                      <div className="progress-on" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            className="row mx-0 mt-4 py-1"
-            style={{ backgroundColor: "#ffffff" }}
-          >
-            <div className="col-8">
-              <img
-                className="w-100 h-100"
-                src="assets/1234.png"
-                alt=""
-                style={{ borderRadius: 20 }}
-              />
-            </div>
-            <div className="col-4">
-              <img
-                className="w-100 h-100"
-                src="assets/12345.png"
-                alt=""
-                style={{ borderRadius: 20 }}
-              />
-            </div>
-          </div>
-          <div className="row flex-column mx-0 mt-4">
-            <div className="d-flex justify-content-between w-100 pl-5 my-3">
-              <div className="d-flex align-items-center">
-                <h4 className="mb-0" style={{ color: "#f53d2d" }}>
-                  SHOPEE MALL
-                </h4>
-                <div className="hr1 mx-4" />
-                <img src="assets/11.png" alt="" />
-                <span className="ml-2">7 Hr Pengembalian</span>
-                <img className="ml-4" src="assets/22.png" alt="" />
-                <span className="ml-2">100% Ori</span>
-                <img className="ml-4" src="assets/33.png" alt="" />
-                <span className="ml-2">Gratis Ongkir</span>
-              </div>
-              <div className="d-flex align-items-center">
-                <span className="mr-4" style={{ color: "#f53d2d" }}>
-                  Lihat Semua
-                </span>
-                <img src="assets/44.png" alt="" />
-              </div>
-            </div>
-            <div
-              className="row mx-0 py-2"
-              style={{ height: 500, backgroundColor: "#ffffff" }}
-            >
-              <div className="col-4 h-100">
+        <div className="content">
+          <img
+            className="shape1"
+            src={`${process.env.PUBLIC_URL}/assets/images/shape1.png`}
+            alt=""
+          />
+          <img
+            className="shape2"
+            src={`${process.env.PUBLIC_URL}/assets/images/shape2.png`}
+            alt=""
+          />
+          <img
+            className="shape3"
+            src={`${process.env.PUBLIC_URL}/assets/images/shape1.png`}
+            alt=""
+          />
+          <img
+            className="shape4"
+            src={`${process.env.PUBLIC_URL}/assets/images/shape2.png`}
+            alt=""
+          />
+          <div className="container">
+            {/* carousel */}
+            <div className="row wrap-carousel">
+              <div className="col-8 h-100 pr-1">
                 <div
                   id="carouselExampleIndicators"
                   className="carousel slide h-100"
@@ -959,204 +505,1172 @@ const Home = () => {
                     />
                   </ol>
                   <div className="carousel-inner h-100">
-                    <div className="carousel-item h-100 active">
-                      <img className="h-100" src="assets/55.png" alt="..." />
+                    <div className="carousel-item active h-100">
+                      <img
+                        src={`${process.env.PUBLIC_URL}/assets/images/slider/3.png`}
+                        className="d-block w-100 h-100"
+                        alt="..."
+                      />
                     </div>
                     <div className="carousel-item h-100">
-                      <img className="h-100" src="assets/66.png" alt="..." />
+                      <img
+                        src={`${process.env.PUBLIC_URL}/assets/images/slider/4.png`}
+                        className="d-block w-100 h-100"
+                        alt="..."
+                      />
                     </div>
                     <div className="carousel-item h-100">
-                      <img className="h-100" src="assets/77.png" alt="..." />
+                      <img
+                        src={`${process.env.PUBLIC_URL}/assets/images/slider/5.png`}
+                        className="d-block w-100 h-100"
+                        alt="..."
+                      />
+                    </div>
+                  </div>
+                  <a
+                    className="carousel-control-prev"
+                    href="#carouselExampleIndicators"
+                    role="button"
+                    data-slide="prev"
+                  >
+                    <span
+                      className="carousel-control-prev-icon"
+                      aria-hidden="true"
+                    />
+                    <span className="sr-only" />
+                  </a>
+                  <a
+                    className="carousel-control-next"
+                    href="#carouselExampleIndicators"
+                    role="button"
+                    data-slide="next"
+                  >
+                    <span
+                      className="carousel-control-next-icon"
+                      aria-hidden="true"
+                    />
+                    <span className="sr-only" />
+                  </a>
+                </div>
+              </div>
+              <div className="col-4 h-100 pl-0">
+                <div className="h-50">
+                  <img
+                    className="w-100 h-100"
+                    src={`${process.env.PUBLIC_URL}/assets/images/chuyentien.png`}
+                    alt=""
+                  />
+                </div>
+                <div className="h-50 pt-1">
+                  <img
+                    className="w-100 h-100"
+                    src={`${process.env.PUBLIC_URL}/assets/images/chuyentien.png`}
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+            {/* kategory */}
+            <div className="row mx-0 mt-4 kategory">
+              <h5 className="p-4">DANH MỤC</h5>
+              <div className="d-flex">
+                <div className="d-flex flex-column align-items-center card-kategory">
+                  <div className="wrap-img">
+                    <img
+                      className="w-100 h-100"
+                      src="assets/thoitrangnam.png"
+                      alt=""
+                    />
+                  </div>
+                  <p className="mb-0 flex-column mt-2">Thời Trang Nam</p>
+                </div>
+                <div className="d-flex flex-column align-items-center card-kategory">
+                  <div className="wrap-img">
+                    <img
+                      className="w-100 h-100"
+                      src="assets/dienthoai.png"
+                      alt=""
+                    />
+                  </div>
+                  <p className="mb-0 flex-column mt-2">Điện Thoại &amp;</p>
+                  <p className="mb-0 flex-column">Phụ Kiện</p>
+                </div>
+                <div className="d-flex flex-column align-items-center card-kategory">
+                  <div className="wrap-img">
+                    <img
+                      className="w-100 h-100"
+                      src="assets/thietbidientu.png"
+                      alt=""
+                    />
+                  </div>
+                  <p className="mb-0 flex-column mt-2">Thiết Bị Điện Tử </p>
+                </div>
+                <div className="d-flex flex-column align-items-center card-kategory">
+                  <div className="wrap-img">
+                    <img
+                      className="w-100 h-100"
+                      src="assets/maytinh.png"
+                      alt=""
+                    />
+                  </div>
+                  <p className="mb-0 flex-column mt-2">Máy tính &amp;</p>
+                  <p className="mb-0 flex-column">Laptop</p>
+                </div>
+                <div className="d-flex flex-column align-items-center card-kategory">
+                  <div className="wrap-img">
+                    <img
+                      className="w-100 h-100"
+                      src="assets/mayanh.png"
+                      alt=""
+                    />
+                  </div>
+                  <p className="mb-0 flex-column mt-2">Máy ảnh &amp; Máy</p>
+                  <p className="mb-0 flex-column">Quay Phim</p>
+                </div>
+                <div className="d-flex flex-column align-items-center card-kategory">
+                  <div className="wrap-img">
+                    <img
+                      className="w-100 h-100"
+                      src="assets/dongho.png"
+                      alt=""
+                    />
+                  </div>
+                  <p className="mb-0 flex-column mt-2">Đồng Hồ</p>
+                </div>
+                <div className="d-flex flex-column align-items-center card-kategory">
+                  <div className="wrap-img">
+                    <img
+                      className="w-100 h-100"
+                      src="assets/giaydepnam.png"
+                      alt=""
+                    />
+                  </div>
+                  <p className="mb-0 flex-column mt-2">Giày Dép Nam</p>
+                </div>
+                <div className="d-flex flex-column align-items-center card-kategory">
+                  <div className="wrap-img">
+                    <img
+                      className="w-100 h-100"
+                      src="assets/images/thietbigiadung.png"
+                      alt=""
+                    />
+                  </div>
+                  <p className="mb-0 text-center mt-2">
+                    Thiết Bị Điện Gia Dụng
+                  </p>
+                </div>
+                <div className="d-flex flex-column align-items-center card-kategory">
+                  <div className="wrap-img">
+                    <img
+                      className="w-100 h-100"
+                      src="assets/thethao.png"
+                      alt=""
+                    />
+                  </div>
+                  <p className="mb-0 text-center mt-2">
+                    Thể Thao &amp; Du Lịch
+                  </p>
+                </div>
+                <div className="d-flex flex-column align-items-center card-kategory">
+                  <div className="wrap-img">
+                    <img
+                      className="w-100 h-100"
+                      src="assets/xemay.png"
+                      alt=""
+                    />
+                  </div>
+                  <p className="mb-0 text-center mt-2">
+                    Ô Tô &amp; Xe Máy &amp; Xe Đạp
+                  </p>
+                </div>
+              </div>
+              <div className="d-flex">
+                <div className="d-flex flex-column align-items-center card-kategory">
+                  <div className="wrap-img">
+                    <img
+                      className="w-100 h-100"
+                      src="assets/thoitrangnu.png"
+                      alt=""
+                    />
+                  </div>
+                  <p className="mb-0 flex-column mt-2">Thời Trang Nữ</p>
+                </div>
+                <div className="d-flex flex-column align-items-center card-kategory">
+                  <div className="wrap-img">
+                    <img
+                      className="w-100 h-100"
+                      src="assets/mevaembe.png"
+                      alt=""
+                    />
+                  </div>
+                  <p className="mb-0 flex-column mt-2">Mẹ &amp; Em Bé</p>
+                </div>
+                <div className="d-flex flex-column align-items-center card-kategory">
+                  <div className="wrap-img">
+                    <img
+                      className="w-100 h-100"
+                      src="assets/nhacuavadoisong.png"
+                      alt=""
+                    />
+                  </div>
+                  <p className="mb-0 text-center mt-2">
+                    Nhà Cửa &amp; Đời Sống
+                  </p>
+                </div>
+                <div className="d-flex flex-column align-items-center card-kategory">
+                  <div className="wrap-img">
+                    <img
+                      className="w-100 h-100"
+                      src="assets/sacdep.png"
+                      alt=""
+                    />
+                  </div>
+                  <p className="mb-0 flex-column mt-2">Sắc Đẹp</p>
+                </div>
+                <div className="d-flex flex-column align-items-center card-kategory">
+                  <div className="wrap-img">
+                    <img
+                      className="w-100 h-100"
+                      src="assets/suckhoe.png"
+                      alt=""
+                    />
+                  </div>
+                  <p className="mb-0 flex-column mt-2">Sức Khỏe</p>
+                </div>
+                <div className="d-flex flex-column align-items-center card-kategory">
+                  <div className="wrap-img">
+                    <img
+                      className="w-100 h-100"
+                      src="assets/giaydepnu.png"
+                      alt=""
+                    />
+                  </div>
+                  <p className="mb-0 flex-column mt-2">Giày Dép Nữ</p>
+                </div>
+                <div className="d-flex flex-column align-items-center card-kategory">
+                  <div className="wrap-img">
+                    <img
+                      className="w-100 h-100"
+                      src="assets/tuivinu.png"
+                      alt=""
+                    />
+                  </div>
+                  <p className="mb-0 flex-column mt-2">Túi Ví Nữ</p>
+                </div>
+                <div className="d-flex flex-column align-items-center card-kategory">
+                  <div className="wrap-img">
+                    <img
+                      className="w-100 h-100"
+                      src="assets/phukiennu.png"
+                      alt=""
+                    />
+                  </div>
+                  <p className="mb-0 text-center mt-2">
+                    Phụ Kiện &amp; Trang Sức Nữ
+                  </p>
+                </div>
+                <div className="d-flex flex-column align-items-center card-kategory">
+                  <div className="wrap-img">
+                    <img
+                      className="w-100 h-100"
+                      src="assets/bachhoaonline.png"
+                      alt=""
+                    />
+                  </div>
+                  <p className="mb-0 flex-column mt-2">Bách Hóa Online</p>
+                </div>
+                <div className="d-flex flex-column align-items-center card-kategory">
+                  <div className="wrap-img">
+                    <img
+                      className="w-100 h-100"
+                      src="assets/nhasachonline.png"
+                      alt=""
+                    />
+                  </div>
+                  <p className="mb-0 flex-column mt-2">Nhà Sách Online</p>
+                </div>
+              </div>
+            </div>
+            {/* flash sale */}
+            <div className="row mx-0 sale mt-4">
+              <div className="d-flex px-4 pt-4">
+                {/* <h5 class="mr-5">FLASH SALE</h5> */}
+                <div className="fl-sale mr-3" />
+                <span>00</span>
+                <span className="ml-3">00</span>
+                <span className="ml-3">00</span>
+              </div>
+              <div className="row mx-0 mt-4 row-card">
+                <div className="col-2 h-100 position-relative">
+                  <div className="d-flex align-items-center justify-content-center h-100">
+                    <div className="diskon">
+                      <span
+                        className="font-weight-bold"
+                        style={{ color: "#f53d2d" }}
+                      >
+                        35%
+                      </span>
+                      <span className="text-white font-weight-bold">OFF</span>
+                    </div>
+                    <div className="wrap-img-sale">
+                      <img
+                        className="w-100 h-100"
+                        src="assets/asdd.png"
+                        alt=""
+                      />
+                    </div>
+                    <div className="total w-100">
+                      <div className="text">
+                        <span>Rp</span>
+                        <span>246.250</span>
+                      </div>
+                      <div className="progresss">
+                        <span> 1 TERJUAL</span>
+                        <div className="progress-on" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-2 h-100 position-relative">
+                  <div className="d-flex align-items-center justify-content-center h-100">
+                    <div className="diskon">
+                      <span
+                        className="font-weight-bold"
+                        style={{ color: "#f53d2d" }}
+                      >
+                        35%
+                      </span>
+                      <span className="text-white font-weight-bold">OFF</span>
+                    </div>
+                    <div className="wrap-img-sale">
+                      <img
+                        className="w-100 h-100"
+                        src="assets/asdd.png"
+                        alt=""
+                      />
+                    </div>
+                    <div className="total w-100">
+                      <div className="text">
+                        <span>Rp</span>
+                        <span>246.250</span>
+                      </div>
+                      <div className="progresss">
+                        <span> 1 TERJUAL</span>
+                        <div className="progress-on" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-2 h-100 position-relative">
+                  <div className="d-flex align-items-center justify-content-center h-100">
+                    <div className="diskon">
+                      <span
+                        className="font-weight-bold"
+                        style={{ color: "#f53d2d" }}
+                      >
+                        35%
+                      </span>
+                      <span className="text-white font-weight-bold">OFF</span>
+                    </div>
+                    <div className="wrap-img-sale">
+                      <img
+                        className="w-100 h-100"
+                        src="assets/asdd.png"
+                        alt=""
+                      />
+                    </div>
+                    <div className="total w-100">
+                      <div className="text">
+                        <span>Rp</span>
+                        <span>246.250</span>
+                      </div>
+                      <div className="progresss">
+                        <span> 1 TERJUAL</span>
+                        <div className="progress-on" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-2 h-100 position-relative">
+                  <div className="d-flex align-items-center justify-content-center h-100">
+                    <div className="diskon">
+                      <span
+                        className="font-weight-bold"
+                        style={{ color: "#f53d2d" }}
+                      >
+                        35%
+                      </span>
+                      <span className="text-white font-weight-bold">OFF</span>
+                    </div>
+                    <div className="wrap-img-sale">
+                      <img
+                        className="w-100 h-100"
+                        src="assets/asdd.png"
+                        alt=""
+                      />
+                    </div>
+                    <div className="total w-100">
+                      <div className="text">
+                        <span>Rp</span>
+                        <span>246.250</span>
+                      </div>
+                      <div className="progresss">
+                        <span> 1 TERJUAL</span>
+                        <div className="progress-on" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-2 h-100 position-relative">
+                  <div className="d-flex align-items-center justify-content-center h-100">
+                    <div className="diskon">
+                      <span
+                        className="font-weight-bold"
+                        style={{ color: "#f53d2d" }}
+                      >
+                        35%
+                      </span>
+                      <span className="text-white font-weight-bold">OFF</span>
+                    </div>
+                    <div className="wrap-img-sale">
+                      <img
+                        className="w-100 h-100"
+                        src="assets/asdd.png"
+                        alt=""
+                      />
+                    </div>
+                    <div className="total w-100">
+                      <div className="text">
+                        <span>Rp</span>
+                        <span>246.250</span>
+                      </div>
+                      <div className="progresss">
+                        <span> 1 TERJUAL</span>
+                        <div className="progress-on" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-2 h-100 position-relative">
+                  <div className="d-flex align-items-center justify-content-center h-100">
+                    <div className="diskon">
+                      <span
+                        className="font-weight-bold"
+                        style={{ color: "#f53d2d" }}
+                      >
+                        35%
+                      </span>
+                      <span className="text-white font-weight-bold">OFF</span>
+                    </div>
+                    <div className="wrap-img-sale">
+                      <img
+                        className="w-100 h-100"
+                        src="assets/asdd.png"
+                        alt=""
+                      />
+                    </div>
+                    <div className="total w-100">
+                      <div className="text">
+                        <span>Rp</span>
+                        <span>246.250</span>
+                      </div>
+                      <div className="progresss">
+                        <span> 1 TERJUAL</span>
+                        <div className="progress-on" />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="col-8 h-100">
+            </div>
+            <div
+              className="row mx-0 mt-4 py-1"
+              style={{ backgroundColor: "#ffffff" }}
+            >
+              <div className="col-8">
+                <img
+                  className="w-100 h-100"
+                  src="assets/1234.png"
+                  alt=""
+                  style={{ borderRadius: 20 }}
+                />
+              </div>
+              <div className="col-4">
+                <img
+                  className="w-100 h-100"
+                  src="assets/12345.png"
+                  alt=""
+                  style={{ borderRadius: 20 }}
+                />
+              </div>
+            </div>
+            <div className="row flex-column mx-0 mt-4">
+              <div className="d-flex justify-content-between w-100 pl-5 my-3">
+                <div className="d-flex align-items-center">
+                  <h4 className="mb-0" style={{ color: "#f53d2d" }}>
+                    SHOPEE MALL
+                  </h4>
+                  <div className="hr1 mx-4" />
+                  <img src="assets/11.png" alt="" />
+                  <span className="ml-2">7 Hr Pengembalian</span>
+                  <img className="ml-4" src="assets/22.png" alt="" />
+                  <span className="ml-2">100% Ori</span>
+                  <img className="ml-4" src="assets/33.png" alt="" />
+                  <span className="ml-2">Gratis Ongkir</span>
+                </div>
+                <div className="d-flex align-items-center">
+                  <span className="mr-4" style={{ color: "#f53d2d" }}>
+                    Lihat Semua
+                  </span>
+                  <img src="assets/44.png" alt="" />
+                </div>
+              </div>
+              <div
+                className="row mx-0 py-2"
+                style={{ height: 500, backgroundColor: "#ffffff" }}
+              >
+                <div className="col-4 h-100">
+                  <div
+                    id="carouselExampleIndicators"
+                    className="carousel slide h-100"
+                    data-ride="carousel"
+                  >
+                    <ol className="carousel-indicators">
+                      <li
+                        data-target="#carouselExampleIndicators"
+                        data-slide-to={0}
+                        className="active"
+                      />
+                      <li
+                        data-target="#carouselExampleIndicators"
+                        data-slide-to={1}
+                      />
+                      <li
+                        data-target="#carouselExampleIndicators"
+                        data-slide-to={2}
+                      />
+                    </ol>
+                    <div className="carousel-inner h-100">
+                      <div className="carousel-item h-100 active">
+                        <img className="h-100" src="assets/55.png" alt="..." />
+                      </div>
+                      <div className="carousel-item h-100">
+                        <img className="h-100" src="assets/66.png" alt="..." />
+                      </div>
+                      <div className="carousel-item h-100">
+                        <img className="h-100" src="assets/77.png" alt="..." />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-8 h-100">
+                  <div
+                    id="carouselExampleIndicators2"
+                    className="carousel slide h-100"
+                    data-ride="carousel"
+                  >
+                    <ol className="carousel-indicators">
+                      <li
+                        data-target="#carouselExampleIndicators"
+                        data-slide-to={0}
+                        className="active"
+                      />
+                      <li
+                        data-target="#carouselExampleIndicators"
+                        data-slide-to={1}
+                      />
+                      <li
+                        data-target="#carouselExampleIndicators"
+                        data-slide-to={2}
+                      />
+                    </ol>
+                    <div className="carousel-inner h-100">
+                      <div className="carousel-item h-100 active">
+                        <div className="row">
+                          <div className="col-3 d-flex flex-column align-items-center">
+                            <img
+                              src="assets/poipoi.png"
+                              alt=""
+                              style={{ height: "67%" }}
+                            />
+                            <span style={{ color: "#f53d2d" }}>
+                              Diskon s/d 50%
+                            </span>
+                          </div>
+                          <div className="col-3 d-flex flex-column align-items-center">
+                            <img
+                              src="assets/poipoi.png"
+                              alt=""
+                              style={{ height: "67%" }}
+                            />
+                            <span style={{ color: "#f53d2d" }}>
+                              Diskon s/d 50%
+                            </span>
+                          </div>
+                          <div className="col-3 d-flex flex-column align-items-center">
+                            <img
+                              src="assets/poipoi.png"
+                              alt=""
+                              style={{ height: "67%" }}
+                            />
+                            <span style={{ color: "#f53d2d" }}>
+                              Diskon s/d 50%
+                            </span>
+                          </div>
+                          <div className="col-3 d-flex flex-column align-items-center">
+                            <img
+                              src="assets/poipoi.png"
+                              alt=""
+                              style={{ height: "67%" }}
+                            />
+                            <span style={{ color: "#f53d2d" }}>
+                              Diskon s/d 50%
+                            </span>
+                          </div>
+                          <div className="col-3 d-flex flex-column align-items-center">
+                            <img
+                              src="assets/poipoi.png"
+                              alt=""
+                              style={{ height: "67%" }}
+                            />
+                            <span style={{ color: "#f53d2d" }}>
+                              Diskon s/d 50%
+                            </span>
+                          </div>
+                          <div className="col-3 d-flex flex-column align-items-center">
+                            <img
+                              src="assets/poipoi.png"
+                              alt=""
+                              style={{ height: "67%" }}
+                            />
+                            <span style={{ color: "#f53d2d" }}>
+                              Diskon s/d 50%
+                            </span>
+                          </div>
+                          <div className="col-3 d-flex flex-column align-items-center">
+                            <img
+                              src="assets/poipoi.png"
+                              alt=""
+                              style={{ height: "67%" }}
+                            />
+                            <span style={{ color: "#f53d2d" }}>
+                              Diskon s/d 50%
+                            </span>
+                          </div>
+                          <div className="col-3 d-flex flex-column align-items-center">
+                            <img
+                              src="assets/poipoi.png"
+                              alt=""
+                              style={{ height: "67%" }}
+                            />
+                            <span style={{ color: "#f53d2d" }}>
+                              Diskon s/d 50%
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="carousel-item h-100">
+                        <div className="row">
+                          <div className="col-3 d-flex flex-column align-items-center">
+                            <img
+                              src="assets/poipoi.png"
+                              alt=""
+                              style={{ height: "67%" }}
+                            />
+                            <span style={{ color: "#f53d2d" }}>
+                              Diskon s/d 50%
+                            </span>
+                          </div>
+                          <div className="col-3 d-flex flex-column align-items-center">
+                            <img
+                              src="assets/poipoi.png"
+                              alt=""
+                              style={{ height: "67%" }}
+                            />
+                            <span style={{ color: "#f53d2d" }}>
+                              Diskon s/d 50%
+                            </span>
+                          </div>
+                          <div className="col-3 d-flex flex-column align-items-center">
+                            <img
+                              src="assets/poipoi.png"
+                              alt=""
+                              style={{ height: "67%" }}
+                            />
+                            <span style={{ color: "#f53d2d" }}>
+                              Diskon s/d 50%
+                            </span>
+                          </div>
+                          <div className="col-3 d-flex flex-column align-items-center">
+                            <img
+                              src="assets/poipoi.png"
+                              alt=""
+                              style={{ height: "67%" }}
+                            />
+                            <span style={{ color: "#f53d2d" }}>
+                              Diskon s/d 50%
+                            </span>
+                          </div>
+                          <div className="col-3 d-flex flex-column align-items-center">
+                            <img
+                              src="assets/poipoi.png"
+                              alt=""
+                              style={{ height: "67%" }}
+                            />
+                            <span style={{ color: "#f53d2d" }}>
+                              Diskon s/d 50%
+                            </span>
+                          </div>
+                          <div className="col-3 d-flex flex-column align-items-center">
+                            <img
+                              src="assets/poipoi.png"
+                              alt=""
+                              style={{ height: "67%" }}
+                            />
+                            <span style={{ color: "#f53d2d" }}>
+                              Diskon s/d 50%
+                            </span>
+                          </div>
+                          <div className="col-3 d-flex flex-column align-items-center">
+                            <img
+                              src="assets/poipoi.png"
+                              alt=""
+                              style={{ height: "67%" }}
+                            />
+                            <span style={{ color: "#f53d2d" }}>
+                              Diskon s/d 50%
+                            </span>
+                          </div>
+                          <div className="col-3 d-flex flex-column align-items-center">
+                            <img
+                              src="assets/poipoi.png"
+                              alt=""
+                              style={{ height: "67%" }}
+                            />
+                            <span style={{ color: "#f53d2d" }}>
+                              Diskon s/d 50%
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <a
+                      className="carousel-control-prev"
+                      href="#carouselExampleIndicators2"
+                      role="button"
+                      data-slide="prev"
+                      style={{ left: "-90px" }}
+                    >
+                      <img
+                        src="assets/222.png"
+                        alt=""
+                        style={{ width: "50%" }}
+                      />
+                    </a>
+                    <a
+                      className="carousel-control-next"
+                      href="#carouselExampleIndicators2"
+                      role="button"
+                      data-slide="next"
+                    >
+                      <img
+                        src="assets/333.png"
+                        alt=""
+                        style={{ width: "50%", position: "relative", left: 70 }}
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* pencarian populer */}
+            <div
+              className="row flex-column mx-0 pt-3 mt-4"
+              style={{ backgroundColor: "#ffffff" }}
+            >
+              <div className="px-4 d-flex justify-content-between align-items-center w-100">
+                <h4 className style={{ color: "#888" }}>
+                  PENCARIAN POPULER
+                </h4>
+                <span style={{ color: "#f53d2d", fontWeight: 100 }}>Ubah</span>
+              </div>
+              <div className="d-flex w-100 pt-3">
+                <div className="card-pencarian">
+                  <div className="d-flex align-items-center justify-content-center">
+                    <div className="d-flex flex-column">
+                      <span className="font-weight-bold"> Sepatu </span>
+                      <span
+                        className="font-weight-bold"
+                        style={{ color: "#888" }}
+                      >
+                        136RB+Produk
+                      </span>
+                    </div>
+                    <img className="w-50" src="assets/123.png" alt="" />
+                  </div>
+                </div>
+                <div className="card-pencarian">
+                  <div className="d-flex align-items-center justify-content-center">
+                    <div className="d-flex flex-column">
+                      <span className="font-weight-bold"> Sepatu </span>
+                      <span
+                        className="font-weight-bold"
+                        style={{ color: "#888" }}
+                      >
+                        136RB+Produk
+                      </span>
+                    </div>
+                    <img className="w-50" src="assets/123.png" alt="" />
+                  </div>
+                </div>
+                <div className="card-pencarian">
+                  <div className="d-flex align-items-center justify-content-center">
+                    <div className="d-flex flex-column">
+                      <span className="font-weight-bold"> Sepatu </span>
+                      <span
+                        className="font-weight-bold"
+                        style={{ color: "#888" }}
+                      >
+                        136RB+Produk
+                      </span>
+                    </div>
+                    <img className="w-50" src="assets/123.png" alt="" />
+                  </div>
+                </div>
+                <div className="card-pencarian">
+                  <div className="d-flex align-items-center justify-content-center">
+                    <div className="d-flex flex-column">
+                      <span className="font-weight-bold"> Sepatu </span>
+                      <span
+                        className="font-weight-bold"
+                        style={{ color: "#888" }}
+                      >
+                        136RB+Produk
+                      </span>
+                    </div>
+                    <img className="w-50" src="assets/123.png" alt="" />
+                  </div>
+                </div>
+                <div className="card-pencarian">
+                  <div className="d-flex align-items-center justify-content-center">
+                    <div className="d-flex flex-column">
+                      <span className="font-weight-bold"> Sepatu </span>
+                      <span
+                        className="font-weight-bold"
+                        style={{ color: "#888" }}
+                      >
+                        136RB+Produk
+                      </span>
+                    </div>
+                    <img className="w-50" src="assets/123.png" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* produk terlaris */}
+            <div
+              className="row mx-0 mt-4"
+              style={{ backgroundColor: "#ffffff" }}
+            >
+              <div className="d-flex flex-column w-100 pt-4 pb-2">
+                <div className="d-flex justify-content-between w-100 px-4 pb-2">
+                  <h4 style={{ color: "#888" }}>PRODUK TERLARIS</h4>
+                  <div
+                    className="d-flex align-items-center"
+                    style={{ color: "#f53d2d" }}
+                  >
+                    <span> Lihat Semua </span>
+                    <span className="h4 mb-0 ml-2">&gt;</span>
+                  </div>
+                </div>
+                {/* carousel */}
                 <div
-                  id="carouselExampleIndicators2"
-                  className="carousel slide h-100"
+                  id="carouselExampleControls3"
+                  className="carousel slide"
                   data-ride="carousel"
+                  style={{ height: 300 }}
                 >
-                  <ol className="carousel-indicators">
-                    <li
-                      data-target="#carouselExampleIndicators"
-                      data-slide-to={0}
-                      className="active"
-                    />
-                    <li
-                      data-target="#carouselExampleIndicators"
-                      data-slide-to={1}
-                    />
-                    <li
-                      data-target="#carouselExampleIndicators"
-                      data-slide-to={2}
-                    />
-                  </ol>
                   <div className="carousel-inner h-100">
                     <div className="carousel-item h-100 active">
-                      <div className="row">
-                        <div className="col-3 d-flex flex-column align-items-center">
-                          <img
-                            src="assets/poipoi.png"
-                            alt=""
-                            style={{ height: "67%" }}
-                          />
-                          <span style={{ color: "#f53d2d" }}>
-                            Diskon s/d 50%
+                      <div
+                        className="row h-100 mx-0"
+                        style={{ borderTop: "2px solid #f2f2f2" }}
+                      >
+                        <div
+                          className="col-4 h-100 pt-4"
+                          style={{ borderRight: "2px solid #f2f2f2" }}
+                        >
+                          <div
+                            className="d-flex w-100"
+                            style={{ height: "87%" }}
+                          >
+                            <div
+                              className="h-100 mr-2"
+                              style={{
+                                width: "60%",
+                                backgroundColor: "yellow",
+                              }}
+                            >
+                              <img
+                                className="w-100 h-100"
+                                src="assets/55.png"
+                                alt=""
+                              />
+                            </div>
+                            <div className="h-100" style={{ width: "40%" }}>
+                              <div className style={{ height: "48%" }}>
+                                <img
+                                  className="w-100 h-100"
+                                  src="assets/55.png"
+                                  alt=""
+                                />
+                              </div>
+                              <div className="mt-2" style={{ height: "48%" }}>
+                                <img
+                                  className="w-100 h-100"
+                                  src="assets/55.png"
+                                  alt=""
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            className="position-relative h5"
+                            style={{ color: "#888", top: 10 }}
+                          >
+                            Masker Kain Karakter
                           </span>
                         </div>
-                        <div className="col-3 d-flex flex-column align-items-center">
-                          <img
-                            src="assets/poipoi.png"
-                            alt=""
-                            style={{ height: "67%" }}
-                          />
-                          <span style={{ color: "#f53d2d" }}>
-                            Diskon s/d 50%
+                        <div
+                          className="col-4 h-100 pt-4"
+                          style={{ borderRight: "2px solid #f2f2f2" }}
+                        >
+                          <div
+                            className="d-flex w-100"
+                            style={{ height: "87%" }}
+                          >
+                            <div
+                              className="h-100 mr-2"
+                              style={{
+                                width: "60%",
+                                backgroundColor: "yellow",
+                              }}
+                            >
+                              <img
+                                className="w-100 h-100"
+                                src="assets/55.png"
+                                alt=""
+                              />
+                            </div>
+                            <div className="h-100" style={{ width: "40%" }}>
+                              <div className style={{ height: "48%" }}>
+                                <img
+                                  className="w-100 h-100"
+                                  src="assets/55.png"
+                                  alt=""
+                                />
+                              </div>
+                              <div className="mt-2" style={{ height: "48%" }}>
+                                <img
+                                  className="w-100 h-100"
+                                  src="assets/55.png"
+                                  alt=""
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            className="position-relative h5"
+                            style={{ color: "#888", top: 10 }}
+                          >
+                            Masker Kain Karakter
                           </span>
                         </div>
-                        <div className="col-3 d-flex flex-column align-items-center">
-                          <img
-                            src="assets/poipoi.png"
-                            alt=""
-                            style={{ height: "67%" }}
-                          />
-                          <span style={{ color: "#f53d2d" }}>
-                            Diskon s/d 50%
-                          </span>
-                        </div>
-                        <div className="col-3 d-flex flex-column align-items-center">
-                          <img
-                            src="assets/poipoi.png"
-                            alt=""
-                            style={{ height: "67%" }}
-                          />
-                          <span style={{ color: "#f53d2d" }}>
-                            Diskon s/d 50%
-                          </span>
-                        </div>
-                        <div className="col-3 d-flex flex-column align-items-center">
-                          <img
-                            src="assets/poipoi.png"
-                            alt=""
-                            style={{ height: "67%" }}
-                          />
-                          <span style={{ color: "#f53d2d" }}>
-                            Diskon s/d 50%
-                          </span>
-                        </div>
-                        <div className="col-3 d-flex flex-column align-items-center">
-                          <img
-                            src="assets/poipoi.png"
-                            alt=""
-                            style={{ height: "67%" }}
-                          />
-                          <span style={{ color: "#f53d2d" }}>
-                            Diskon s/d 50%
-                          </span>
-                        </div>
-                        <div className="col-3 d-flex flex-column align-items-center">
-                          <img
-                            src="assets/poipoi.png"
-                            alt=""
-                            style={{ height: "67%" }}
-                          />
-                          <span style={{ color: "#f53d2d" }}>
-                            Diskon s/d 50%
-                          </span>
-                        </div>
-                        <div className="col-3 d-flex flex-column align-items-center">
-                          <img
-                            src="assets/poipoi.png"
-                            alt=""
-                            style={{ height: "67%" }}
-                          />
-                          <span style={{ color: "#f53d2d" }}>
-                            Diskon s/d 50%
+                        <div
+                          className="col-4 h-100 pt-4"
+                          style={{ borderRight: "2px solid #f2f2f2" }}
+                        >
+                          <div
+                            className="d-flex w-100"
+                            style={{ height: "87%" }}
+                          >
+                            <div
+                              className="h-100 mr-2"
+                              style={{
+                                width: "60%",
+                                backgroundColor: "yellow",
+                              }}
+                            >
+                              <img
+                                className="w-100 h-100"
+                                src="assets/55.png"
+                                alt=""
+                              />
+                            </div>
+                            <div className="h-100" style={{ width: "40%" }}>
+                              <div className style={{ height: "48%" }}>
+                                <img
+                                  className="w-100 h-100"
+                                  src="assets/55.png"
+                                  alt=""
+                                />
+                              </div>
+                              <div className="mt-2" style={{ height: "48%" }}>
+                                <img
+                                  className="w-100 h-100"
+                                  src="assets/55.png"
+                                  alt=""
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            className="position-relative h5"
+                            style={{ color: "#888", top: 10 }}
+                          >
+                            Masker Kain Karakter
                           </span>
                         </div>
                       </div>
                     </div>
                     <div className="carousel-item h-100">
-                      <div className="row">
-                        <div className="col-3 d-flex flex-column align-items-center">
-                          <img
-                            src="assets/poipoi.png"
-                            alt=""
-                            style={{ height: "67%" }}
-                          />
-                          <span style={{ color: "#f53d2d" }}>
-                            Diskon s/d 50%
+                      <div
+                        className="row h-100 mx-0"
+                        style={{ borderTop: "2px solid #f2f2f2" }}
+                      >
+                        <div
+                          className="col-4 h-100 pt-4"
+                          style={{ borderRight: "2px solid #f2f2f2" }}
+                        >
+                          <div
+                            className="d-flex w-100"
+                            style={{ height: "87%" }}
+                          >
+                            <div
+                              className="h-100 mr-2"
+                              style={{
+                                width: "60%",
+                                backgroundColor: "yellow",
+                              }}
+                            >
+                              <img
+                                className="w-100 h-100"
+                                src="assets/55.png"
+                                alt=""
+                              />
+                            </div>
+                            <div className="h-100" style={{ width: "40%" }}>
+                              <div className style={{ height: "48%" }}>
+                                <img
+                                  className="w-100 h-100"
+                                  src="assets/55.png"
+                                  alt=""
+                                />
+                              </div>
+                              <div className="mt-2" style={{ height: "48%" }}>
+                                <img
+                                  className="w-100 h-100"
+                                  src="assets/55.png"
+                                  alt=""
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            className="position-relative h5"
+                            style={{ color: "#888", top: 10 }}
+                          >
+                            Masker Kain Karakter
                           </span>
                         </div>
-                        <div className="col-3 d-flex flex-column align-items-center">
-                          <img
-                            src="assets/poipoi.png"
-                            alt=""
-                            style={{ height: "67%" }}
-                          />
-                          <span style={{ color: "#f53d2d" }}>
-                            Diskon s/d 50%
+                        <div
+                          className="col-4 h-100 pt-4"
+                          style={{ borderRight: "2px solid #f2f2f2" }}
+                        >
+                          <div
+                            className="d-flex w-100"
+                            style={{ height: "87%" }}
+                          >
+                            <div
+                              className="h-100 mr-2"
+                              style={{
+                                width: "60%",
+                                backgroundColor: "yellow",
+                              }}
+                            >
+                              <img
+                                className="w-100 h-100"
+                                src="assets/55.png"
+                                alt=""
+                              />
+                            </div>
+                            <div className="h-100" style={{ width: "40%" }}>
+                              <div className style={{ height: "48%" }}>
+                                <img
+                                  className="w-100 h-100"
+                                  src="assets/55.png"
+                                  alt=""
+                                />
+                              </div>
+                              <div className="mt-2" style={{ height: "48%" }}>
+                                <img
+                                  className="w-100 h-100"
+                                  src="assets/55.png"
+                                  alt=""
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            className="position-relative h5"
+                            style={{ color: "#888", top: 10 }}
+                          >
+                            Masker Kain Karakter
                           </span>
                         </div>
-                        <div className="col-3 d-flex flex-column align-items-center">
-                          <img
-                            src="assets/poipoi.png"
-                            alt=""
-                            style={{ height: "67%" }}
-                          />
-                          <span style={{ color: "#f53d2d" }}>
-                            Diskon s/d 50%
-                          </span>
-                        </div>
-                        <div className="col-3 d-flex flex-column align-items-center">
-                          <img
-                            src="assets/poipoi.png"
-                            alt=""
-                            style={{ height: "67%" }}
-                          />
-                          <span style={{ color: "#f53d2d" }}>
-                            Diskon s/d 50%
-                          </span>
-                        </div>
-                        <div className="col-3 d-flex flex-column align-items-center">
-                          <img
-                            src="assets/poipoi.png"
-                            alt=""
-                            style={{ height: "67%" }}
-                          />
-                          <span style={{ color: "#f53d2d" }}>
-                            Diskon s/d 50%
-                          </span>
-                        </div>
-                        <div className="col-3 d-flex flex-column align-items-center">
-                          <img
-                            src="assets/poipoi.png"
-                            alt=""
-                            style={{ height: "67%" }}
-                          />
-                          <span style={{ color: "#f53d2d" }}>
-                            Diskon s/d 50%
-                          </span>
-                        </div>
-                        <div className="col-3 d-flex flex-column align-items-center">
-                          <img
-                            src="assets/poipoi.png"
-                            alt=""
-                            style={{ height: "67%" }}
-                          />
-                          <span style={{ color: "#f53d2d" }}>
-                            Diskon s/d 50%
-                          </span>
-                        </div>
-                        <div className="col-3 d-flex flex-column align-items-center">
-                          <img
-                            src="assets/poipoi.png"
-                            alt=""
-                            style={{ height: "67%" }}
-                          />
-                          <span style={{ color: "#f53d2d" }}>
-                            Diskon s/d 50%
+                        <div
+                          className="col-4 h-100 pt-4"
+                          style={{ borderRight: "2px solid #f2f2f2" }}
+                        >
+                          <div
+                            className="d-flex w-100"
+                            style={{ height: "87%" }}
+                          >
+                            <div
+                              className="h-100 mr-2"
+                              style={{
+                                width: "60%",
+                                backgroundColor: "yellow",
+                              }}
+                            >
+                              <img
+                                className="w-100 h-100"
+                                src="assets/55.png"
+                                alt=""
+                              />
+                            </div>
+                            <div className="h-100" style={{ width: "40%" }}>
+                              <div className style={{ height: "48%" }}>
+                                <img
+                                  className="w-100 h-100"
+                                  src="assets/55.png"
+                                  alt=""
+                                />
+                              </div>
+                              <div className="mt-2" style={{ height: "48%" }}>
+                                <img
+                                  className="w-100 h-100"
+                                  src="assets/55.png"
+                                  alt=""
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            className="position-relative h5"
+                            style={{ color: "#888", top: 10 }}
+                          >
+                            Masker Kain Karakter
                           </span>
                         </div>
                       </div>
@@ -1164,423 +1678,52 @@ const Home = () => {
                   </div>
                   <a
                     className="carousel-control-prev"
-                    href="#carouselExampleIndicators2"
+                    href="#carouselExampleControls3"
                     role="button"
                     data-slide="prev"
-                    style={{ left: "-90px" }}
                   >
-                    <img src="assets/222.png" alt="" style={{ width: "50%" }} />
+                    <img
+                      src="assets/222.png"
+                      alt=""
+                      style={{ width: 50, left: "-90px", position: "relative" }}
+                    />
                   </a>
                   <a
                     className="carousel-control-next"
-                    href="#carouselExampleIndicators2"
+                    href="#carouselExampleControls3"
                     role="button"
                     data-slide="next"
                   >
                     <img
                       src="assets/333.png"
                       alt=""
-                      style={{ width: "50%", position: "relative", left: 70 }}
+                      style={{
+                        width: 50,
+                        right: "-90px",
+                        position: "relative",
+                      }}
                     />
                   </a>
                 </div>
               </div>
             </div>
+            {/* rekomendasi */}
+            <SearchFilter
+              value={searchInput}
+              data={productData}
+              renderResults={(results) => (
+                <Row className="justify-content-center">
+                  {results.map((item, i) => (
+                    <ProductCard data={item} key={i} />
+                  ))}
+                </Row>
+              )}
+            ></SearchFilter>
           </div>
-          {/* pencarian populer */}
-          <div
-            className="row flex-column mx-0 pt-3 mt-4"
-            style={{ backgroundColor: "#ffffff" }}
-          >
-            <div className="px-4 d-flex justify-content-between align-items-center w-100">
-              <h4 className style={{ color: "#888" }}>
-                PENCARIAN POPULER
-              </h4>
-              <span style={{ color: "#f53d2d", fontWeight: 100 }}>Ubah</span>
-            </div>
-            <div className="d-flex w-100 pt-3">
-              <div className="card-pencarian">
-                <div className="d-flex align-items-center justify-content-center">
-                  <div className="d-flex flex-column">
-                    <span className="font-weight-bold"> Sepatu </span>
-                    <span
-                      className="font-weight-bold"
-                      style={{ color: "#888" }}
-                    >
-                      136RB+Produk
-                    </span>
-                  </div>
-                  <img className="w-50" src="assets/123.png" alt="" />
-                </div>
-              </div>
-              <div className="card-pencarian">
-                <div className="d-flex align-items-center justify-content-center">
-                  <div className="d-flex flex-column">
-                    <span className="font-weight-bold"> Sepatu </span>
-                    <span
-                      className="font-weight-bold"
-                      style={{ color: "#888" }}
-                    >
-                      136RB+Produk
-                    </span>
-                  </div>
-                  <img className="w-50" src="assets/123.png" alt="" />
-                </div>
-              </div>
-              <div className="card-pencarian">
-                <div className="d-flex align-items-center justify-content-center">
-                  <div className="d-flex flex-column">
-                    <span className="font-weight-bold"> Sepatu </span>
-                    <span
-                      className="font-weight-bold"
-                      style={{ color: "#888" }}
-                    >
-                      136RB+Produk
-                    </span>
-                  </div>
-                  <img className="w-50" src="assets/123.png" alt="" />
-                </div>
-              </div>
-              <div className="card-pencarian">
-                <div className="d-flex align-items-center justify-content-center">
-                  <div className="d-flex flex-column">
-                    <span className="font-weight-bold"> Sepatu </span>
-                    <span
-                      className="font-weight-bold"
-                      style={{ color: "#888" }}
-                    >
-                      136RB+Produk
-                    </span>
-                  </div>
-                  <img className="w-50" src="assets/123.png" alt="" />
-                </div>
-              </div>
-              <div className="card-pencarian">
-                <div className="d-flex align-items-center justify-content-center">
-                  <div className="d-flex flex-column">
-                    <span className="font-weight-bold"> Sepatu </span>
-                    <span
-                      className="font-weight-bold"
-                      style={{ color: "#888" }}
-                    >
-                      136RB+Produk
-                    </span>
-                  </div>
-                  <img className="w-50" src="assets/123.png" alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* produk terlaris */}
-          <div className="row mx-0 mt-4" style={{ backgroundColor: "#ffffff" }}>
-            <div className="d-flex flex-column w-100 pt-4 pb-2">
-              <div className="d-flex justify-content-between w-100 px-4 pb-2">
-                <h4 style={{ color: "#888" }}>PRODUK TERLARIS</h4>
-                <div
-                  className="d-flex align-items-center"
-                  style={{ color: "#f53d2d" }}
-                >
-                  <span> Lihat Semua </span>
-                  <span className="h4 mb-0 ml-2">&gt;</span>
-                </div>
-              </div>
-              {/* carousel */}
-              <div
-                id="carouselExampleControls3"
-                className="carousel slide"
-                data-ride="carousel"
-                style={{ height: 300 }}
-              >
-                <div className="carousel-inner h-100">
-                  <div className="carousel-item h-100 active">
-                    <div
-                      className="row h-100 mx-0"
-                      style={{ borderTop: "2px solid #f2f2f2" }}
-                    >
-                      <div
-                        className="col-4 h-100 pt-4"
-                        style={{ borderRight: "2px solid #f2f2f2" }}
-                      >
-                        <div className="d-flex w-100" style={{ height: "87%" }}>
-                          <div
-                            className="h-100 mr-2"
-                            style={{ width: "60%", backgroundColor: "yellow" }}
-                          >
-                            <img
-                              className="w-100 h-100"
-                              src="assets/55.png"
-                              alt=""
-                            />
-                          </div>
-                          <div className="h-100" style={{ width: "40%" }}>
-                            <div className style={{ height: "48%" }}>
-                              <img
-                                className="w-100 h-100"
-                                src="assets/55.png"
-                                alt=""
-                              />
-                            </div>
-                            <div className="mt-2" style={{ height: "48%" }}>
-                              <img
-                                className="w-100 h-100"
-                                src="assets/55.png"
-                                alt=""
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <span
-                          className="position-relative h5"
-                          style={{ color: "#888", top: 10 }}
-                        >
-                          Masker Kain Karakter
-                        </span>
-                      </div>
-                      <div
-                        className="col-4 h-100 pt-4"
-                        style={{ borderRight: "2px solid #f2f2f2" }}
-                      >
-                        <div className="d-flex w-100" style={{ height: "87%" }}>
-                          <div
-                            className="h-100 mr-2"
-                            style={{ width: "60%", backgroundColor: "yellow" }}
-                          >
-                            <img
-                              className="w-100 h-100"
-                              src="assets/55.png"
-                              alt=""
-                            />
-                          </div>
-                          <div className="h-100" style={{ width: "40%" }}>
-                            <div className style={{ height: "48%" }}>
-                              <img
-                                className="w-100 h-100"
-                                src="assets/55.png"
-                                alt=""
-                              />
-                            </div>
-                            <div className="mt-2" style={{ height: "48%" }}>
-                              <img
-                                className="w-100 h-100"
-                                src="assets/55.png"
-                                alt=""
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <span
-                          className="position-relative h5"
-                          style={{ color: "#888", top: 10 }}
-                        >
-                          Masker Kain Karakter
-                        </span>
-                      </div>
-                      <div
-                        className="col-4 h-100 pt-4"
-                        style={{ borderRight: "2px solid #f2f2f2" }}
-                      >
-                        <div className="d-flex w-100" style={{ height: "87%" }}>
-                          <div
-                            className="h-100 mr-2"
-                            style={{ width: "60%", backgroundColor: "yellow" }}
-                          >
-                            <img
-                              className="w-100 h-100"
-                              src="assets/55.png"
-                              alt=""
-                            />
-                          </div>
-                          <div className="h-100" style={{ width: "40%" }}>
-                            <div className style={{ height: "48%" }}>
-                              <img
-                                className="w-100 h-100"
-                                src="assets/55.png"
-                                alt=""
-                              />
-                            </div>
-                            <div className="mt-2" style={{ height: "48%" }}>
-                              <img
-                                className="w-100 h-100"
-                                src="assets/55.png"
-                                alt=""
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <span
-                          className="position-relative h5"
-                          style={{ color: "#888", top: 10 }}
-                        >
-                          Masker Kain Karakter
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="carousel-item h-100">
-                    <div
-                      className="row h-100 mx-0"
-                      style={{ borderTop: "2px solid #f2f2f2" }}
-                    >
-                      <div
-                        className="col-4 h-100 pt-4"
-                        style={{ borderRight: "2px solid #f2f2f2" }}
-                      >
-                        <div className="d-flex w-100" style={{ height: "87%" }}>
-                          <div
-                            className="h-100 mr-2"
-                            style={{ width: "60%", backgroundColor: "yellow" }}
-                          >
-                            <img
-                              className="w-100 h-100"
-                              src="assets/55.png"
-                              alt=""
-                            />
-                          </div>
-                          <div className="h-100" style={{ width: "40%" }}>
-                            <div className style={{ height: "48%" }}>
-                              <img
-                                className="w-100 h-100"
-                                src="assets/55.png"
-                                alt=""
-                              />
-                            </div>
-                            <div className="mt-2" style={{ height: "48%" }}>
-                              <img
-                                className="w-100 h-100"
-                                src="assets/55.png"
-                                alt=""
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <span
-                          className="position-relative h5"
-                          style={{ color: "#888", top: 10 }}
-                        >
-                          Masker Kain Karakter
-                        </span>
-                      </div>
-                      <div
-                        className="col-4 h-100 pt-4"
-                        style={{ borderRight: "2px solid #f2f2f2" }}
-                      >
-                        <div className="d-flex w-100" style={{ height: "87%" }}>
-                          <div
-                            className="h-100 mr-2"
-                            style={{ width: "60%", backgroundColor: "yellow" }}
-                          >
-                            <img
-                              className="w-100 h-100"
-                              src="assets/55.png"
-                              alt=""
-                            />
-                          </div>
-                          <div className="h-100" style={{ width: "40%" }}>
-                            <div className style={{ height: "48%" }}>
-                              <img
-                                className="w-100 h-100"
-                                src="assets/55.png"
-                                alt=""
-                              />
-                            </div>
-                            <div className="mt-2" style={{ height: "48%" }}>
-                              <img
-                                className="w-100 h-100"
-                                src="assets/55.png"
-                                alt=""
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <span
-                          className="position-relative h5"
-                          style={{ color: "#888", top: 10 }}
-                        >
-                          Masker Kain Karakter
-                        </span>
-                      </div>
-                      <div
-                        className="col-4 h-100 pt-4"
-                        style={{ borderRight: "2px solid #f2f2f2" }}
-                      >
-                        <div className="d-flex w-100" style={{ height: "87%" }}>
-                          <div
-                            className="h-100 mr-2"
-                            style={{ width: "60%", backgroundColor: "yellow" }}
-                          >
-                            <img
-                              className="w-100 h-100"
-                              src="assets/55.png"
-                              alt=""
-                            />
-                          </div>
-                          <div className="h-100" style={{ width: "40%" }}>
-                            <div className style={{ height: "48%" }}>
-                              <img
-                                className="w-100 h-100"
-                                src="assets/55.png"
-                                alt=""
-                              />
-                            </div>
-                            <div className="mt-2" style={{ height: "48%" }}>
-                              <img
-                                className="w-100 h-100"
-                                src="assets/55.png"
-                                alt=""
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <span
-                          className="position-relative h5"
-                          style={{ color: "#888", top: 10 }}
-                        >
-                          Masker Kain Karakter
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <a
-                  className="carousel-control-prev"
-                  href="#carouselExampleControls3"
-                  role="button"
-                  data-slide="prev"
-                >
-                  <img
-                    src="assets/222.png"
-                    alt=""
-                    style={{ width: 50, left: "-90px", position: "relative" }}
-                  />
-                </a>
-                <a
-                  className="carousel-control-next"
-                  href="#carouselExampleControls3"
-                  role="button"
-                  data-slide="next"
-                >
-                  <img
-                    src="assets/333.png"
-                    alt=""
-                    style={{ width: 50, right: "-90px", position: "relative" }}
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-          {/* rekomendasi */}
-          <SearchFilter value={searchInput} data={productData} renderResults= {results => (
-              <Row className='justify-content-center'>
-                 {results.map((item, i) => (
-                  <ProductCard data={item} key={i}/>
-                 ))}
-              </Row>
-          )}></SearchFilter>
         </div>
-      </div>
       </StyledHome>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
