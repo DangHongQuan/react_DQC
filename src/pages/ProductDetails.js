@@ -5,17 +5,19 @@ import 'react-lightbox-component/build/css/index.css';
 import './product-details.css';
 import { useCart } from 'react-use-cart';
 import { BsCartPlus } from 'react-icons/bs';
+import { useParams } from 'react-router-dom';
 
 const ProductDetails = (props) => {
     const [productData, setProductData] = useState([]);
+    const {productId} = useParams();
     const { addItem } = useCart();
 
     useEffect(()=>{
-        getResponse();
-    },[]);
+        getResponse(productId);
+    },[productId]);
 
-    const getResponse = async()=>{
-        const res = await fetch(`https://fakestoreapi.com/products/${props.productId}`)
+    const getResponse = async(productId)=>{
+        const res = await fetch(`https://fakestoreapi.com/products/${productId}`)
                           .then(res=> res.json());
                           setProductData(await res);
     }
