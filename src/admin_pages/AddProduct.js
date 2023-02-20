@@ -8,42 +8,42 @@ import { useEffect } from "react";
 import nameProduct from "../services/nameProduct";
 
 function AddProduct(props) {
-  const [name, setName] = useState({ id: 0, name: "" });
-  const { id } = useParams();
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (!/\d+/.test(id)) {
-      navigate("/Loi");
-    } else {
-      if (id > 0) {
-        nameProduct.get(id).then((res) => setName(res.data));
-      } else {
-        setName({ id: 0, name: "" });
-      }
-    }
-  }, [id, navigate]);
+  // const [name, setName] = useState({ id: 0, name: "" });
+  // const { id } = useParams();
+  // const navigate = useNavigate();
+  // useEffect(() => {
+  //   if (!/\d+/.test(id)) {
+  //     navigate("/Loi");
+  //   } else {
+  //     if (id > 0) {
+  //       nameProduct.get(id).then((res) => setName(res.data));
+  //     } else {
+  //       setName({ id: 0, name: "" });
+  //     }
+  //   }
+  // }, [id, navigate]);
 
-  const HendleChange = (e) => {
-    let newMajor = { ...name };
-    newMajor[e.target.name] = e.target.value;
-    setName(newMajor);
-  };
-  const saveHandler = () => {
-    console.log(name);
-    if (id > 0) {
-      nameProduct.update(id, name).then((res) => {
-        if (res.errorCode === 0) {
-          navigate("/addProduct");
-        }
-      });
-    } else {
-      nameProduct.add(name).then((res) => {
-        if (res.errorCode === 0) {
-          navigate("/addProduct");
-        }
-      });
-    }
-  };
+  // const HendleChange = (e) => {
+  //   let newMajor = { ...name };
+  //   newMajor[e.target.name] = e.target.value;
+  //   setName(newMajor);
+  // };
+  // const saveHandler = () => {
+  //   console.log(name);
+  //   if (id > 0) {
+  //     nameProduct.update(id, name).then((res) => {
+  //       if (res.errorCode === 0) {
+  //         navigate("/addProduct");
+  //       }
+  //     });
+  //   } else {
+  //     nameProduct.add(name).then((res) => {
+  //       if (res.errorCode === 0) {
+  //         navigate("/addProduct");
+  //       }
+  //     });
+  //   }
+  // };
 
   return (
     <>
@@ -274,13 +274,6 @@ function AddProduct(props) {
                         <i className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400" />
                         Đăng xuất
                       </NavLink>
-                      <button
-                        type="button"
-                        onClick={saveHandler}
-                        className="btn btn-primary"
-                      >
-                        Save
-                      </button>
                     </div>
                   </li>
                 </ul>
@@ -290,16 +283,7 @@ function AddProduct(props) {
               <div className="container-fluid">
                 <div className="ms-5">
                   <label> Tên sản phẩm</label>
-                  <div className="card-body">
-                    <Input
-                      label="Major name"
-                      required
-                      onChange={HendleChange}
-                      lastRow
-                      name="name"
-                      defaultValue={name.name}
-                    />
-                  </div>
+                  <div className="card-body"></div>
                 </div>
               </div>
               {/* /.container-fluid */}

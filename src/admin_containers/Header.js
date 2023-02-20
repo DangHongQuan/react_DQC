@@ -72,9 +72,9 @@ function Header(props) {
                 >
                   <div className="bg-white py-2 collapse-inner rounded">
                     <h6 className="collapse-header">Xin Chào Đạt,Quân,Châu:</h6>
-                    <a className="collapse-item" href="buttons.html">
+                    <NavLink className="collapse-item" to={"/addProduct"}>
                       Cài Đặt Nút
-                    </a>
+                    </NavLink>
                     <a className="collapse-item" href="cards.html">
                       Cài Đặt Giao Diện
                     </a>
