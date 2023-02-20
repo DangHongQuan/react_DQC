@@ -87,7 +87,7 @@ const Shopcart = (props) => {
         {!isEmpty && 
           <Row className="justify-content-center w-100" style={{position: 'fixed', bottom:0}}>
               <Col className="py-2">
-                <h4>Thành tiền: {cartTotal}</h4>
+                <h4>Thành tiền: {cartTotal.toFixed()}.000</h4>
               </Col>
               <Col className="p-0" md={4}>
                 <Button variant="danger" className="m-2" onClick={() => emptyCart()}><BsCartX/> Xóa tất cả </Button>
