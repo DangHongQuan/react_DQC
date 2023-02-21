@@ -99,9 +99,9 @@ function AddProduct(props) {
                   <NavLink className="collapse-item" to={"/addProduct"}>
                     Thêm sản phẩm
                   </NavLink>
-                  <a className="collapse-item" href="cards.html">
-                    Cài Đặt Giao Diện
-                  </a>
+                  <NavLink className="collapse-item" to={"/productAdminList"}>
+                    Chỉnh sửa sản phẩm
+                  </NavLink>
                 </div>
               </div>
             </li>
