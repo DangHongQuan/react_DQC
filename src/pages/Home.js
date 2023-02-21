@@ -343,7 +343,7 @@ const Home = () => {
   const [searchInput, setSearchInput] = useState("");
 
   async function getResponse() {
-    const res = await fetch("https://fakestoreapi.com/products").then((res) =>
+    const res = await fetch("http://localhost:8000/products").then((res) =>
       res.json()
     );
     setProductData(await res);
