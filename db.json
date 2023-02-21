@@ -17,6 +17,116 @@
       "phone": "0398134817",
       "avatar": "",
       "id": 2
+    },
+    {
+      "username": "fafd",
+      "password": "dfafs",
+      "user": "fdsafa",
+      "address": "fasfd",
+      "phone": "fdasfs",
+      "id": 3
+    },
+    {
+      "username": "fafd",
+      "password": "dfafs",
+      "user": "fdsafa",
+      "address": "fasfd",
+      "phone": "fdasfs",
+      "id": 4
+    },
+    {
+      "username": "fdakh",
+      "password": "hfskahfk",
+      "user": "kfsakhkfdhsk",
+      "address": "kfhasfakkflaljhflasllakfsh",
+      "phone": "014018401",
+      "id": 5
+    },
+    {
+      "username": "fdaf",
+      "password": "àds",
+      "user": "hkfahk",
+      "address": "kfhak",
+      "phone": "ahkfashkkh",
+      "id": 6
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "image": "https://pixlr.com/images/index/remove-bg.webp",
+      "title": "gai xinh",
+      "price": "20.92"
+    },
+    {
+      "image": "https://pixlr.com/images/index/remove-bg.webp",
+      "title": "gai xinh",
+      "price": "20.92"
+    },
+    {
+      "image": "https://pixlr.com/images/index/remove-bg.webp",
+      "title": "gai xinh",
+      "price": "20.92"
+    },
+    {
+      "image": "https://pixlr.com/images/index/remove-bg.webp",
+      "title": "gai xinh",
+      "price": "20.92"
+    },
+    {
+      "image": "https://pixlr.com/images/index/remove-bg.webp",
+      "title": "gai xinh",
+      "price": "20.92"
+    },
+    {
+      "image": "https://pixlr.com/images/index/remove-bg.webp",
+      "title": "gai xinh",
+      "price": "20.92"
+    },
+    {
+      "image": "https://pixlr.com/images/index/remove-bg.webp",
+      "title": "gai xinh",
+      "price": "20.92"
+    },
+    {
+      "image": "https://pixlr.com/images/index/remove-bg.webp",
+      "title": "gai xinh",
+      "price": "20.92"
+    },
+    {
+      "image": "https://pixlr.com/images/index/remove-bg.webp",
+      "title": "gai xinh",
+      "price": "20.92"
+    },
+    {
+      "image": "https://pixlr.com/images/index/remove-bg.webp",
+      "title": "gai xinh",
+      "price": "20.92"
+    },
+    {
+      "image": "https://pixlr.com/images/index/remove-bg.webp",
+      "title": "gai xinh",
+      "price": "20.92"
+    },
+    {
+      "image": "https://pixlr.com/images/index/remove-bg.webp",
+      "title": "gai xinh",
+      "price": "20.92"
+    },
+    {
+      "image": "https://pixlr.com/images/index/remove-bg.webp",
+      "title": "gai xinh",
+      "price": "20.92"
+    },
+    {
+      "image": "https://pixlr.com/images/index/remove-bg.webp",
+      "title": "gai xinh",
+      "price": "20.92"
+    },
+    {
+      "image": "https://pixlr.com/images/index/remove-bg.webp",
+      "title": "gai xinh",
+      "price": "20.92"
     }
   ]
 }

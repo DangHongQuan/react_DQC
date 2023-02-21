@@ -1,7 +1,6 @@
-import React from "react";
-import { Helmet } from "react-helmet";
+import React, {useState, useEffect} from "react";
 import styled from "styled-components";
-import { login } from "../main.js";
+
 
 const StyledLogin = styled.div`
   #background-login {
@@ -39,7 +38,7 @@ const StyledLogin = styled.div`
     border: 1px solid gray;
     border-radius: 5px;
   }
-  input[type="submit"] {
+  button[type="submit"] {
     width: 70%;
     padding: 10px;
     margin: 20px 0;
@@ -68,9 +67,6 @@ const Login = () => {
 
   return (
     <>
-      <Helmet>
-        <script src="../main.js" />
-      </Helmet>
       <StyledLogin>
         <header className="bg-white">
           <div className="container">
@@ -113,7 +109,7 @@ const Login = () => {
                   placeholder="Mật Khẩu"
                 />
               </div>
-              <input onClick={login} type="submit" defaultValue="Đăng nhập" />
+              <button className="btn btn-bg-danger" type="submit">Đăng Nhập</button>
               <div className="row">
                 <div className="col">
                   <small className="mx-5 text-primary">Quên mật khẩu</small>
