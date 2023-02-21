@@ -2,47 +2,43 @@ import React, { useState } from "react";
 import "./../admin_containers/header.css";
 import "./../admin_containers/fontawesome-free/css/all.min.css";
 import LoginAdmin from "./../admin_pages/LoginAdmin";
-import { NavLink, useNavigate, useParams } from "react-router-dom";
-import Input from "./../user_components/Input";
-import { useEffect } from "react";
-import nameProduct from "../services/nameProduct";
+import { NavLink } from "react-router-dom";
+import axios from "axios";
 
 function AddProduct(props) {
-  const [name, setName] = useState({ id: 0, name: "" });
-  const { id } = useParams();
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (!/\d+/.test(id)) {
-      navigate("/Loi");
-    } else {
-      if (id > 0) {
-        nameProduct.get(id).then((res) => setName(res.data));
-      } else {
-        setName({ id: 0, name: "" });
-      }
-    }
-  }, [id, navigate]);
+  const [id, setId] = useState(0);
+  const [title, setTitle] = useState("");
+  const [price, setPrice] = useState(0);
+  const [description, setDescription] = useState("");
+  const [category, setCategory] = useState("");
+  const [image, setImage] = useState("");
+  const [rate, setRate] = useState(0);
+  const [count, setCount] = useState(0);
 
-  const HendleChange = (e) => {
-    let newMajor = { ...name };
-    newMajor[e.target.name] = e.target.value;
-    setName(newMajor);
-  };
-  const saveHandler = () => {
-    console.log(name);
-    if (id > 0) {
-      nameProduct.update(id, name).then((res) => {
-        if (res.errorCode === 0) {
-          navigate("/addProduct");
-        }
+  const handleAddProduct = () => {
+    const newProduct = {
+      id: parseInt(id),
+      title,
+      price: parseInt(price),
+      description,
+      category,
+      image,
+      rating: { rate: parseInt(rate), count: parseInt(count) },
+    };
+
+    // Loại bỏ các thuộc tính không cần thiết trong object newProduct
+    delete newProduct.createdAt;
+    delete newProduct.modifiedAt;
+
+    axios
+      .post("http://localhost:8000/products", newProduct)
+      .then((response) => {
+        console.log(response.data);
+        props.onAddProduct(newProduct);
+      })
+      .catch((error) => {
+        console.log(error);
       });
-    } else {
-      nameProduct.add(name).then((res) => {
-        if (res.errorCode === 0) {
-          navigate("/addProduct");
-        }
-      });
-    }
   };
 
   return (
@@ -104,7 +100,7 @@ function AddProduct(props) {
                     Thêm sản phẩm
                   </NavLink>
                   <a className="collapse-item" href="cards.html">
-                    Chỉnh sửa sản phẩm
+                    Cài Đặt Giao Diện
                   </a>
                 </div>
               </div>
@@ -247,7 +243,7 @@ function AddProduct(props) {
                       aria-expanded="false"
                     >
                       <span className="mr-2 d-none d-lg-inline text-gray-600 small">
-                        Trần Quang Đạt
+                        Admin page
                       </span>
                       <img
                         className="img-profile rounded-circle"
@@ -274,13 +270,6 @@ function AddProduct(props) {
                         <i className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400" />
                         Đăng xuất
                       </NavLink>
-                      <button
-                        type="button"
-                        onClick={saveHandler}
-                        className="btn btn-primary"
-                      >
-                        Save
-                      </button>
                     </div>
                   </li>
                 </ul>
@@ -289,16 +278,72 @@ function AddProduct(props) {
               {/* Begin Page Content */}
               <div className="container-fluid">
                 <div className="ms-5">
-                  <label> Tên sản phẩm</label>
-                  <div className="card-body">
-                    <Input
-                      label="Major name"
-                      required
-                      onChange={HendleChange}
-                      lastRow
-                      name="name"
-                      defaultValue={name.name}
+                  <div>
+                    <h3 className="h1">Thêm sản phẩm mới</h3>
+
+                    <label>Tên sản phẩm:</label>
+                    <input
+                      className="form-control w-25"
+                      type="text"
+                      value={title}
+                      onChange={(e) => setTitle(e.target.value)}
                     />
+                    <br />
+                    <label>Giá:</label>
+                    <input
+                      className="form-control  w-25"
+                      type="number"
+                      value={price}
+                      onChange={(e) => setPrice(e.target.value)}
+                    />
+                    <br />
+                    <label>Mô tả:</label>
+                    <input
+                      className="form-control  w-25"
+                      type="text"
+                      value={description}
+                      onChange={(e) => setDescription(e.target.value)}
+                    />
+                    <br />
+                    <label>Danh mục:</label>
+                    <input
+                      className="form-control  w-25"
+                      type="text"
+                      value={category}
+                      onChange={(e) => setCategory(e.target.value)}
+                    />
+                    <br />
+                    <label>Link ảnh:</label>
+                    <input
+                      className="form-control  w-25"
+                      type="text"
+                      value={image}
+                      onChange={(e) => setImage(e.target.value)}
+                    />
+                    <br />
+                    <label>Đánh giá:</label>
+                    <input
+                      className="form-control  w-25"
+                      type="number"
+                      value={rate}
+                      onChange={(e) => setRate(e.target.value)}
+                    />
+                    <br />
+                    <label>Số lượt đánh giá:</label>
+                    <input
+                      className="form-control  w-25"
+                      type="number"
+                      value={count}
+                      onChange={(e) => setCount(e.target.value)}
+                    />
+                    <br />
+
+                    <button
+                      className="btn btn-primary mb-5"
+                      onClick={handleAddProduct}
+                    >
+                      Thêm sản phẩm
+                    </button>
                   </div>
                 </div>
               </div>

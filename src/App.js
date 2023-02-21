@@ -7,6 +7,7 @@ import LoginAdmin from "./admin_pages/LoginAdmin";
 import Shopcart from "./pages/Shopcart";
 import Layouts from "./admin_containers/Layouts";
 import ProductDetails from "./pages/ProductDetails";
+import AddProduct from './admin_pages/AddProduct';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/shopcart" element={<Shopcart />} />
+        <Route path="/addProduct" element={<AddProduct/>} />
       </Routes>
     </BrowserRouter>
   );
