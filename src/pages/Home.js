@@ -227,8 +227,7 @@ const StyledHome = styled.div`
 /* rekomendasi */
 .nav-link.active {
   border-bottom: 3px solid #f53d2d !important;
-}import { useCart } from 'react-use-cart';
-import { useCart } from 'react-use-cart';
+}
 
 `;
 const StyledHeader = styled.div`
@@ -343,7 +342,7 @@ const Home = () => {
   const [searchInput, setSearchInput] = useState("");
 
   async function getResponse() {
-    const res = await fetch("https://fakestoreapi.com/products").then((res) =>
+    const res = await fetch("http://localhost:8000/products").then((res) =>
       res.json()
     );
     setProductData(await res);

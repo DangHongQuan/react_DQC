@@ -1,7 +1,7 @@
 import React from 'react'
 import  styled  from 'styled-components';
-import { Helmet } from 'react-helmet';
-import { signup } from '../main';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const StyledSignin = styled.div` 
 #background-login{
@@ -52,7 +52,7 @@ const StyledSignin = styled.div`
         border: 1px solid gray;
         border-radius: 5px;
       }
-      input[type="submit"] {
+      button[type="submit"] {
         width: 70%;
         padding: 10px;
         margin: 20px 0;
@@ -78,12 +78,53 @@ const StyledSignin = styled.div`
       }
 `;
 
-const Signup = () => {
+const Signup = (props) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [user, setUser] = useState("");
+  const [address, setAddress] = useState("");
+  const [phone, setPhone] = useState("");
+  const navigate = useNavigate();
+
+
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleUserChange = (event) => {
+    setUser(event.target.value);
+  };
+
+  const handleAddressChange = (event) => {
+    setAddress(event.target.value);
+  };
+
+  const handlePhoneChange = (event) => {
+    setPhone(event.target.value);
+  };
+
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const response = await fetch("http://localhost:8000/user", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username, password, user, address, phone }),
+    });
+    const data = await response.json();
+    alert("đăng kí thành công");
+    navigate("/login");
+    console.log(data);
+  };
+
   return (
     <>
-    <Helmet>
-      <script src="../main.js"></script>
-    </Helmet>
     <StyledSignin>
     <div>
   <header className='bg-white'>
@@ -104,28 +145,27 @@ const Signup = () => {
   <div id="background-login">
     <div className="form-container container-fluid">
       <div className="text-start fs-3 ms-5 mt-3">Đăng Kí</div>
-      <form id="login-form">
+      <form id="login-form" onSubmit={handleSubmit}>
         <div className="form-group">
-          <input type="text" name="username" id="username" placeholder="Email/Số điện thoại/Tên Đăng Nhập" />
+          <input type="text" name="username" id="username" placeholder="Email/Số điện thoại/Tên Đăng Nhập" value={username} onChange={handleUsernameChange}/>
         </div>
         <div className="form-group">
-          <input type="password" name="password" id="password" placeholder="Mật Khẩu" />
+          <input type="password" name="password" id="password" placeholder="Mật Khẩu"  value={password} onChange={handlePasswordChange} />
         </div>
         <div className="form-group">
-          <input type="text" name="nameUser" id="nameUser" placeholder="Tên khách hàng" />
+          <input type="text" name="nameUser" id="nameUser" placeholder="Tên khách hàng"  value={user} onChange={handleUserChange} />
         </div>
         <div className="form-group">
-          <input type="text" name="addres" id="address" placeholder="Địa chỉ" />
+          <input type="text" name="addres" id="address" placeholder="Địa chỉ"  value={address} onChange={handleAddressChange}/>
         </div>
         <div className="form-group">
-          <input type="text" name="phone" id="telphone" placeholder="Số điện thoại" />
+          <input type="text" name="phone" id="telphone" placeholder="Số điện thoại"  value={phone} onChange={handlePhoneChange} />
         </div>
         <div className="form-group">
           <label htmlFor="avatar">Ảnh đại diện: </label>
           <input type="file" name="avatar" id="avatar" />
         </div>
-        <input onClick={signup} type="submit" defaultValue="Đăng Kí" />
-        <a href="login.html" className="text-decoration-none">Đăng Nhập</a>
+        <button type='submit' className='btn'>Đăng kí</button>
       </form>
     </div>
   </div>

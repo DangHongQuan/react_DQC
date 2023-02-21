@@ -33,7 +33,7 @@ const ProductCard = (props) => {
       </Link>
         <Card.Body>
             <Card.Title style={{textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace:'nowrap'}}><small>{title}</small></Card.Title>
-            <Card.Title><small>Giá bán: <small>{price.toFixed()}.000đ</small></small></Card.Title>
+            <Card.Title><small>Giá bán: <small>{price}.000đ</small></small></Card.Title>
             <Button className='d-flex align-items-center m-auto border-0' onClick={() => addToCart()}><BsCartPlus size="1.8rem"/></Button>
         </Card.Body>
     </Card>

@@ -5,6 +5,7 @@ const url = {
     baseUrl: "http://localhost:3000/",
     login: "/login",
     signup: "/signup",
+    register: "/register",
 };
 
 const instance = axios.create({
