@@ -9,6 +9,7 @@ import Layouts from "./admin_containers/Layouts";
 import ProductDetails from "./pages/ProductDetails";
 import AddProduct from './admin_pages/AddProduct';
 import ProductAdminList from "./admin_pages/ProductAdminList";
+import CheckOurAdmin from "./admin_pages/CheckOurAdmin";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/shopcart" element={<Shopcart />} />
         <Route path="/addProduct" element={<AddProduct/>} />
         <Route path="/productAdminList" element={<ProductAdminList/>} />
+        <Route path="/checkout" element={<CheckOurAdmin/>} />
       </Routes>
     </BrowserRouter>
   );

@@ -101,10 +101,10 @@ const ProductListCard = (props) => {
     description: productData.description,
     category: productData.category,
     image: productData.image,
-    rating : {
-        rate:productData.rate,
-        count:productData.count,
-    }
+    rating: {
+      rate: productData.rate,
+      count: productData.count,
+    },
   });
 
   const handleEditProduct = () => {
@@ -124,10 +124,10 @@ const ProductListCard = (props) => {
         description: editedProductData.description,
         category: editedProductData.category,
         image: editedProductData.image,
-        rating : {
-            rate:editedProductData.rate,
-            count:editedProductData.count,
-        }
+        rating: {
+          rate: editedProductData.rate,
+          count: editedProductData.count,
+        },
       });
       setProductData(editedProductData);
       setShowEditPopup(false);
@@ -200,7 +200,7 @@ const ProductListCard = (props) => {
           {/* edit */}
           <Modal.Body>
             <Form>
-            <Form.Group controlId="formTitle">
+              <Form.Group controlId="formTitle">
                 <Form.Label>ID</Form.Label>
                 <Form.Control
                   type="text"
@@ -312,8 +312,6 @@ const ProductListCard = (props) => {
                   }
                 />
               </Form.Group>
-             
-             
             </Form>
           </Modal.Body>
           <Modal.Footer>
