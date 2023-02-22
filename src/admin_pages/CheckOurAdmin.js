@@ -7,18 +7,7 @@ import ProductAdminList from "./../admin_pages/ProductAdminList";
 import Checkout from './CheckOur';
 
 function Header(props) {
-  const [loggedIn, setLoggedIn] = useState(false);
-
-  const handleLogin = (username, password) => {
-    // Gửi yêu cầu đăng nhập đến máy chủ và xác thực thông tin đăng nhập
-    if (username === "admin" && password === "admin") {
-      setLoggedIn(true);
-    } else {
-      alert("Invalid username or password.");
-    }
-  };
-
-  if (loggedIn) {
+ 
     return (
       <>
         <div id="page-top">
@@ -279,13 +268,8 @@ function Header(props) {
         </div>
       </>
     );
-  } else {
-    return (
-      <div>
-        <LoginAdmin onSubmit={handleLogin} />
-      </div>
-    );
-  }
+    
+  
 }
 
 export default Header;

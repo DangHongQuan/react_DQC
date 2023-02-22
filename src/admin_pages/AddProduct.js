@@ -306,12 +306,14 @@ function AddProduct(props) {
                     />
                     <br />
                     <label>Danh mục:</label>
+
                     <input
                       className="form-control  w-25"
                       type="text"
                       value={category}
                       onChange={(e) => setCategory(e.target.value)}
                     />
+
                     <br />
                     <label>Link ảnh:</label>
                     <input

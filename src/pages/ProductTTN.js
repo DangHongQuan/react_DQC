@@ -1,3 +1,38 @@
+// import React, { useState, useEffect } from "react";
+// import axios from "axios";
+
+// function ProductTTN() {
+//   const [products, setProducts] = useState([]);
+
+//   useEffect(() => {
+//     axios
+//       .get("http://localhost:8000/products")
+//       .then((response) => {
+//         const data = response.data.filter(
+//           (item) => item.category === "thoitrangnam"
+//         );
+//         setProducts(data);
+//       })
+//       .catch((error) => console.error(error));
+//   }, []);
+
+//   return (
+//     <div>
+//       <h1>Product List</h1>
+//       {products.map((item) => (
+//         <div key={item.id} className="product">
+//           <h2>{item.title}</h2>
+//           <img src={item.image} alt={item.title} />
+//           <p>Price: {item.price}</p>
+//           <p>Description: {item.description}</p>
+//         </div>
+//       ))}
+//     </div>
+//   );
+// }
+
+// export default ProductTTN;
+import ProducHomeTTN from "../pages/ProducHomeTTN";
 import React from "react";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
@@ -9,226 +44,227 @@ import { FormControl, InputGroup } from "react-bootstrap";
 import { BiSearch } from "react-icons/bi";
 import { useCart } from "react-use-cart";
 import Myconponent from "./Myconponent";
+import axios from "axios";
+
 const StyledHome = styled.div`
-/* carousel */
-.content {
-  position: relative;
-  top: 130px;
-  background-color: #e1e1e1;
-}
+  /* carousel */
+  .content {
+    position: relative;
+    top: 130px;
+    background-color: #e1e1e1;
+  }
 
-.content .shape1 {
-  position: absolute;
-  left: 0;
-  top: 0;
-  transform: rotate(-90deg);
-  top: 17px;
-  left: 20px;
-}
-.content .shape2 {
-  position: absolute;
-  left: -3px;
-  top: -3px;
-}
-.content .shape3 {
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 1;
-}
-.content .shape4 {
-  position: absolute;
-  transform: rotate(90deg);
-  right: 17px;
-  top: 20px;
-}
+  .content .shape1 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: rotate(-90deg);
+    top: 17px;
+    left: 20px;
+  }
+  .content .shape2 {
+    position: absolute;
+    left: -3px;
+    top: -3px;
+  }
+  .content .shape3 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+  .content .shape4 {
+    position: absolute;
+    transform: rotate(90deg);
+    right: 17px;
+    top: 20px;
+  }
 
-.wrap-carousel {
-  height: 250px;
-  position: relative;
-  top: 30px;
-  z-index: 2;
-}
+  .wrap-carousel {
+    height: 250px;
+    position: relative;
+    top: 30px;
+    z-index: 2;
+  }
 
-.carousel-indicators li {
-  border: 0;
-  border-radius: 20px;
-  width: 10px;
-  height: 10px;
-}
+  .carousel-indicators li {
+    border: 0;
+    border-radius: 20px;
+    width: 10px;
+    height: 10px;
+  }
 
-/* jenis sale */
+  /* jenis sale */
 
-.jenis-sale {
-  padding: 20px;
-  background-color: #ffffff;
-  margin-top: 60px;
-}
+  .jenis-sale {
+    padding: 20px;
+    background-color: #ffffff;
+    margin-top: 60px;
+  }
 
-.jenis-sale p {
-  font-size: 14px;
-}
-.wrap-img {
-  border-radius: 12px;
-  width: 50px;
-  height: 50px;
-  position: relative;
-  border: 1px solid #888;
-  padding: 5px;
-}
+  .jenis-sale p {
+    font-size: 14px;
+  }
+  .wrap-img {
+    border-radius: 12px;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: 1px solid #888;
+    padding: 5px;
+  }
 
-.wrap-img img {
-  width: 100%;
-  height: 100%;
-}
+  .wrap-img img {
+    width: 100%;
+    height: 100%;
+  }
 
-/* KATEGORY */
-.kategory {
-  display: flex;
-  flex-direction: column;
-  background-color: #ffffff;
-}
+  /* KATEGORY */
+  .kategory {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+  }
 
-.kategory h5 {
-  color: #8e8e8e;
-  font-weight: 500;
-}
+  .kategory h5 {
+    color: #8e8e8e;
+    font-weight: 500;
+  }
 
-.kategory p {
-  font-size: 14px;
-}
+  .kategory p {
+    font-size: 14px;
+  }
 
-.card-kategory {
-  padding: 10px 5px;
-  width: 10%;
-  height: 140px;
-  border: 1px solid #f4f4f4;
-}
+  .card-kategory {
+    padding: 10px 5px;
+    width: 10%;
+    height: 140px;
+    border: 1px solid #f4f4f4;
+  }
 
-.card-kategory .wrap-img {
-  width: 80px;
-  height: 80px;
-  background-color: #ffffff;
-  border-radius: 20px;
-  border: none;
-}
+  .card-kategory .wrap-img {
+    width: 80px;
+    height: 80px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: none;
+  }
 
-/* sale */
-.sale {
-  background-color: #ffffff;
-  /* padding: 13px; */
-  flex-direction: column;
-  padding-bottom: 20px;
-}
-.sale h5 {
-  color: #f53d2d;
-}
+  /* sale */
+  .sale {
+    background-color: #ffffff;
+    /* padding: 13px; */
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
+  .sale h5 {
+    color: #f53d2d;
+  }
 
-.sale span {
-  background-color: black;
-  color: #fff;
-  font-weight: bold;
-  padding: 0 5px;
-}
+  .sale span {
+    background-color: black;
+    color: #fff;
+    font-weight: bold;
+    padding: 0 5px;
+  }
 
-.sale .diskon span {
-  background-color: transparent;
-}
+  .sale .diskon span {
+    background-color: transparent;
+  }
 
-.diskon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  right: 0;
-  top: 0;
-  background-color: rgba(255, 212, 36, 0.9);
-  width: 60px;
-  height: 60px;
-}
+  .diskon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: rgba(255, 212, 36, 0.9);
+    width: 60px;
+    height: 60px;
+  }
 
-.total {
-  position: absolute;
-  bottom: 0;
-  height: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  .total {
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.text span {
-  background-color: #ffffff;
-  color: #f53d2d;
-  font-size: 20px;
-  padding: 0;
-  font-weight: 400;
-}
+  .text span {
+    background-color: #ffffff;
+    color: #f53d2d;
+    font-size: 20px;
+    padding: 0;
+    font-weight: 400;
+  }
 
-.text span:first-child {
-  font-size: 14px;
-  font-weight: 400;
-}
+  .text span:first-child {
+    font-size: 14px;
+    font-weight: 400;
+  }
 
-.progresss {
-  left: 0;
-  width: 90%;
-  border-radius: 12px;
-  background-color: #ff000057;
-  display: flex;
-  height: 20px;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
+  .progresss {
+    left: 0;
+    width: 90%;
+    border-radius: 12px;
+    background-color: #ff000057;
+    display: flex;
+    height: 20px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
 
-.progress-on {
-  background-color: red;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 75%;
-  z-index: 6;
-  height: 100%;
-}
-.progresss span {
-  background-color: transparent;
-  color: #ffffff;
-  font-size: 12px;
-  position: relative;
-  z-index: 7;
-  font-weight: 100;
-}
+  .progress-on {
+    background-color: red;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 75%;
+    z-index: 6;
+    height: 100%;
+  }
+  .progresss span {
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 12px;
+    position: relative;
+    z-index: 7;
+    font-weight: 100;
+  }
 
-.row-card {
-  height: 250px;
-  border-top: 1px solid #9b9b9b7a;
-}
+  .row-card {
+    height: 250px;
+    border-top: 1px solid #9b9b9b7a;
+  }
 
-.wrap-img-sale {
-  height: 70%;
-  width: 80%;
-  position: relative;
-}
+  .wrap-img-sale {
+    height: 70%;
+    width: 80%;
+    position: relative;
+  }
 
-/* pencarian populer */
-.card-pencarian {
-  width: 20%;
-  border-top: 1px solid #d0d0d0;
-  border-right: 1px solid #d0d0d0;
-  border-left: 1px solid #d0d0d0;
-}
+  /* pencarian populer */
+  .card-pencarian {
+    width: 20%;
+    border-top: 1px solid #d0d0d0;
+    border-right: 1px solid #d0d0d0;
+    border-left: 1px solid #d0d0d0;
+  }
 
-.card-pencarian span {
-  font-size: 14px;
-}
+  .card-pencarian span {
+    font-size: 14px;
+  }
 
-/* rekomendasi */
-.nav-link.active {
-  border-bottom: 3px solid #f53d2d !important;
-}
-
+  /* rekomendasi */
+  .nav-link.active {
+    border-bottom: 3px solid #f53d2d !important;
+  }
 `;
 const StyledHeader = styled.div`
   body {
@@ -337,19 +373,21 @@ const StyledHeader = styled.div`
   }
 `;
 
-const Home = () => {
+const ProductTTN = () => {
   const [productData, setProductData] = useState([]);
   const [searchInput, setSearchInput] = useState("");
-
-  async function getResponse() {
-    const res = await fetch("http://localhost:8000/products").then((res) =>
-      res.json()
-    );
-    setProductData(await res);
-  }
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    getResponse();
+    axios
+      .get("http://localhost:8000/products")
+      .then((response) => {
+        const data = response.data.filter(
+          (item) => item.category === "thoitrangnam"
+        );
+        setProducts(data);
+      })
+      .catch((error) => console.error(error));
   }, []);
 
   return (
@@ -581,7 +619,7 @@ const Home = () => {
                       alt=""
                     />
                   </NavLink>
-                  <span className="mb-0 flex-column mt-2" >Thời Trang Nam</span>
+                  <span className="mb-0 flex-column mt-2">Thời Trang Nam</span>
                 </div>
                 <div className="d-flex flex-column align-items-center card-kategory">
                   <div className="wrap-img">
@@ -1130,17 +1168,10 @@ const Home = () => {
               </div>
             </div>
             {/* rekomendasi */}
-            <SearchFilter
-              value={searchInput}
-              data={productData}
-              renderResults={(results) => (
-                <Row className="justify-content-center">
-                  {results.map((item, i) => (
-                    <ProductCard data={item} key={i} />
-                  ))}
-                </Row>
-              )}
-            ></SearchFilter>
+
+            <Row className="justify-content-center col-3">
+              <ProducHomeTTN />
+            </Row>
           </div>
         </div>
       </StyledHome>
@@ -1148,4 +1179,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default ProductTTN;

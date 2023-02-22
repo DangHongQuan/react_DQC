@@ -10,7 +10,7 @@ import ProductDetails from "./pages/ProductDetails";
 import AddProduct from './admin_pages/AddProduct';
 import ProductAdminList from "./admin_pages/ProductAdminList";
 import CheckOurAdmin from "./admin_pages/CheckOurAdmin";
-
+import  ProductTTN from "./pages/ProductTTN";
 function App() {
   return (
     <BrowserRouter>
@@ -25,6 +25,7 @@ function App() {
         <Route path="/addProduct" element={<AddProduct/>} />
         <Route path="/productAdminList" element={<ProductAdminList/>} />
         <Route path="/checkout" element={<CheckOurAdmin/>} />
+        <Route path="/producTTN" element={<ProductTTN/>} />
       </Routes>
     </BrowserRouter>
   );
