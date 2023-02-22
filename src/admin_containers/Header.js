@@ -3,6 +3,7 @@ import "./../admin_containers/header.css";
 import "./../admin_containers/fontawesome-free/css/all.min.css";
 import LoginAdmin from "./../admin_pages/LoginAdmin";
 import { NavLink } from "react-router-dom";
+import ProductAdminList from './../admin_pages/ProductAdminList';
 
 function Header(props) {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -73,11 +74,11 @@ function Header(props) {
                   <div className="bg-white py-2 collapse-inner rounded">
                     <h6 className="collapse-header">Xin Chào Đạt,Quân,Châu:</h6>
                     <NavLink className="collapse-item" to={"/addProduct"}>
-                      Cài Đặt Nút
+                     Thêm sản phẩm
                     </NavLink>
-                    <a className="collapse-item" href="cards.html">
-                      Cài Đặt Giao Diện
-                    </a>
+                    <NavLink className="collapse-item"  to={"/productAdminList"}>
+                     Chỉnh sửa sản phẩm
+                    </NavLink>
                   </div>
                 </div>
               </li>

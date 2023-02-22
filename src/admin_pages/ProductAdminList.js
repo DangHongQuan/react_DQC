@@ -1,46 +1,26 @@
 import React, { useState } from "react";
 import "./../admin_containers/header.css";
 import "./../admin_containers/fontawesome-free/css/all.min.css";
-import LoginAdmin from "./../admin_pages/LoginAdmin";
 import { NavLink } from "react-router-dom";
-import axios from "axios";
+import { useEffect } from "react";
+import SearchFilter from "react-filter-search";
+import { Row } from "react-bootstrap";
+import ProductListCard from "./ProducListCard";
 
-function AddProduct(props) {
-  const [id, setId] = useState(0);
-  const [title, setTitle] = useState("");
-  const [price, setPrice] = useState(0);
-  const [description, setDescription] = useState("");
-  const [category, setCategory] = useState("");
-  const [image, setImage] = useState("");
-  const [rate, setRate] = useState(0);
-  const [count, setCount] = useState(0);
+const ProductAdmniList = (props) => {
+  const [productData, setProductData] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
 
-  const handleAddProduct = () => {
-    const newProduct = {
-      id: parseInt(id),
-      title,
-      price: parseInt(price),
-      description,
-      category,
-      image,
-      rating: { rate: parseInt(rate), count: parseInt(count) },
-    };
+  async function getResponse() {
+    const res = await fetch("http://localhost:8000/products").then((res) =>
+      res.json()
+    );
+    setProductData(await res);
+  }
 
-    // Loại bỏ các thuộc tính không cần thiết trong object newProduct
-    delete newProduct.createdAt;
-    delete newProduct.modifiedAt;
-
-    axios
-      .post("http://localhost:8000/products", newProduct)
-      .then((response) => {
-        console.log(response.data);
-        props.onAddProduct(newProduct);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
+  useEffect(() => {
+    getResponse();
+  }, []);
   return (
     <>
       <div id="page-top">
@@ -99,9 +79,9 @@ function AddProduct(props) {
                   <NavLink className="collapse-item" to={"/addProduct"}>
                     Thêm sản phẩm
                   </NavLink>
-                  <NavLink className="collapse-item" to={"/productAdminList"}>
-                    Chỉnh sửa sản phẩm
-                  </NavLink>
+                  <a className="collapse-item" href="cards.html">
+                    Cài Đặt Giao Diện
+                  </a>
                 </div>
               </div>
             </li>
@@ -183,6 +163,8 @@ function AddProduct(props) {
                       placeholder="Search for..."
                       aria-label="Search"
                       aria-describedby="basic-addon2"
+                      value={searchInput}
+                      onChange={(e) => setSearchInput(e.target.value)}
                     />
                     <div className="input-group-append">
                       <button className="btn btn-primary" type="button">
@@ -243,7 +225,7 @@ function AddProduct(props) {
                       aria-expanded="false"
                     >
                       <span className="mr-2 d-none d-lg-inline text-gray-600 small">
-                        Admin page
+                        Trần Quang Đạt
                       </span>
                       <img
                         className="img-profile rounded-circle"
@@ -277,75 +259,18 @@ function AddProduct(props) {
               {/* End of Topbar */}
               {/* Begin Page Content */}
               <div className="container-fluid">
-                <div className="ms-5">
-                  <div>
-                    <h3 className="h1">Thêm sản phẩm mới</h3>
-
-                    <label>Tên sản phẩm:</label>
-                    <input
-                      className="form-control w-25"
-                      type="text"
-                      value={title}
-                      onChange={(e) => setTitle(e.target.value)}
-                    />
-                    <br />
-                    <label>Giá:</label>
-                    <input
-                      className="form-control  w-25"
-                      type="number"
-                      value={price}
-                      onChange={(e) => setPrice(e.target.value)}
-                    />
-                    <br />
-                    <label>Mô tả:</label>
-                    <input
-                      className="form-control  w-25"
-                      type="text"
-                      value={description}
-                      onChange={(e) => setDescription(e.target.value)}
-                    />
-                    <br />
-                    <label>Danh mục:</label>
-                    <input
-                      className="form-control  w-25"
-                      type="text"
-                      value={category}
-                      onChange={(e) => setCategory(e.target.value)}
-                    />
-                    <br />
-                    <label>Link ảnh:</label>
-                    <input
-                      className="form-control  w-25"
-                      type="text"
-                      value={image}
-                      onChange={(e) => setImage(e.target.value)}
-                    />
-                    <br />
-                    <label>Đánh giá:</label>
-                    <input
-                      className="form-control  w-25"
-                      type="number"
-                      value={rate}
-                      onChange={(e) => setRate(e.target.value)}
-                    />
-                    <br />
-                    <label>Số lượt đánh giá:</label>
-                    <input
-                      className="form-control  w-25"
-                      type="number"
-                      value={count}
-                      onChange={(e) => setCount(e.target.value)}
-                    />
-                    <br />
-
-                    <button
-                      className="btn btn-primary mb-5"
-                      onClick={handleAddProduct}
-                    >
-                      Thêm sản phẩm
-                    </button>
-                  </div>
-                </div>
+                chỉnh sửa sản phẩm
+                <SearchFilter
+                  value={searchInput}
+                  data={productData}
+                  renderResults={(results) => (
+                    <Row className="justify-content-center">
+                      {results.map((item, i) => (
+                        <ProductListCard data={item} key={i} />
+                      ))}
+                    </Row>
+                  )}
+                ></SearchFilter>
               </div>
               {/* /.container-fluid */}
             </div>
@@ -366,6 +291,6 @@ function AddProduct(props) {
       </div>
     </>
   );
-}
+};
 
-export default AddProduct;
+export default ProductAdmniList;
