@@ -1,132 +1,307 @@
 {
-  "user": [
+  "protectedResources": {
+    "products/1": [
+      "GET",
+      "POST",
+      "PUT",
+      "PATCH",
+      "DELETE"
+    ],
+    "products": [
+      "POST",
+      "PUT",
+      "PATCH",
+      "DELETE"
+    ]
+  },
+  "products": [
     {
-      "username": "fasasf",
-      "password": "fasfa",
-      "nameuser": "fafss",
-      "address": "fsafsafa",
-      "phone": "",
-      "avatar": "",
-      "id": 1
+      "id": 1,
+      "title": "Áo vest name bao đẹp, không đẹp k lấy tiền",
+      "price": 100,
+      "description": "áo đẹp xuất con bà nó sắt",
+      "category": "men's clothing",
+      "image": "https://cdn.kkfashion.vn/15377-home_default/ao-kieu-nu-hoa-tiet-hoa-co-sen-phoi-no-asm10-11.jpg",
+      "rating": {
+        "rate": 3.9,
+        "count": 120
+      },
+      "createdAt": 1676905179609,
+      "modifiedAt": 1676905179609
     },
     {
-      "username": "chauvo2510",
-      "password": "chauvo2510",
-      "nameuser": "vo ngoc chau",
-      "address": "soc trang",
-      "phone": "0398134817",
-      "avatar": "",
+      "id": 2,
+      "title": "Áo vest name bao đẹp, không đẹp k lấy tiền",
+      "price": 100,
+      "description": "áo đẹp xuất con bà nó sắt",
+      "category": "men's clothing",
+      "image": "https://cdn.kkfashion.vn/15377-home_default/ao-kieu-nu-hoa-tiet-hoa-co-sen-phoi-no-asm10-11.jpg",
+      "rating": {
+        "rate": 3.9,
+        "count": 120
+      },
+      "createdAt": 1676905179609,
+      "modifiedAt": 1676905179609
+    },
+    {
+      "id": 3,
+      "title": "Áo vest name bao đẹp, không đẹp k lấy tiền",
+      "price": 100,
+      "description": "áo đẹp xuất con bà nó sắt",
+      "category": "men's clothing",
+      "image": "https://cdn.kkfashion.vn/15377-home_default/ao-kieu-nu-hoa-tiet-hoa-co-sen-phoi-no-asm10-11.jpg",
+      "rating": {
+        "rate": 3.9,
+        "count": 120
+      },
+      "createdAt": 1676905179609,
+      "modifiedAt": 1676905179609
+    },
+    {
+      "id": 4,
+      "title": "Áo vest name bao đẹp, không đẹp k lấy tiền",
+      "price": 100,
+      "description": "áo đẹp xuất con bà nó sắt",
+      "category": "men's clothing",
+      "image": "https://cdn.kkfashion.vn/15377-home_default/ao-kieu-nu-hoa-tiet-hoa-co-sen-phoi-no-asm10-11.jpg",
+      "rating": {
+        "rate": 3.9,
+        "count": 120
+      },
+      "createdAt": 1676905179609,
+      "modifiedAt": 1676905179609
+    },
+    {
+      "id": 5,
+      "title": "Áo vest name bao đẹp, không đẹp k lấy tiền",
+      "price": 100,
+      "description": "áo đẹp xuất con bà nó sắt",
+      "category": "men's clothing",
+      "image": "https://cdn.kkfashion.vn/15377-home_default/ao-kieu-nu-hoa-tiet-hoa-co-sen-phoi-no-asm10-11.jpg",
+      "rating": {
+        "rate": 3.9,
+        "count": 120
+      },
+      "createdAt": 1676905179609,
+      "modifiedAt": 1676905179609
+    },
+    {
+      "id": 6,
+      "title": "Áo vest name bao đẹp, không đẹp k lấy tiền",
+      "price": 100,
+      "description": "áo đẹp xuất con bà nó sắt",
+      "category": "men's clothing",
+      "image": "https://cdn.kkfashion.vn/15377-home_default/ao-kieu-nu-hoa-tiet-hoa-co-sen-phoi-no-asm10-11.jpg",
+      "rating": {
+        "rate": 3.9,
+        "count": 120
+      },
+      "createdAt": 1676905179609,
+      "modifiedAt": 1676905179609
+    },
+    {
+      "id": 7,
+      "title": "Áo vest name bao đẹp, không đẹp k lấy tiền",
+      "price": 100,
+      "description": "áo đẹp xuất con bà nó sắt",
+      "category": "men's clothing",
+      "image": "https://cdn.kkfashion.vn/15377-home_default/ao-kieu-nu-hoa-tiet-hoa-co-sen-phoi-no-asm10-11.jpg",
+      "rating": {
+        "rate": 3.9,
+        "count": 120
+      },
+      "createdAt": 1676905179609,
+      "modifiedAt": 1676905179609
+    },
+    {
+      "id": 8,
+      "title": "quandhtesst",
+      "price": 200,
+      "description": "quan ao deo",
+      "category": "ao quan",
+      "image": "https://www.invert.vn/media/downloads/221203T1328_631.jpg",
+      "rating": {
+        "rate": 222,
+        "count": 333
+      },
+      "createdAt": 1676907264189,
+      "modifiedAt": 1676907264189
+    },
+    {
+      "id": 9,
+      "title": "quandhtesst",
+      "price": 200,
+      "description": "quan ao deo",
+      "category": "ao quan",
+      "image": "https://www.invert.vn/media/downloads/221203T1328_631.jpg",
+      "rating": {
+        "rate": 222,
+        "count": 333
+      },
+      "createdAt": 1676907412299,
+      "modifiedAt": 1676907412299
+    },
+    {
+      "id": 11,
+      "title": "quandhtesst",
+      "price": 200,
+      "description": "quan ao deo",
+      "category": "ao quan",
+      "image": "https://www.invert.vn/media/downloads/221203T1328_631.jpg",
+      "rating": {
+        "rate": 222,
+        "count": 333
+      },
+      "createdAt": 1676907458572,
+      "modifiedAt": 1676907458572
+    },
+    {
+      "id": 12,
+      "title": "quandh",
+      "price": 200,
+      "description": "hahaha",
+      "category": "bbbb",
+      "image": "aaa",
+      "rating": {
+        "rate": 22,
+        "count": 222
+      },
+      "createdAt": 1676968872425,
+      "modifiedAt": 1676968872425
+    },
+    {
+      "id": 13,
+      "title": "ao vest nu",
+      "price": 500,
+      "description": "ao vest nu",
+      "category": "ao",
+      "image": "https://tse2.mm.bing.net/th?id=OIP.FR70yP-PJtlKwzzcUoj8ggHaJ4&pid=Api&P=0",
+      "rating": {
+        "rate": 1200,
+        "count": 400
+      },
+      "createdAt": 1676969314091,
+      "modifiedAt": 1676969314091
+    },
+    {
+      "id": 14,
+      "title": "ao vest nu",
+      "price": 500,
+      "description": "ao vest nu",
+      "category": "ao",
+      "image": "https://tse2.mm.bing.net/th?id=OIP.FR70yP-PJtlKwzzcUoj8ggHaJ4&pid=Api&P=0",
+      "rating": {
+        "rate": 1200,
+        "count": 400
+      },
+      "createdAt": 1676969549080,
+      "modifiedAt": 1676969549080
+    },
+    {
+      "id": 15,
+      "title": "ao vest nu",
+      "price": 500,
+      "description": "ao vest nu",
+      "category": "ao",
+      "image": "https://tse2.mm.bing.net/th?id=OIP.FR70yP-PJtlKwzzcUoj8ggHaJ4&pid=Api&P=0",
+      "rating": {
+        "rate": 1200,
+        "count": 400
+      },
+      "createdAt": 1676969551605,
+      "modifiedAt": 1676969551605
+    },
+    {
+      "id": 16,
+      "title": "test",
+      "price": 0,
+      "description": "",
+      "category": "",
+      "image": "",
+      "rating": {
+        "rate": 0,
+        "count": 0
+      },
+      "createdAt": 1676969559471,
+      "modifiedAt": 1676969559471
+    },
+    {
+      "id": 17,
+      "title": "",
+      "price": 0,
+      "description": "",
+      "category": "",
+      "image": "",
+      "rating": {
+        "rate": 0,
+        "count": 0
+      },
+      "createdAt": 1676970157140,
+      "modifiedAt": 1676970157140
+    },
+    {
+      "id": 18,
+      "title": "",
+      "price": 0,
+      "description": "",
+      "category": "",
+      "image": "",
+      "rating": {
+        "rate": 0,
+        "count": 0
+      },
+      "createdAt": 1676970193308,
+      "modifiedAt": 1676970193308
+    },
+    {
+      "id": 19,
+      "title": "quandh test ",
+      "price": 200,
+      "description": "quan ao",
+      "category": "ao ",
+      "image": "https://www.uniqlo.com/vn/vi/products/E424600-000/?colorCode=COL09&sizeCode=SMA005",
+      "rating": {
+        "rate": 0,
+        "count": 0
+      },
+      "createdAt": 1676970988007,
+      "modifiedAt": 1676970988007
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "username": "chauvo",
+      "password": "chauvo",
+      "user": "vo ngoc chau",
+      "address": "Soc trang",
+      "phone": "0398134817"
+    },
+    {
+      "username": "fass",
+      "password": "fdafs",
+      "user": "fda",
+      "address": "fdsads",
+      "phone": "fasfds",
       "id": 2
     },
     {
-      "username": "fafd",
-      "password": "dfafs",
-      "user": "fdsafa",
-      "address": "fasfd",
-      "phone": "fdasfs",
+      "username": "chauvo",
+      "password": "CHAUVO",
       "id": 3
     },
     {
-      "username": "fafd",
-      "password": "dfafs",
-      "user": "fdsafa",
-      "address": "fasfd",
-      "phone": "fdasfs",
+      "username": "hongquan",
+      "password": "hongquan",
+      "user": "dang hong quan",
+      "address": "long an",
+      "phone": "01212468731",
       "id": 4
     },
     {
-      "username": "fdakh",
-      "password": "hfskahfk",
-      "user": "kfsakhkfdhsk",
-      "address": "kfhasfakkflaljhflasllakfsh",
-      "phone": "014018401",
+      "username": "hongquan",
+      "password": "hongquan",
       "id": 5
-    },
-    {
-      "username": "fdaf",
-      "password": "àds",
-      "user": "hkfahk",
-      "address": "kfhak",
-      "phone": "ahkfashkkh",
-      "id": 6
-    }
-  ],
-  "products": [
-    {
-      "id": "1",
-      "image": "https://pixlr.com/images/index/remove-bg.webp",
-      "title": "gai xinh",
-      "price": "20.92"
-    },
-    {
-      "image": "https://pixlr.com/images/index/remove-bg.webp",
-      "title": "gai xinh",
-      "price": "20.92"
-    },
-    {
-      "image": "https://pixlr.com/images/index/remove-bg.webp",
-      "title": "gai xinh",
-      "price": "20.92"
-    },
-    {
-      "image": "https://pixlr.com/images/index/remove-bg.webp",
-      "title": "gai xinh",
-      "price": "20.92"
-    },
-    {
-      "image": "https://pixlr.com/images/index/remove-bg.webp",
-      "title": "gai xinh",
-      "price": "20.92"
-    },
-    {
-      "image": "https://pixlr.com/images/index/remove-bg.webp",
-      "title": "gai xinh",
-      "price": "20.92"
-    },
-    {
-      "image": "https://pixlr.com/images/index/remove-bg.webp",
-      "title": "gai xinh",
-      "price": "20.92"
-    },
-    {
-      "image": "https://pixlr.com/images/index/remove-bg.webp",
-      "title": "gai xinh",
-      "price": "20.92"
-    },
-    {
-      "image": "https://pixlr.com/images/index/remove-bg.webp",
-      "title": "gai xinh",
-      "price": "20.92"
-    },
-    {
-      "image": "https://pixlr.com/images/index/remove-bg.webp",
-      "title": "gai xinh",
-      "price": "20.92"
-    },
-    {
-      "image": "https://pixlr.com/images/index/remove-bg.webp",
-      "title": "gai xinh",
-      "price": "20.92"
-    },
-    {
-      "image": "https://pixlr.com/images/index/remove-bg.webp",
-      "title": "gai xinh",
-      "price": "20.92"
-    },
-    {
-      "image": "https://pixlr.com/images/index/remove-bg.webp",
-      "title": "gai xinh",
-      "price": "20.92"
-    },
-    {
-      "image": "https://pixlr.com/images/index/remove-bg.webp",
-      "title": "gai xinh",
-      "price": "20.92"
-    },
-    {
-      "image": "https://pixlr.com/images/index/remove-bg.webp",
-      "title": "gai xinh",
-      "price": "20.92"
     }
   ]
 }

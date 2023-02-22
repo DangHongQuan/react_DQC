@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import styled from "styled-components";
+import  {useNavigate} from 'react-router-dom';
 
 
 const StyledLogin = styled.div`
@@ -64,7 +65,34 @@ const StyledLogin = styled.div`
   }
 `;
 const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const naviate = useNavigate();
 
+  useEffect(() => {
+    if(localStorage.getItem('user-info')){
+      naviate("/home");
+    }
+  }, []);
+
+  async function login(e){
+    e.preventDefault();
+    console.log(username, password);
+
+    let item = {username, password};
+    let result = await fetch("http://localhost:8000/user", {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(item)
+    });
+    result = await result.json();
+    localStorage.setItem("user-info", JSON.stringify(result))
+    naviate("/home")
+    
+  }
   return (
     <>
       <StyledLogin>
@@ -99,6 +127,7 @@ const Login = () => {
                   name="username"
                   id="username"
                   placeholder="Email/Số điện thoại/Tên Đăng Nhập"
+                  onChange={(e) => setUsername(e.target.value)}
                 />
               </div>
               <div className="form-group">
@@ -107,9 +136,11 @@ const Login = () => {
                   name="password"
                   id="password"
                   placeholder="Mật Khẩu"
+                  onChange={(e) => setPassword(e.target.value)}
+
                 />
               </div>
-              <button className="btn btn-bg-danger" type="submit">Đăng Nhập</button>
+              <button className="btn btn-bg-danger" type="submit" onClick={login}>Đăng Nhập</button>
               <div className="row">
                 <div className="col">
                   <small className="mx-5 text-primary">Quên mật khẩu</small>
