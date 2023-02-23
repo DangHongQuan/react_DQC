@@ -12,12 +12,14 @@ import ProductAdminList from "./admin_pages/ProductAdminList";
 import CheckOurAdmin from "./admin_pages/CheckOurAdmin";
 import ProductTTN from "./page_danhmuc/ProductTTN";
 import EditQC_admin from "./admin_pages/EditQC_admin";
+import Loi from "./pages/Loi";
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="product-details/:productId" element={<ProductDetails />} />
-        <Route path="/*" element={<Layout />} />
+        <Route path="*" element={<Loi />} />
+        <Route path="/" element={<Layout />} />
         <Route path="/admin" element={<Layouts />} />
         <Route path="/login/admin" element={<LoginAdmin />} />
         <Route path="/signup" element={<Signup />} />
