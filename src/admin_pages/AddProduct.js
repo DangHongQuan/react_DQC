@@ -25,6 +25,13 @@ function AddProduct(props) {
       image,
       rating: { rate: parseInt(rate), count: parseInt(count) },
     };
+    setTitle("");
+    setPrice("");
+    setDescription("");
+    setCategory("");
+    setImage("");
+    setRate("");
+    setCount("");
 
     // Loại bỏ các thuộc tính không cần thiết trong object newProduct
     delete newProduct.createdAt;
@@ -40,6 +47,7 @@ function AddProduct(props) {
         console.log(error);
       });
   };
+  
 
   return (
     <>
@@ -280,72 +288,76 @@ function AddProduct(props) {
                 <div className="ms-5">
                   <div>
                     <h3 className="h1">Thêm sản phẩm mới</h3>
+                    <from>
+                      <label>Tên sản phẩm:</label>
+                      <input
+                        className="form-control w-25"
+                        type="text"
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                      />
+                      <br />
+                      <label>Giá:</label>
+                      <input
+                        className="form-control  w-25"
+                        type="number"
+                        value={price}
+                        onChange={(e) => setPrice(e.target.value)}
+                      />
+                      <br />
+                      <label>Mô tả:</label>
+                      <input
+                        className="form-control  w-25"
+                        type="text"
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                      />
+                      <br />
+                      <label>Danh mục:</label>
+                      <select
+                        className="form-control  w-25"
+                        type="text"
+                        value={category}
+                        onChange={(e) => setCategory(e.target.value)}
+                      >
+                        <option value="">-- Chọn Danh Mục --</option>
+                        <option value="thoitrangnam">Thời trang nam</option>
+                        <option value="thoitrangnu">Thời trang nữ</option>
+                      </select>
 
-                    <label>Tên sản phẩm:</label>
-                    <input
-                      className="form-control w-25"
-                      type="text"
-                      value={title}
-                      onChange={(e) => setTitle(e.target.value)}
-                    />
-                    <br />
-                    <label>Giá:</label>
-                    <input
-                      className="form-control  w-25"
-                      type="number"
-                      value={price}
-                      onChange={(e) => setPrice(e.target.value)}
-                    />
-                    <br />
-                    <label>Mô tả:</label>
-                    <input
-                      className="form-control  w-25"
-                      type="text"
-                      value={description}
-                      onChange={(e) => setDescription(e.target.value)}
-                    />
-                    <br />
-                    <label>Danh mục:</label>
+                      <br />
+                      <label>Link ảnh:</label>
+                      <input
+                        className="form-control  w-25"
+                        type="text"
+                        value={image}
+                        onChange={(e) => setImage(e.target.value)}
+                      />
+                      <br />
+                      <label>Đánh giá:</label>
+                      <input
+                        className="form-control  w-25"
+                        type="number"
+                        value={rate}
+                        onChange={(e) => setRate(e.target.value)}
+                      />
+                      <br />
+                      <label>Số lượt đánh giá:</label>
+                      <input
+                        className="form-control  w-25"
+                        type="number"
+                        value={count}
+                        onChange={(e) => setCount(e.target.value)}
+                      />
+                      <br />
 
-                    <input
-                      className="form-control  w-25"
-                      type="text"
-                      value={category}
-                      onChange={(e) => setCategory(e.target.value)}
-                    />
-
-                    <br />
-                    <label>Link ảnh:</label>
-                    <input
-                      className="form-control  w-25"
-                      type="text"
-                      value={image}
-                      onChange={(e) => setImage(e.target.value)}
-                    />
-                    <br />
-                    <label>Đánh giá:</label>
-                    <input
-                      className="form-control  w-25"
-                      type="number"
-                      value={rate}
-                      onChange={(e) => setRate(e.target.value)}
-                    />
-                    <br />
-                    <label>Số lượt đánh giá:</label>
-                    <input
-                      className="form-control  w-25"
-                      type="number"
-                      value={count}
-                      onChange={(e) => setCount(e.target.value)}
-                    />
-                    <br />
-
-                    <button
-                      className="btn btn-primary mb-5"
-                      onClick={handleAddProduct}
-                    >
-                      Thêm sản phẩm
-                    </button>
+                      <button
+                        className="btn btn-primary mb-5"
+                        onClick={handleAddProduct}
+                      >
+                        Thêm sản phẩm
+                      </button>
+                    </from>
                   </div>
                 </div>
               </div>

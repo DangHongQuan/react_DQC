@@ -10,7 +10,6 @@ import { useParams } from 'react-router-dom';
 const ProductDetails = (props) => {
     const [productData, setProductData] = useState([]);
     const { addItem } = useCart();
-
     const {productId} = useParams();
     
     useEffect(()=>{
@@ -22,6 +21,10 @@ const ProductDetails = (props) => {
                           .then(res=> res.json());
                           setProductData(await res);
     }
+    const addToCart = (item) => {
+        addItem(item);
+      };
+    
     return (
         <Container className="py-5">
             <Row className="justify-content-center mt-5">
@@ -54,7 +57,7 @@ const ProductDetails = (props) => {
                 <Col xs={10} md={7} lg={7} >
                     <h1>{productData.title}</h1>
                     <Button 
-                        onClick={()=>addItem(productData)}
+                        onClick={()=>addToCart(productData)}
                         style={{borderRadius: '0', border: 0}}
                     >
                         <BsCartPlus size="1.8rem"/>

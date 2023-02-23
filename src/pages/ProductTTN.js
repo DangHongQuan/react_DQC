@@ -1169,9 +1169,9 @@ const ProductTTN = () => {
             </div>
             {/* rekomendasi */}
 
-            <Row className="justify-content-center col-3">
+          
               <ProducHomeTTN />
-            </Row>
+            
           </div>
         </div>
       </StyledHome>
