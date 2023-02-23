@@ -38,6 +38,7 @@ const handleCheckout = () => {
     .then((response) => {
       console.log(response.data);
       // xử lý kết quả trả về
+      emptyCart();
     })
     .catch((error) => {
       console.error(error);
@@ -135,6 +136,7 @@ const handleCheckout = () => {
               <Button variant="primary" onClick={() => setShowModal(true)}>
                 Thanh toán
               </Button>
+              
             </Col>
           </Row>
         )}

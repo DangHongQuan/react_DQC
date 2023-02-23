@@ -120,6 +120,13 @@ function Header(props) {
                   <span>Danh sách đặt hằng</span>
                 </NavLink>
               </li>
+              
+            <li className="nav-item">
+              <NavLink className="nav-link" to={"/editqc"}>
+                <i className="fas fa-fw fa-table" />
+                <span>Quảng cáo</span>
+              </NavLink>
+            </li>
               {/* Divider */}
               <hr className="sidebar-divider d-none d-md-block" />
               {/* Sidebar Toggler (Sidebar) */}

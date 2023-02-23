@@ -6,13 +6,14 @@ import { useEffect } from "react";
 import SearchFilter from "react-filter-search";
 import { Row } from "react-bootstrap";
 import ProductListCard from "./ProducListCard";
+import EditQc from "./EditQc";
 
 const ProductAdmniList = (props) => {
   const [productData, setProductData] = useState([]);
   const [searchInput, setSearchInput] = useState("");
 
   async function getResponse() {
-    const res = await fetch("http://localhost:8000/products").then((res) =>
+    const res = await fetch("http://localhost:8000/QCimg").then((res) =>
       res.json()
     );
     setProductData(await res);
@@ -124,20 +125,21 @@ const ProductAdmniList = (props) => {
 
             {/* Nav Item - Pages Collapse Menu */}
 
+          
             <li className="nav-item">
-              <NavLink className="nav-link" to={"/checkout"}>
-                <i className="fas fa-fw fa-table" />
-                <span>Danh sách đặt hàng</span>
-              </NavLink>
-            </li>
-            {/* Divider */}
-
+                <NavLink className="nav-link" to={"/checkout"}>
+                  <i className="fas fa-fw fa-table" />
+                  <span>Danh sách đặt hằng</span>
+                </NavLink>
+              </li>
+              
             <li className="nav-item">
               <NavLink className="nav-link" to={"/editqc"}>
                 <i className="fas fa-fw fa-table" />
                 <span>Quảng cáo</span>
               </NavLink>
             </li>
+            {/* Divider */}
             <hr className="sidebar-divider d-none d-md-block" />
             {/* Sidebar Toggler (Sidebar) */}
 
@@ -273,7 +275,7 @@ const ProductAdmniList = (props) => {
                   renderResults={(results) => (
                     <Row className="justify-content-center">
                       {results.map((item, i) => (
-                        <ProductListCard data={item} key={i} />
+                        <EditQc data={item} key={i} />
                       ))}
                     </Row>
                   )}

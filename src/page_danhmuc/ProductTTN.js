@@ -339,7 +339,52 @@ const ProductTTN = () => {
   const [productData, setProductData] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [products, setProducts] = useState([]);
+  const [imageURL1, setImageURL1] = useState("");
+  const [imageURL2, setImageURL2] = useState("");
+  const [imageURL3, setImageURL3] = useState("");
+  const [imageURL4, setImageURL4] = useState("");
+  const [imageURL5, setImageURL5] = useState("");
 
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/QCimg/1")
+      .then((response) => {
+        setImageURL1(response.data.image);
+      })
+      .catch((error) => console.error(error));
+  }, []);
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/QCimg/2")
+      .then((response) => {
+        setImageURL2(response.data.image);
+      })
+      .catch((error) => console.error(error));
+  }, []);
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/QCimg/3")
+      .then((response) => {
+        setImageURL3(response.data.image);
+      })
+      .catch((error) => console.error(error));
+  }, []);
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/QCimg/4")
+      .then((response) => {
+        setImageURL4(response.data.image);
+      })
+      .catch((error) => console.error(error));
+  }, []);
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/QCimg/5")
+      .then((response) => {
+        setImageURL5(response.data.image);
+      })
+      .catch((error) => console.error(error));
+  }, []);
   useEffect(() => {
     axios
       .get("http://localhost:8000/products")
@@ -351,6 +396,7 @@ const ProductTTN = () => {
       })
       .catch((error) => console.error(error));
   }, []);
+  
 
   return (
     <>
@@ -504,27 +550,30 @@ const ProductTTN = () => {
                     />
                   </ol>
                   <div className="carousel-inner h-100">
+                  <div className="carousel-inner h-100">
                     <div className="carousel-item active h-100">
+                      {/* quangcao */}
                       <img
-                        src={`${process.env.PUBLIC_URL}/assets/images/slider/3.png`}
+                       src={imageURL1} 
                         className="d-block w-100 h-100"
                         alt="..."
                       />
                     </div>
                     <div className="carousel-item h-100">
                       <img
-                        src={`${process.env.PUBLIC_URL}/assets/images/slider/4.png`}
+                        src={imageURL2}
                         className="d-block w-100 h-100"
                         alt="..."
                       />
                     </div>
                     <div className="carousel-item h-100">
                       <img
-                        src={`${process.env.PUBLIC_URL}/assets/images/slider/5.png`}
+                        src={imageURL3}
                         className="d-block w-100 h-100"
                         alt="..."
                       />
                     </div>
+                  </div>
                   </div>
                   <a
                     className="carousel-control-prev"
@@ -556,14 +605,14 @@ const ProductTTN = () => {
                 <div className="h-50">
                   <img
                     className="w-100 h-100"
-                    src={`${process.env.PUBLIC_URL}/assets/images/chuyentien.png`}
+                    src={imageURL4}
                     alt=""
                   />
                 </div>
                 <div className="h-50 pt-1">
                   <img
                     className="w-100 h-100"
-                    src={`${process.env.PUBLIC_URL}/assets/images/chuyentien.png`}
+                    src={imageURL5}
                     alt=""
                   />
                 </div>

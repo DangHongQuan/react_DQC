@@ -33,7 +33,6 @@ function AddProduct(props) {
     setRate("");
     setCount("");
 
-    // Loại bỏ các thuộc tính không cần thiết trong object newProduct
     delete newProduct.createdAt;
     delete newProduct.modifiedAt;
 
@@ -47,7 +46,6 @@ function AddProduct(props) {
         console.log(error);
       });
   };
-  
 
   return (
     <>
@@ -153,10 +151,16 @@ function AddProduct(props) {
             {/* Nav Item - Pages Collapse Menu */}
 
             <li className="nav-item">
-              <a className="nav-link" href="tables.html">
+              <NavLink className="nav-link" to={"/checkout"}>
                 <i className="fas fa-fw fa-table" />
-                <span>Tables</span>
-              </a>
+                <span>Danh sách Đặt hàng</span>
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to={"/editqc"}>
+                <i className="fas fa-fw fa-table" />
+                <span>Quảng cáo</span>
+              </NavLink>
             </li>
             {/* Divider */}
             <hr className="sidebar-divider d-none d-md-block" />

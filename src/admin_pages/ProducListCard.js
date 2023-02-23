@@ -1,92 +1,3 @@
-// import React, { useState } from "react";
-// import { Card } from "react-bootstrap";
-// import { Button } from 'react-bootstrap';
-
-// const ProductListCard = (props) => {
-//   const [productData, setProductData] = useState(props.data);
-
-//   const handleDeleteProduct = async () => {
-//     try {
-//       await fetch(`http://localhost:8000/products/${productData.id}`, {
-//         method: "DELETE",
-//       });
-//       setProductData(null);
-//     } catch (error) {
-//       console.log("Failed to delete product", error);
-//     }
-//   };
-
-//     if (!productData) {
-//     return null; // Don't render anything if the product has been deleted
-//     }
-
-//     const { image, price, title, id } = productData;
-
-//     return (
-//     <Card
-//     style={{ width: "15rem", height: "auto" }}
-//     className="text-center p-0 overflow-hidden shadow mx-auto mb-4 mt-3"
-//     >
-//     <div>{id}</div>
-//     <div
-//     style={{
-//     background: "white",
-//     height: "15rem",
-//     overflow: "hidden",
-//     display: "flex",
-//     justifyContent: "center",
-//     alignItems: "center",
-//     marginBottom: "inherit",
-//     }}
-//     >
-//     <div style={{ width: "9rem" }}>
-//     <Card.Img
-//     variant="top"
-//     src={image}
-//     className="img-fluid w-100 h-100"
-//     />
-//     </div>
-//     </div>
-//     <Card.Body>
-//     <Card.Title
-//       style={{
-//         textOverflow: "ellipsis",
-//         overflow: "hidden",
-//         whiteSpace: "nowrap",
-//       }}
-//     >
-//       <small>{title}</small>
-//     </Card.Title>
-//     <Card.Title>
-//       <small>
-//         Giá bán: <small>{price}.000đ</small>
-//       </small>
-//     </Card.Title>
-
-//     <div className="d-flex justify-content-between">
-//       <button
-//         onClick={() =>
-//             handleDeleteProduct({
-//             image: "new-image-url",
-//             price: 100,
-//             title: "New Product Title",
-//           })
-//         }
-//       >
-//         Edit
-//       </button>
-//       <Card.Footer>
-//         <Button onClick={handleDeleteProduct}>
-//           Xóa
-//         </Button>
-//       </Card.Footer>
-//     </div>
-//   </Card.Body>
-// </Card>
-// );
-// };
-
-// export default ProductListCard;
 import React, { useState } from "react";
 import { Card, Button, Modal, Form } from "react-bootstrap";
 import axios from "axios";
@@ -140,6 +51,7 @@ const ProductListCard = (props) => {
     try {
       await axios.delete(`http://localhost:8000/products/${productData.id}`);
       setProductData(null);
+      window.location.reload();
     } catch (error) {
       console.log("Failed to delete product", error);
     }

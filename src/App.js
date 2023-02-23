@@ -11,6 +11,7 @@ import AddProduct from "./admin_pages/AddProduct";
 import ProductAdminList from "./admin_pages/ProductAdminList";
 import CheckOurAdmin from "./admin_pages/CheckOurAdmin";
 import ProductTTN from "./page_danhmuc/ProductTTN";
+import EditQC_admin from "./admin_pages/EditQC_admin";
 function App() {
   return (
     <BrowserRouter>
@@ -26,6 +27,7 @@ function App() {
         <Route path="/productAdminList" element={<ProductAdminList />} />
         <Route path="/checkout" element={<CheckOurAdmin />} />
         <Route path="/producTTN" element={<ProductTTN />} />
+        <Route path="/editqc" element={<EditQC_admin/>} />
       </Routes>
     </BrowserRouter>
   );
