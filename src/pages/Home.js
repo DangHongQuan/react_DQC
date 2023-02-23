@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 import SearchFilter from "react-filter-search";
-import { Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import ProductCard from "../user_components/ProductCard";
 import { NavLink } from "react-router-dom";
 import { FormControl, InputGroup } from "react-bootstrap";
@@ -1175,9 +1175,11 @@ const Home = () => {
               value={searchInput}
               data={productData}
               renderResults={(results) => (
-                <Row className="justify-content-center">
+                <Row >
                   {results.map((item, i) => (
+                    <Col className="col-lg-2">
                     <ProductCard data={item} key={i} />
+                    </Col>
                   ))}
                 </Row>
               )}

@@ -13,30 +13,27 @@ const ProductCard = (props) => {
         addItem(props.data);
     };
   return (
-    <Card style={{width: '15rem', height: 'auto'}} className="text-center p-0 overflow-hidden shadow mx-auto mb-4 mt-3">
+  
+    <Card style={{height:'320px'}} className=" text-center p-0 overflow-hidden shadow mx-auto mb-4 mt-3">
          <Link to={`/product-details/${id}`}>
         <div
           style={{
-            background: "white",
-            height: "15rem",
-            overflow: "hidden",
-            display: "flex",
-            justifyContent: "center",
             alignItems: "center",
             marginBottom: "inherit",
           }}
         >
-          <div style={{ width: "9rem" }}>
-            <Card.Img variant="top" src={image} className="img-fluid w-100 h-100" />
+          <div>
+            <Card.Img variant="top" src={image} className="img-fluid" />
           </div>
         </div>
       </Link>
         <Card.Body>
             <Card.Title style={{textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace:'nowrap'}}><small>{title}</small></Card.Title>
-            <Card.Title><small>Giá bán: <small>{price}.000đ</small></small></Card.Title>
-            <Button className='d-flex align-items-center m-auto border-0' onClick={() => addToCart()}><BsCartPlus size="1.8rem"/>Thêm giỏ hàng</Button>
+            <Card.Title><small style={{textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace:'nowrap'}}>Giá bán: <small>{price}.000đ</small></small></Card.Title>
+            <Button className='mb-1 ' onClick={() => addToCart()}><BsCartPlus/></Button>
         </Card.Body>
     </Card>
+
   )
 }
 

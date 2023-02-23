@@ -21,57 +21,87 @@
   },
   "products": [
     {
-      "id": 30,
-      "title": "",
-      "price": 0,
-      "description": "",
-      "category": "thoitrangnu",
-      "image": "",
-      "rating": {
-        "rate": 0,
-        "count": 0
-      },
-      "createdAt": 1677144174894,
-      "modifiedAt": 1677144174894
-    },
-    {
-      "id": 31,
-      "title": "test",
-      "price": 0,
-      "description": "",
-      "category": "",
-      "image": "",
-      "rating": {
-        "rate": 0,
-        "count": 0
-      },
-      "createdAt": 1677144213927,
-      "modifiedAt": 1677144213927
-    },
-    {
-      "id": 32,
-      "title": "test",
-      "price": 0,
-      "description": "",
-      "category": "",
-      "image": "",
-      "rating": {
-        "rate": 0,
-        "count": 0
-      },
-      "createdAt": 1677144346608,
-      "modifiedAt": 1677144346608
-    },
-    {
-      "id": 33,
-      "title": "test",
-      "price": 0,
-      "description": "",
+      "id": 34,
+      "title": "Trần Quang Đạt TEST",
+      "price": 2143,
+      "description": "test xem sao đây có ",
       "category": "thoitrangnam",
-      "image": "",
+      "image": "https://datgoldshop.com/images/anhgioithieu.jpg",
       "rating": {
-        "rate": 0,
-        "count": 0
+        "rate": 342,
+        "count": 241214
+      }
+    },
+    {
+      "id": 35,
+      "title": "Váy Đầm Xoe Đẹp Dự Tiệc Đi Chơi",
+      "price": 200,
+      "description": "Tân hoa hậu từng sống ở Mỹ cùng gia đình trước khi chuyển về Philippines. Cô theo học chuyên ngành Triết học và Quản trị kinh doanh tại Đại học De La Salle (Manila). So với những nhan sắc Philippines đi thi quốc tế năm nay, Katarina cũng được đánh giá cao dù không gây chú ý bằng Catriona Gray. ",
+      "category": "thoitrangnu",
+      "image": "https://bizweb.dktcdn.net/thumb/1024x1024/100/403/511/products/o1cn01qbw72e1qncngfnoat9003520.jpg",
+      "rating": {
+        "rate": 5,
+        "count": 100
+      }
+    },
+    {
+      "id": 36,
+      "title": "Đồng Hồ Cơ Nam",
+      "price": 1230,
+      "description": "MÔ TẢ SẢN PHẨM MTP STORE BIỂU TƯỢNG CHẤT LƯỢNG! + CAM KẾT HÌNH ẢNH, MÔ TẢ TÍNH NĂNG CHUẨN + BẢO HÀNH 1 ĐỔI 1 NẾU SAI HÀNG HOẶC LỖI ZALO hỗ trợ: 0393583320   Cở sở 1: Lô CC04 đường Lý Thái Tổ, TP Bắc Ninh. Cơ sở 2: Số 14 Trần Phú, Phường Đông Ngàn, TX Từ Sơn, Bắc Ninh. Cở sở 3: 102 Đường Lý Thường Kiệt, TT Lim, Tiên Du, Bắc Ninh. Đồng hồ nam HBL - fullbox hãng cao cấp, chống nước bảo hành 12 tháng Thông tin bảo hành Đồng hồ nam nữ * Bảo hành đổi chiếc mới trong 30 ngày đầu nếu lỗi NSX * Bảo hành sửa chữa 12 tháng với sản phẩm của shop * Cam kết sản phẩm chuẩn hình, có video shop tự chụp tự quay ( Khách hàng muốn kiểm tra trước inboxx shop để được hỗ trợ ) * Hotline:   (TƯ VẤN - HỖ TRỢ - BẢO HÀNH) THÔNG SỐ SẢN PHẨM : Đồng hồ nam HUB • Kiểu máy : Máy pin (Nhập khẩu nhật) • Kích thước mặt : 42mm • Kích thước đây : 220 x 16mm • Chất liệu dây: Dây da kết hợp cao su thơm vani • Chất liệu khung : Thép không gỉ. • Kính : Kính Mineral chống xước • Chống nước : Chỉ số chống nước 3ATM / 30M • Bảo hành máy 12 tháng BỘ SẢN PHẨM Đồng hồ nam - 1 Đồng hồ - 1 Hộp đồng hồ đi kèm - 1 Pin dự phòng . TRƯỜNG HỢP KHÔNG ĐỦ ĐIỀU KIỆN BẢO HÀNH  • Vỡ,đứt,gãy do tai nạn trong quá trình sử dụng.  • Tự ý mở ra can thiệp sửa chữa trong thời gian bảo hành . THỜI GIAN GIAO NHẬN - Khu vực TP. HCM/ Hà Nội : 02-04 Ngày làm việc - Khu vực còn lại : 03-06 Ngày làm việc - Lưu Ý : Thời gian giao nhận không tính các ngày cuối tuần và lễ, tết  . #dong #ho #nam #hub #may #pin #gia #re #day #cao #su  #đồng_hồ_nam #đồng_hồ_hub #đồng_hồ_đeo_tay",
+      "category": "",
+      "image": "https://cf.shopee.vn/file/sg-11134201-22120-34g8oogbzdlv8e",
+      "rating": {
+        "rate": 10,
+        "count": 111
+      }
+    },
+    {
+      "id": 37,
+      "title": "Iphone 14 Promax bản 128GB",
+      "price": 1000,
+      "description": "Đây Là Một chiếc điện thoại ra mắt vào năm 2022 . Với sự cãi tiến mới từ iphone 13 mang đến sự ham muốn của rất nhiều người......",
+      "category": "thoitrangnam",
+      "image": "https://cdn.tgdd.vn/Products/Images/42/289691/iphone-14-pro-vang-thumb-600x600.jpg",
+      "rating": {
+        "rate": 234,
+        "count": 332
+      }
+    },
+    {
+      "id": 38,
+      "title": "Dell Alienware Area 51m R2 I9 10900K/ 64GB/ 1000GB SSD + 1000GB SSD/ 17.3\" UHD/ RTX 2080 8GB/ Win 10",
+      "price": 242,
+      "description": "Sức mạnh mới đầu tiên: Area-51m R2 có một loạt tính năng đầu tiên cho hiệu suất và công suất cao nhất. Đây là máy tính xách tay đầu tiên của chúng tôi có bộ vi xử lý máy tính để bàn Intel ® Core ™ i9K thế hệ thứ 10 có thể ép xung , hỗ trợ công suất lên đến 125W và tùy chọn CPU máy tính để bàn 10 lõi, mang đến cho nó một cấp độ điện toán hoàn toàn mới so với các máy tính xách tay chơi game khác. Đồ họa và lối chơi tuyệt vời hơn: Trải nghiệm chơi game sống động, không bị gián đoạn và tốc độ khung hình nhanh hơn trong quá trình chơi game được hỗ trợ mạnh mẽ nhờ NVIDIA ® GeForce ® có thể ép xung. Đồ họa RTX ™ hoặc lần đầu tiên có trong đồ họa AMD Radeon ™ Area-51m R2. Giờ đây, có tùy chọn hiển thị FHD 360Hz mới, bạn có thể mong đợi trải nghiệm chơi game tốc độ nhanh mượt mà nhất và trải nghiệm màn hình 17 inch tốt nhất có thể tưởng tượng được. Bộ nhớ lớn: Area-51m R2 cũng là máy tính xách tay chơi game đầu tiên của Alienware hỗ trợ tối đa 64GB bộ nhớ DDR4 với tốc độ 2933Mhz hoặc 32GB bộ nhớ DDR4 XMP ở tốc độ 3200Mhz. Điều này đảm bảo đủ RAM cho các tác vụ và khối lượng công việc tiêu tốn nhiều tài nguyên nhất, lý tưởng cho các nhà phát triển trò chơi, người sáng tạo nội dung và bộ truyền phát megatasking.",
+      "category": "",
+      "image": "https://laptopxachtay.com.vn/Images/Products/39612_dell-alienware-area-51m-r2-i7-10700k-16gb-256gb-ssd-1000gb-17-3-fhd-rtx-2080-8gb-win-10_39611_1.jpg?",
+      "rating": {
+        "rate": 2,
+        "count": 123
+      }
+    },
+    {
+      "id": 39,
+      "title": "Quần ống vẩy, ống loe cạp cao 1 khuy hách dáng chất đẹp",
+      "price": 1332,
+      "description": "Quần ống vẩy, ống loe basic 1 cúc phong cách Hàn Quốc tôn dáng  Chất liệu: Tuyết mưa vitex  + Cấu trúc sợi vải chắc chắn, bền màu, mặc vào cực kì thoáng mát, thoải mái  + Không bị sờn mốc hay xù lông sau thời gian dài sử dụng  Thiết kế/ mix & match  + Tinh tế đến từng chi tiết; đường may tỉ mỉ, chất liệu tuyết mưa mềm mại, có độ bền cao, không nhăn, không sờn.  + Quần suông với điểm nhấn là phần cạp liền tôn vòng 2, 3 quyến rũ và thanh lịch.  + Kết hợp quần suông với áo thun/áo phông, áo sơ mi hoặc một chiếc blazer mỏng giúp tạo nên set đồ hoàn hảo nhất  + Phù hợp đi làm công sở, dự tiệc, đi tiệc hay đi dạo và đi chơi  Màu sắc: ĐEN / TRẮNG SỮA / GHI  Thông số size: chiều cao; cân nặng  + Size S: 150 - 159 cm; 43 - 48 kg  + Size M: 150 - 159 cm; 49 - 54 kg  + Size L: 160 - 165 cm; 55 - 58 kg  + Size XL: 166-170 cm; 57-62kg  Hướng dẫn bảo quản: Để sản phẩm bền đẹp, shop khuyến khích quý khách:  + Giặt bằng xà phòng trung tính, không chất tẩy mạnh.  + Phơi sản phẩm ở nơi khô ráo, thoáng mát, có ánh nắng.  =======================================  Lưu ý quan trọng:  Bảng size chart mang tính chất tham khảo, tùy thuộc vào số đo cơ thể mỗi người và chất liệu vải sẽ có sự chênh lệch nhất định. Nếu quý khách mua hàng lần đầu hoặc chưa chắc chắn về chọn size, vui lòng inbox cho shop để được tư vấn size phù hợp.  Màu sắc vải/ sản phẩm có thể sẽ chênh lệch thực tế một phần nhỏ, do ảnh hưởng về độ lệch màu của ánh sáng, góc chụp nhưng vẫn đảm bảo chất lượng.  CAM KẾT 100% đổi Size nếu sản phẩm khách đặt không vừa (hỗ trợ đổi size trong vòng 07 ngày)  CAM KẾT 100% hỗ trợ 1 đổi 1 nếu sản phẩm lỗi do phía nhà sản xuất; hỗ trợ đổi sang sản phẩm khác cùng giá hoặc cao hơn nếu quý khách không hài lòng về sản phẩm đã mua.  Nếu có bất kì khiếu nại cần Shop hỗ trợ về sản phẩm, khi mở sản phẩm các Chị vui lòng quay lại video quá trình mở sản phẩm để được đảm bảo 100% đổi lại sản phẩm mới nếu Shop giao hàng bị lỗi, thiếu hàng.  Vui lòng inbox ngay cho shop để được tiếp nhận và xử lý nhanh nhất nếu quý khách có bất cứ thắc mắc hay phản ánh về sản phẩm/ dịch vụ  Các Chị nhận được sản phẩm, vui lòng đánh giá 5* giúp Shop để nhận quà hấp dẫn nhé!  #quan #au #quần #nữ #nu #quanaunu #aunu #quantaynu #quanvainu #quanvai #quanau #quandai #formrong #ongsuong #ongrong #lungcao #congso #tretrung #thoitrang #senclothing #baggy #quanbaggynu #quanbaggy #quầnâu #quầntây #quầnsuông #quầndài",
+      "category": "",
+      "image": "https://cf.shopee.vn/file/228182e22f1b3afa5914d9fb4e01ba89",
+      "rating": {
+        "rate": 5,
+        "count": 23
+      }
+    },
+    {
+      "id": 40,
+      "title": "(FreeShip-MẫuHot) Jum Kèm Khoác Dạ, Đi Chơi, Đi Dự Tiệc, Phối Nút Cực Xinh, Thời Trang Nữ Cao Cấp Sang Trọng Cho Các Nàn",
+      "price": 2423,
+      "description": "SIZE S DƯỚI 42KG- TÙY CHIỀU CAO-SIZE M DƯỚI: 48kg SIZE L : 54KG. TÙY CHIỀU CAO KHÁCH CÓ THỂ IB VỚI SHOP ĐỂ LỰA CHỌN SIZE PHÙ HỢP NHÉ. KÈM HÌNH CHỤP THẬT MẪU MẶC 100% ĐỂ KHÁCH LỰA CHỌN, TRÁNH ĐỔI TRẢ HÀNG, MẪU 160CM 47KG MẶC SIZE M. #DAMXOE #DAMGIARE #DAMDANGDAI #MAXI #DAM2DAY #DAMCUPNGUC #DAMHOTGIRL #DAMDITIEC #DAMOM #DAMBODY #DAMSUONG #DAMCONGCHUA #DAMDEP #DAMSANGCHANH #DAMSEXY #DAMREN #DAMHOA #DAMDIBIEN CHÚ Ý: MÀU SẮC VẢI HOẶC HỌA TIẾT VẢI CÓ THỂ THAY ĐỔI ĐẬM NHẠT TÙY ĐỢT SẢN XUẤT VỀ HOẶC DO ÁNH SÁNG CHỤP NỮA NHÉ KHÁCH, NHƯNG FORM DÁNG THÌ VẪN KHÔNG THAY ĐỔI NHÉ QUÝ KHÁC--------------- #đầmthiếtkế #damthietke #đầmbody #dambody #đầmxòe #damxoe #damxinh #vayxinh #đầmdựtiệc #damdutiec #đầmcôngchúa #damcongchua #đầmbabydoll #dambabydoll #đầmsơmi #damsomi #đầmmaxi #dammaxi #maxi #đầmsuông #damsuong #vaysuong #đầm2dây #dam2day #damhaiday #đầmnữđẹp #damnudep #đầm #vayden #damden #vay #đầmđibiển #damdibien #đầmtrắng #damtrang #đầmđen #maxiđibiển #maxidibien #váythiếtkế #vaythietke #vaýbody #vaybody #váyxòe #vayxoe #vaycongchua #damxinh #nahouse #na.house #váyđitiệc #vayditiec #váytrắng #vaytrang #vaybabydoll #damnudep #sétváy #setvay #setbộ #jum #vaysomi #vay2day #vaydangdai #vaydibien #vaynudep#sieusale#sieusalehagia#sieusale",
+      "category": "thoitrangnu",
+      "image": "https://cf.shopee.vn/file/sg-11134201-22110-8a1831ifwmjv21",
+      "rating": {
+        "rate": 234,
+        "count": 32423
       }
     }
   ],
