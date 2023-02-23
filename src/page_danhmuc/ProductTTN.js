@@ -1,49 +1,11 @@
-// import React, { useState, useEffect } from "react";
-// import axios from "axios";
-
-// function ProductTTN() {
-//   const [products, setProducts] = useState([]);
-
-//   useEffect(() => {
-//     axios
-//       .get("http://localhost:8000/products")
-//       .then((response) => {
-//         const data = response.data.filter(
-//           (item) => item.category === "thoitrangnam"
-//         );
-//         setProducts(data);
-//       })
-//       .catch((error) => console.error(error));
-//   }, []);
-
-//   return (
-//     <div>
-//       <h1>Product List</h1>
-//       {products.map((item) => (
-//         <div key={item.id} className="product">
-//           <h2>{item.title}</h2>
-//           <img src={item.image} alt={item.title} />
-//           <p>Price: {item.price}</p>
-//           <p>Description: {item.description}</p>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// }
-
-// export default ProductTTN;
-import ProducHomeTTN from "../pages/ProducHomeTTN";
+import ProducHomeTTN from "../page_danhmuc/ProducHomeTTN";
 import React from "react";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-import SearchFilter from "react-filter-search";
-import { Row } from "react-bootstrap";
-import ProductCard from "../user_components/ProductCard";
 import { NavLink } from "react-router-dom";
 import { FormControl, InputGroup } from "react-bootstrap";
 import { BiSearch } from "react-icons/bi";
-import { useCart } from "react-use-cart";
-import Myconponent from "./Myconponent";
+import Myconponent from "../pages/Myconponent";
 import axios from "axios";
 
 const StyledHome = styled.div`
@@ -1169,9 +1131,7 @@ const ProductTTN = () => {
             </div>
             {/* rekomendasi */}
 
-          
-              <ProducHomeTTN />
-            
+            <ProducHomeTTN />
           </div>
         </div>
       </StyledHome>

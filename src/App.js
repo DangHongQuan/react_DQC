@@ -7,25 +7,25 @@ import LoginAdmin from "./admin_pages/LoginAdmin";
 import Shopcart from "./pages/Shopcart";
 import Layouts from "./admin_containers/Layouts";
 import ProductDetails from "./pages/ProductDetails";
-import AddProduct from './admin_pages/AddProduct';
+import AddProduct from "./admin_pages/AddProduct";
 import ProductAdminList from "./admin_pages/ProductAdminList";
 import CheckOurAdmin from "./admin_pages/CheckOurAdmin";
-import  ProductTTN from "./pages/ProductTTN";
+import ProductTTN from "./page_danhmuc/ProductTTN";
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="product-details/:productId" element={<ProductDetails/>} />
+        <Route path="product-details/:productId" element={<ProductDetails />} />
         <Route path="/*" element={<Layout />} />
         <Route path="/admin" element={<Layouts />} />
         <Route path="/login/admin" element={<LoginAdmin />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/shopcart" element={<Shopcart />} />
-        <Route path="/addProduct" element={<AddProduct/>} />
-        <Route path="/productAdminList" element={<ProductAdminList/>} />
-        <Route path="/checkout" element={<CheckOurAdmin/>} />
-        <Route path="/producTTN" element={<ProductTTN/>} />
+        <Route path="/addProduct" element={<AddProduct />} />
+        <Route path="/productAdminList" element={<ProductAdminList />} />
+        <Route path="/checkout" element={<CheckOurAdmin />} />
+        <Route path="/producTTN" element={<ProductTTN />} />
       </Routes>
     </BrowserRouter>
   );
