@@ -103,6 +103,114 @@
         "rate": 234,
         "count": 32423
       }
+    },
+    {
+      "id": 41,
+      "title": "hongquantest no img",
+      "price": 0,
+      "description": "",
+      "category": "thoitrangnu",
+      "image": "",
+      "rating": {
+        "rate": 0,
+        "count": 0
+      }
+    },
+    {
+      "id": 42,
+      "title": "testdienthaoi no img",
+      "price": 0,
+      "description": "",
+      "category": "dienthoai",
+      "image": "",
+      "rating": {
+        "rate": 0,
+        "count": 0
+      }
+    },
+    {
+      "id": 43,
+      "title": "quan test thiet bi dien no img",
+      "price": 0,
+      "description": "",
+      "category": "thietbidientu",
+      "image": "",
+      "rating": {
+        "rate": 0,
+        "count": 0
+      }
+    },
+    {
+      "id": 44,
+      "title": "tesst danh muc",
+      "price": null,
+      "description": "",
+      "category": "mayanh",
+      "image": "",
+      "rating": {
+        "rate": null,
+        "count": null
+      }
+    },
+    {
+      "id": 45,
+      "title": "tesst danh muc",
+      "price": null,
+      "description": "",
+      "category": "dongho",
+      "image": "",
+      "rating": {
+        "rate": null,
+        "count": null
+      }
+    },
+    {
+      "id": 46,
+      "title": "tesst danh muc",
+      "price": null,
+      "description": "",
+      "category": "giaydepnam",
+      "image": "",
+      "rating": {
+        "rate": null,
+        "count": null
+      }
+    },
+    {
+      "id": 47,
+      "title": "tesst danh muc",
+      "price": null,
+      "description": "",
+      "category": "thietbigiadung",
+      "image": "",
+      "rating": {
+        "rate": null,
+        "count": null
+      }
+    },
+    {
+      "id": 48,
+      "title": "tesst danh muc",
+      "price": null,
+      "description": "",
+      "category": "thethao",
+      "image": "",
+      "rating": {
+        "rate": null,
+        "count": null
+      }
+    },
+    {
+      "id": 49,
+      "title": "tesst danh muc",
+      "price": null,
+      "description": "",
+      "category": "xemay",
+      "image": "",
+      "rating": {
+        "rate": null,
+        "count": null
+      }
     }
   ],
   "checkout": [

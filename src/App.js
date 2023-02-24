@@ -12,7 +12,17 @@ import ProductAdminList from "./admin_pages/ProductAdminList";
 import CheckOurAdmin from "./admin_pages/CheckOurAdmin";
 import ProductTTN from "./page_danhmuc/ProductTTN";
 import EditQC_admin from "./admin_pages/EditQC_admin";
+import Thoitrangnu from "./page_danhmuc/HomeThoitrangnu";
 import Loi from "./pages/Loi";
+import DienthoaiHome from "./page_danhmuc/Homedienthoai";
+import Thietbidien from "./page_danhmuc/Homethietbidien";
+import Mayanh from "./page_danhmuc/Homemayanh";
+import Dongho from "./page_danhmuc/HomeDongho";
+import Giaydep from "./page_danhmuc/Homegiaydepnam";
+import Xemay from "./page_danhmuc/Homexemay";
+import Thethao from "./page_danhmuc/Homethethao";
+import Thietbigiadung from "./page_danhmuc/Homethietbigiadung";
+
 function App() {
   return (
     <BrowserRouter>
@@ -29,7 +39,16 @@ function App() {
         <Route path="/productAdminList" element={<ProductAdminList />} />
         <Route path="/checkout" element={<CheckOurAdmin />} />
         <Route path="/producTTN" element={<ProductTTN />} />
-        <Route path="/editqc" element={<EditQC_admin/>} />
+        <Route path="/editqc" element={<EditQC_admin />} />
+        <Route path="/producTTnu" element={<Thoitrangnu />} />
+        <Route path="/dienthoai" element={<DienthoaiHome />} />
+        <Route path="/thietbidien" element={<Thietbidien />} />
+        <Route path="/mayanh" element={<Mayanh />} />
+        <Route path="/dongho" element={<Dongho />} />
+        <Route path="/giaydep" element={<Giaydep />} />
+        <Route path="/thethao" element={<Thethao />} />
+        <Route path="/thietbigiadung" element={<Thietbigiadung />} />
+        <Route path="/xemay" element={<Xemay />} />
       </Routes>
     </BrowserRouter>
   );

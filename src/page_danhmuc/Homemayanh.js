@@ -1,15 +1,14 @@
+import ProducHomeTTN from "../page_danhmuc/ProducHomeTTN";
 import React from "react";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-import SearchFilter from "react-filter-search";
-import { Col, Nav, Row } from "react-bootstrap";
-import ProductCard from "../user_components/ProductCard";
 import { NavLink } from "react-router-dom";
 import { FormControl, InputGroup } from "react-bootstrap";
 import { BiSearch } from "react-icons/bi";
-import { useCart } from "react-use-cart";
-import Myconponent from "./Myconponent";
+import Myconponent from "../pages/Myconponent";
 import axios from "axios";
+import Mayanh from "./Mayanh";
+
 const StyledHome = styled.div`
   /* carousel */
   .content {
@@ -228,7 +227,8 @@ const StyledHome = styled.div`
   /* rekomendasi */
   .nav-link.active {
     border-bottom: 3px solid #f53d2d !important;
-  }
+  }import Thoitrangnu from './Thoitrangnu';
+
 `;
 const StyledHeader = styled.div`
   body {
@@ -337,8 +337,10 @@ const StyledHeader = styled.div`
   }
 `;
 
-const Home = () => {
+const HomeThoitrangnu = () => {
   const [productData, setProductData] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
+  const [products, setProducts] = useState([]);
   const [imageURL1, setImageURL1] = useState("");
   const [imageURL2, setImageURL2] = useState("");
   const [imageURL3, setImageURL3] = useState("");
@@ -385,19 +387,18 @@ const Home = () => {
       })
       .catch((error) => console.error(error));
   }, []);
-
-  const [searchInput, setSearchInput] = useState("");
-
-  async function getResponse() {
-    const res = await fetch("http://localhost:8000/products").then((res) =>
-      res.json()
-    );
-    setProductData(await res);
-  }
-
   useEffect(() => {
-    getResponse();
+    axios
+      .get("http://localhost:8000/products")
+      .then((response) => {
+        const data = response.data.filter(
+          (item) => item.category === "thoitrangnam"
+        );
+        setProducts(data);
+      })
+      .catch((error) => console.error(error));
   }, []);
+  
 
   return (
     <>
@@ -491,7 +492,14 @@ const Home = () => {
               </div>
 
               <NavLink to={"/shopcart"}>
+                {/* //cart */}
                 <Myconponent />
+                {/* <Myconponent />
+                <img
+                  className="icon-shop"
+                  src={`${process.env.PUBLIC_URL}/assets/images/shop.png`}
+                  alt=""
+                /> */}
               </NavLink>
             </div>
           </div>
@@ -544,10 +552,11 @@ const Home = () => {
                     />
                   </ol>
                   <div className="carousel-inner h-100">
+                  <div className="carousel-inner h-100">
                     <div className="carousel-item active h-100">
                       {/* quangcao */}
                       <img
-                        src={imageURL1}
+                       src={imageURL1} 
                         className="d-block w-100 h-100"
                         alt="..."
                       />
@@ -566,6 +575,7 @@ const Home = () => {
                         alt="..."
                       />
                     </div>
+                  </div>
                   </div>
                   <a
                     className="carousel-control-prev"
@@ -595,10 +605,18 @@ const Home = () => {
               </div>
               <div className="col-4 h-100 pl-0">
                 <div className="h-50">
-                  <img className="w-100 h-100" src={imageURL4} alt="" />
+                  <img
+                    className="w-100 h-100"
+                    src={imageURL4}
+                    alt=""
+                  />
                 </div>
                 <div className="h-50 pt-1">
-                  <img className="w-100 h-100" src={imageURL5} alt="" />
+                  <img
+                    className="w-100 h-100"
+                    src={imageURL5}
+                    alt=""
+                  />
                 </div>
               </div>
             </div>
@@ -718,19 +736,8 @@ const Home = () => {
               </div>
             </div>
             {/* rekomendasi */}
-            <SearchFilter
-              value={searchInput}
-              data={productData}
-              renderResults={(results) => (
-                <Row>
-                  {results.map((item, i) => (
-                    <Col className="col-lg-2">
-                      <ProductCard data={item} key={i} />
-                    </Col>
-                  ))}
-                </Row>
-              )}
-            ></SearchFilter>
+
+            <Mayanh />
           </div>
         </div>
       </StyledHome>
@@ -738,4 +745,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomeThoitrangnu;

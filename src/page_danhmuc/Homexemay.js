@@ -1,15 +1,14 @@
+import ProducHomeTTN from "../page_danhmuc/ProducHomeTTN";
 import React from "react";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-import SearchFilter from "react-filter-search";
-import { Col, Nav, Row } from "react-bootstrap";
-import ProductCard from "../user_components/ProductCard";
 import { NavLink } from "react-router-dom";
 import { FormControl, InputGroup } from "react-bootstrap";
 import { BiSearch } from "react-icons/bi";
-import { useCart } from "react-use-cart";
-import Myconponent from "./Myconponent";
+import Myconponent from "../pages/Myconponent";
 import axios from "axios";
+import Xemay from "./Xemay";
+
 const StyledHome = styled.div`
   /* carousel */
   .content {
@@ -228,7 +227,8 @@ const StyledHome = styled.div`
   /* rekomendasi */
   .nav-link.active {
     border-bottom: 3px solid #f53d2d !important;
-  }
+  }import Thoitrangnu from './Thoitrangnu';
+
 `;
 const StyledHeader = styled.div`
   body {
@@ -337,8 +337,10 @@ const StyledHeader = styled.div`
   }
 `;
 
-const Home = () => {
+const HomeThoitrangnu = () => {
   const [productData, setProductData] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
+  const [products, setProducts] = useState([]);
   const [imageURL1, setImageURL1] = useState("");
   const [imageURL2, setImageURL2] = useState("");
   const [imageURL3, setImageURL3] = useState("");
@@ -385,19 +387,18 @@ const Home = () => {
       })
       .catch((error) => console.error(error));
   }, []);
-
-  const [searchInput, setSearchInput] = useState("");
-
-  async function getResponse() {
-    const res = await fetch("http://localhost:8000/products").then((res) =>
-      res.json()
-    );
-    setProductData(await res);
-  }
-
   useEffect(() => {
-    getResponse();
+    axios
+      .get("http://localhost:8000/products")
+      .then((response) => {
+        const data = response.data.filter(
+          (item) => item.category === "thoitrangnam"
+        );
+        setProducts(data);
+      })
+      .catch((error) => console.error(error));
   }, []);
+  
 
   return (
     <>
@@ -491,7 +492,14 @@ const Home = () => {
               </div>
 
               <NavLink to={"/shopcart"}>
+                {/* //cart */}
                 <Myconponent />
+                {/* <Myconponent />
+                <img
+                  className="icon-shop"
+                  src={`${process.env.PUBLIC_URL}/assets/images/shop.png`}
+                  alt=""
+                /> */}
               </NavLink>
             </div>
           </div>
@@ -544,10 +552,11 @@ const Home = () => {
                     />
                   </ol>
                   <div className="carousel-inner h-100">
+                  <div className="carousel-inner h-100">
                     <div className="carousel-item active h-100">
                       {/* quangcao */}
                       <img
-                        src={imageURL1}
+                       src={imageURL1} 
                         className="d-block w-100 h-100"
                         alt="..."
                       />
@@ -566,6 +575,7 @@ const Home = () => {
                         alt="..."
                       />
                     </div>
+                  </div>
                   </div>
                   <a
                     className="carousel-control-prev"
@@ -595,10 +605,18 @@ const Home = () => {
               </div>
               <div className="col-4 h-100 pl-0">
                 <div className="h-50">
-                  <img className="w-100 h-100" src={imageURL4} alt="" />
+                  <img
+                    className="w-100 h-100"
+                    src={imageURL4}
+                    alt=""
+                  />
                 </div>
                 <div className="h-50 pt-1">
-                  <img className="w-100 h-100" src={imageURL5} alt="" />
+                  <img
+                    className="w-100 h-100"
+                    src={imageURL5}
+                    alt=""
+                  />
                 </div>
               </div>
             </div>
@@ -627,7 +645,7 @@ const Home = () => {
                   <p className="mb-0 flex-column mt-2">Thời trang nữ</p>
                 </div>
                 <div className="d-flex flex-column align-items-center card-kategory">
-                  <NavLink className="wrap-img" to={"/dienthoai"}>
+                  <NavLink className="wrap-img" to={"ProducTTN"}>
                     <img
                       className="w-100 h-100"
                       src="assets/dienthoai.jpg"
@@ -638,79 +656,79 @@ const Home = () => {
                   <p className="mb-0 flex-column">Phụ Kiện</p>
                 </div>
                 <div className="d-flex flex-column align-items-center card-kategory">
-                  <NavLink className="wrap-img" to={"/thietbidien"}>
+                  <div className="wrap-img">
                     <img
                       className="w-100 h-100"
                       src="assets/thietbidientu.jpg"
                       alt=""
                     />
-                  </NavLink>
+                  </div>
                   <p className="mb-0 flex-column mt-2">Thiết Bị Điện Tử </p>
                 </div>
 
                 <div className="d-flex flex-column align-items-center card-kategory">
-                  <NavLink className="wrap-img" to={"/mayanh"}>
+                  <div className="wrap-img">
                     <img
                       className="w-100 h-100"
                       src="assets/mayanh.jpg"
                       alt=""
                     />
-                  </NavLink>
+                  </div>
                   <p className="mb-0 flex-column mt-2">Máy ảnh &amp; Máy</p>
                   <p className="mb-0 flex-column">Quay Phim</p>
                 </div>
                 <div className="d-flex flex-column align-items-center card-kategory">
-                  <NavLink className="wrap-img" to={"/dongho"}>
+                  <div className="wrap-img">
                     <img
                       className="w-100 h-100"
                       src="assets/dongho.jpg"
                       alt=""
                     />
-                  </NavLink>
+                  </div>
                   <p className="mb-0 flex-column mt-2">Đồng Hồ</p>
                 </div>
                 <div className="d-flex flex-column align-items-center card-kategory">
-                  <NavLink className="wrap-img" to={"/giaydep"}>
+                  <div className="wrap-img">
                     <img
                       className="w-100 h-100"
                       src="assets/giaydepnam.jpg"
                       alt=""
                     />
-                  </NavLink>
+                  </div>
                   <p className="mb-0 flex-column mt-2">Giày Dép Nam</p>
                 </div>
                 <div className="d-flex flex-column align-items-center card-kategory">
-                  <NavLink className="wrap-img" to={"/thietbigiadung"}>
+                  <div className="wrap-img">
                     <img
                       className="w-100 h-100"
                       src="assets/images/thietbigiadung.jpg"
                       alt=""
                     />
-                  </NavLink>
+                  </div>
                   <p className="mb-0 text-center mt-2">
                     Thiết Bị Điện Gia Dụng
                   </p>
                 </div>
                 <div className="d-flex flex-column align-items-center card-kategory">
-                  <NavLink className="wrap-img" to={"/thethao"}>
+                  <div className="wrap-img">
                     <img
                       className="w-100 h-100"
                       src="assets/images/thethao.jpg"
                       alt=""
                     />
-                  </NavLink>
+                  </div>
                   <p className="mb-0 text-center mt-2">
                     Thể Thao &amp; Du Lịch
                   </p>
                 </div>
                 <div className="d-flex flex-column align-items-center card-kategory">
-                  <NavLink className="wrap-img" to={"/xemay"}>
+                  <div className="wrap-img">
                     <img
                       className="w-100 h-100"
                       src="assets/images/xemay.jpg"
                       alt=""
                     />
-                  </NavLink>
+                  </div>
                   <p className="mb-0 text-center mt-2">
                     Ô Tô &amp; Xe Máy &amp; Xe Đạp
                   </p>
@@ -718,19 +736,8 @@ const Home = () => {
               </div>
             </div>
             {/* rekomendasi */}
-            <SearchFilter
-              value={searchInput}
-              data={productData}
-              renderResults={(results) => (
-                <Row>
-                  {results.map((item, i) => (
-                    <Col className="col-lg-2">
-                      <ProductCard data={item} key={i} />
-                    </Col>
-                  ))}
-                </Row>
-              )}
-            ></SearchFilter>
+
+            <Xemay />
           </div>
         </div>
       </StyledHome>
@@ -738,4 +745,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomeThoitrangnu;

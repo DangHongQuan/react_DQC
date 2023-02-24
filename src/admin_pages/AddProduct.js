@@ -327,6 +327,16 @@ function AddProduct(props) {
                         <option value="">-- Chọn Danh Mục --</option>
                         <option value="thoitrangnam">Thời trang nam</option>
                         <option value="thoitrangnu">Thời trang nữ</option>
+                        <option value="dienthoai">Điện thoại & phụ kiện</option>
+                        <option value="thietbidientu">Thiết bị điện tử</option>
+                        <option value="mayanh">Máy ảnh & quay phim</option>
+                        <option value="dongho">Đồng hồ</option>
+                        <option value="giaydepnam">Giày dép nam</option>
+                        <option value="thietbigiadung">
+                          Thiết bị điện & da dụng
+                        </option>
+                        <option value="thethao">Thể thao & du lịch</option>
+                        <option value="xemay">Ôtô & xe máy & xe đạp</option>
                       </select>
 
                       <br />
