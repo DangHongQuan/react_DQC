@@ -23,6 +23,7 @@ const EditQc = (props) => {
       await axios.put(`http://localhost:8000/QCimg/${productData.id}`, {
         id: editedProductData.id,
         image: editedProductData.image,
+        
       });
       setProductData(editedProductData);
       setShowEditPopup(false);

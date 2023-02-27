@@ -6,7 +6,7 @@ const Checkout = () => {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/checkout")
+      .get("http://localhost:8000/checkout")
       .then((response) => {
         setCheckoutData(response.data);
       })
@@ -17,7 +17,7 @@ const Checkout = () => {
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://127.0.0.1:8000/checkout/${id}`)
+      .delete(`http://localhost:8000/checkout/${id}`)
       .then((response) => {
         setCheckoutData(checkoutData.filter((data) => data.id !== id));
       })

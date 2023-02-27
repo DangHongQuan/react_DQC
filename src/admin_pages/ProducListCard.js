@@ -115,6 +115,7 @@ const ProductListCard = (props) => {
               <Form.Group controlId="formTitle">
                 <Form.Label>ID</Form.Label>
                 <Form.Control
+                  disabled
                   type="text"
                   placeholder="Enter id"
                   value={editedProductData.id}

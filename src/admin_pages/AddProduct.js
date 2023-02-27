@@ -32,10 +32,8 @@ function AddProduct(props) {
     setImage("");
     setRate("");
     setCount("");
-
     delete newProduct.createdAt;
     delete newProduct.modifiedAt;
-
     axios
       .post("http://localhost:8000/products", newProduct)
       .then((response) => {

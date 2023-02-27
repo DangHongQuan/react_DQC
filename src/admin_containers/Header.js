@@ -3,7 +3,6 @@ import "./../admin_containers/header.css";
 import "./../admin_containers/fontawesome-free/css/all.min.css";
 import LoginAdmin from "./../admin_pages/LoginAdmin";
 import { NavLink } from "react-router-dom";
-import ProductAdminList from "./../admin_pages/ProductAdminList";
 
 function Header(props) {
   const [loggedIn, setLoggedIn] = useState(false);
