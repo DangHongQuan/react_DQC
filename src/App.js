@@ -21,6 +21,7 @@ import Giaydep from "./page_danhmuc/Homegiaydepnam";
 import Xemay from "./page_danhmuc/Homexemay";
 import Thethao from "./page_danhmuc/Homethethao";
 import Thietbigiadung from "./page_danhmuc/Homethietbigiadung";
+import Dashboard from "./admin_pages/Dashboard";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/" element={<Layout />} />
         <Route path="/home" element={<Layout />} />
         <Route path="/admin" element={<Layouts />} />
+        <Route path="/dashboard" element={<Dashboard/>} />
         <Route path="/login/admin" element={<LoginAdmin />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />

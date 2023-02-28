@@ -9,6 +9,16 @@ const EditQc = (props) => {
     id: productData.id,
     image: productData.image,
   });
+  const handleDelete = (id) => {
+    axios
+      .delete(`http://localhost:8000/QCimg/${productData.id}`)
+      .then((response) => {
+        setProductData(productData.filter((data) => data.id !== id));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   const handleEditProduct = () => {
     setShowEditPopup(true);
@@ -69,10 +79,11 @@ const EditQc = (props) => {
         <Button variant="primary" onClick={handleEditProduct}>
           Edit
         </Button>{" "}
+     
        
         <Modal show={showEditPopup} onHide={handleCloseEditPopup}>
           <Modal.Header closeButton>
-            <Modal.Title>Edit QC</Modal.Title>
+            <Modal.Title>Edit Quảng Cáo</Modal.Title>
           </Modal.Header>
           {/* edit */}
           <Modal.Body>
@@ -113,7 +124,7 @@ const EditQc = (props) => {
             <Button variant="secondary" onClick={handleCloseEditPopup}>
               Close
             </Button>
-            <Button variant="primary" onClick={handleSaveEditedProduct}>
+            <Button variant="primary" onClick={handleDelete}>
               Save Changes
             </Button>
           </Modal.Footer>

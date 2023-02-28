@@ -28,18 +28,18 @@ const Thoitrangnu = (props) => {
 
   return (
     <div>
-      <Row xs={1} sm={2} md={3} lg={4} xl={5}>
+     <Row xs={1} sm={2} md={3} lg={4} xl={5}>
         {products.map((item) => (
           <Col key={item.id}>
             <Card
-              style={{ width: "15rem", height: "auto" }}
+              style={{ height:"350px" }}
               className="text-center p-0 overflow-hidden shadow mx-auto mb-4 mt-3"
             >
               <Link to={`/product-details/${item.id}`}>
                 <div
                   style={{
                     background: "white",
-                    height: "15rem",
+                   
                     overflow: "hidden",
                     display: "flex",
                     justifyContent: "center",
@@ -47,7 +47,7 @@ const Thoitrangnu = (props) => {
                     marginBottom: "inherit",
                   }}
                 >
-                  <div style={{ width: "9rem" }}>
+                  <div style={{ width: "300px" }}>
                     <Card.Img
                       variant="top"
                       src={item.image}

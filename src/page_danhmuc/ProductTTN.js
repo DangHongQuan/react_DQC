@@ -7,6 +7,7 @@ import { FormControl, InputGroup } from "react-bootstrap";
 import { BiSearch } from "react-icons/bi";
 import Myconponent from "../pages/Myconponent";
 import axios from "axios";
+import Danhmuc from "../pages/Danhmuc";
 
 const StyledHome = styled.div`
   /* carousel */
@@ -618,122 +619,9 @@ const ProductTTN = () => {
                 </div>
               </div>
             </div>
-            {/* kategory */}
-            <div className="row mx-0 mt-4 kategory">
-              <h5 className="p-4">DANH MỤC</h5>
-              <div className="d-flex">
-                <div className="d-flex flex-column align-items-center card-kategory">
-                  <NavLink className="wrap-img" to={"/producTTN"}>
-                    <img
-                      className="w-100 h-100"
-                      src="assets/thoitrangnam.png"
-                      alt=""
-                    />
-                  </NavLink>
-                  <span className="mb-0 flex-column mt-2">Thời Trang Nam</span>
-                </div>
-                <div className="d-flex flex-column align-items-center card-kategory">
-                  <NavLink className="wrap-img" to={"/producTTnu"}>
-                    <img
-                      className="w-100 h-100"
-                      src="assets/thoitrangnu.png"
-                      alt=""
-                    />
-                  </NavLink>
-                  <p className="mb-0 flex-column mt-2">Thời trang nữ</p>
-                </div>
-                <div className="d-flex flex-column align-items-center card-kategory">
-                  <NavLink className="wrap-img" to={"ProducTTN"}>
-                    <img
-                      className="w-100 h-100"
-                      src="assets/dienthoai.jpg"
-                      alt=""
-                    />
-                  </NavLink>
-                  <p className="mb-0 flex-column mt-2">Điện Thoại &amp;</p>
-                  <p className="mb-0 flex-column">Phụ Kiện</p>
-                </div>
-                <div className="d-flex flex-column align-items-center card-kategory">
-                  <div className="wrap-img">
-                    <img
-                      className="w-100 h-100"
-                      src="assets/thietbidientu.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <p className="mb-0 flex-column mt-2">Thiết Bị Điện Tử </p>
-                </div>
-
-                <div className="d-flex flex-column align-items-center card-kategory">
-                  <div className="wrap-img">
-                    <img
-                      className="w-100 h-100"
-                      src="assets/mayanh.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <p className="mb-0 flex-column mt-2">Máy ảnh &amp; Máy</p>
-                  <p className="mb-0 flex-column">Quay Phim</p>
-                </div>
-                <div className="d-flex flex-column align-items-center card-kategory">
-                  <div className="wrap-img">
-                    <img
-                      className="w-100 h-100"
-                      src="assets/dongho.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <p className="mb-0 flex-column mt-2">Đồng Hồ</p>
-                </div>
-                <div className="d-flex flex-column align-items-center card-kategory">
-                  <div className="wrap-img">
-                    <img
-                      className="w-100 h-100"
-                      src="assets/giaydepnam.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <p className="mb-0 flex-column mt-2">Giày Dép Nam</p>
-                </div>
-                <div className="d-flex flex-column align-items-center card-kategory">
-                  <div className="wrap-img">
-                    <img
-                      className="w-100 h-100"
-                      src="assets/images/thietbigiadung.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <p className="mb-0 text-center mt-2">
-                    Thiết Bị Điện Gia Dụng
-                  </p>
-                </div>
-                <div className="d-flex flex-column align-items-center card-kategory">
-                  <div className="wrap-img">
-                    <img
-                      className="w-100 h-100"
-                      src="assets/images/thethao.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <p className="mb-0 text-center mt-2">
-                    Thể Thao &amp; Du Lịch
-                  </p>
-                </div>
-                <div className="d-flex flex-column align-items-center card-kategory">
-                  <div className="wrap-img">
-                    <img
-                      className="w-100 h-100"
-                      src="assets/images/xemay.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <p className="mb-0 text-center mt-2">
-                    Ô Tô &amp; Xe Máy &amp; Xe Đạp
-                  </p>
-                </div>
-              </div>
-            </div>
-            {/* rekomendasi */}
+          {/* Phần Danh Mục  */}
+          <Danhmuc/>
+            {/* Kết Thúc Danh Mục */}
 
             <ProducHomeTTN />
           </div>

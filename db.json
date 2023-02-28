@@ -43,6 +43,36 @@
       "img2": "aaaaaaaaa",
       "img3": "aaaaaaaaaaa",
       "id": 2
+    },
+    {
+      "img1": "https://cf.shopee.vn/file/sg-11134201-22100-4nzs8b8vl8iv3b",
+      "img2": "https://cf.shopee.vn/file/sg-11134201-22110-z1mog9mogyjv73",
+      "img3": "https://cf.shopee.vn/file/sg-11134201-22100-4nzs8b8vl8iv3b",
+      "id": 3
+    },
+    {
+      "img1": "https://cf.shopee.vn/file/sg-11134201-22120-1bbpdql1o9kv6f",
+      "img2": "https://cf.shopee.vn/file/c63b543f5d2db98297317113ef99c658",
+      "img3": "https://cf.shopee.vn/file/468d5c9e5502825d8ca559bb9659f531",
+      "id": 4
+    },
+    {
+      "img1": "https://cf.shopee.vn/file/d3fd58e067ebe5a38cd611bee23c3232",
+      "img2": "https://cf.shopee.vn/file/sg-11134201-22090-gxug3d8t1vhv6e",
+      "img3": "https://cf.shopee.vn/file/sg-11134201-22090-5f0ice8t1vhve5",
+      "id": 5
+    },
+    {
+      "img1": "https://cf.shopee.vn/file/sg-11134201-23010-5o8rhh9jgylvcf",
+      "img2": "https://cf.shopee.vn/file/sg-11134201-23010-hgwri8nkgylv0c",
+      "img3": "https://cf.shopee.vn/file/sg-11134201-23010-q62oo45jgylvd9",
+      "id": 6
+    },
+    {
+      "img1": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/t/_/t_m_18.png",
+      "img2": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/2/5/2522.png",
+      "img3": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/8/9/896_2.png",
+      "id": 7
     }
   ],
   "user": [
@@ -69,19 +99,82 @@
       }
     },
     {
-      "id": 2,
-      "title": "test",
-      "price": null,
-      "description": "test",
-      "category": "",
-      "image": "test",
+      "id": 3,
+      "title": "Váy nhung phối bèo nơ thời trang nữ thu đông",
+      "price": 123,
+      "description": "- Màu sắc : \n-Size: S,M\n- Chất liệu : \n- Size :  ( <58 kg )\n- Hình ảnh : Kèm video ảnh thật trải sàn shop chụp \n\n🍏 HƯỚNG DẪN MUA HÀNG 🍏\n \n- B1 : Click vào sản phẩm và ấn chọn ngay & điền số lượng rồi chọn \"Thêm vào giỏ hàng\" \n- B2 : Vào phần xem shop để tìm mua thêm những sản phẩm ưng ý\n- B3: Vào phần \"Giỏ hàng\" check lại một lần nữa sản phẩm mình cần rồi chọn Mua ngay\n- B4: Check lại thông tin địa chỉ giao hàng\n- B5: Chọn hình thức thanh toán\n- B6: Nhập mã giảm giá (nếu có) và nhập mã miễn phí ship nhé! \n- B7: Click vào ô ĐẶT HÀNG ở phía cuối là okie nhé!\n\n🐭 CAM KẾT CỦA SHOP : \n+ Bao đổi trả hàng miễn phí khi sản phẩm kém chất lượng và không giống hình, nhầm size, số lượng . \n+ Khách hàng cũ : Mua lần thứ 2 trở đi sẽ được nhận mã giảm giá của shop \n\n🐠 LƯU Ý KHI SỬ DỤNG CÁC SẢN PHẨM CỦA SHOP\n- Trong quá trình đóng gói và vận chuyển sản phẩm có thể bị nhàu, quý khách vui lòng giặt trước khi sử dụng để cảm nhận sản phẩm tốt nhất \n- Đối với sản phẩm đa dạng về chất liệu, kiểu dáng cách bảo quản sản phẩm tốt nhất là giặt tay với bột (nước) giặt nhẹ để giữ được độ bền của vải, tránh bị phai màu từ các loại quần áo khác. \n- Đối với những sản phẩm có thể giặt máy, chỉ nên để ở chế độ giặt nhẹ, hoặc mức trung bình và nên phân loại sản phẩm cùng màu và cùng loại vải khi giặt. \n- Nên phơi sản phẩm ở nơi thoáng mát, tránh ánh nắng trực tiếp dễ bị phai bạc màu, nên làm khô quần áo bằng cách phơi ở những điểm đón gió sẽ giữ được màu vải tốt hơn. ",
+      "category": "thoitrangnu",
+      "image": "https://cf.shopee.vn/file/sg-11134201-22110-j53ywgdogyjvdf",
       "rating": {
-        "rate": 0,
-        "count": 0
+        "rate": 5,
+        "count": 22
+      }
+    },
+    {
+      "id": 4,
+      "title": "Áo khoác dạ kim tuyến phối cổ tàu 2 lớp viền mí áo dạ nữ dài tay",
+      "price": "1249",
+      "description": "🌸 Thông tin chi tiết sản phẩm sản phẩm 🌸 \n\n- Màu sắc : \n- Chất liệu : \n- Hình ảnh : Kèm video ảnh thật trải sàn shop chụp \n\n🍏 HƯỚNG DẪN MUA HÀNG 🍏\n \n- B1 : Click vào sản phẩm và ấn chọn ngay & điền số lượng rồi chọn \"Thêm vào giỏ hàng\" \n- B2 : Vào phần xem shop để tìm mua thêm những sản phẩm ưng ý\n- B3: Vào phần \"Giỏ hàng\" check lại một lần nữa sản phẩm mình cần rồi chọn Mua ngay\n- B4: Check lại thông tin địa chỉ giao hàng\n- B5: Chọn hình thức thanh toán\n- B6: Nhập mã giảm giá (nếu có) và nhập mã miễn phí ship nhé! \n- B7: Click vào ô ĐẶT HÀNG ở phía cuối là okie nhé!\n\n🐭 CAM KẾT CỦA SHOP : \n+ Bao đổi trả hàng miễn phí khi sản phẩm kém chất lượng và không giống hình, nhầm size, số lượng . \n+ Khách hàng cũ : Mua lần thứ 2 trở đi sẽ được nhận mã giảm giá của shop \n\n🐠 LƯU Ý KHI SỬ DỤNG CÁC SẢN PHẨM CỦA SHOP\n- Trong quá trình đóng gói và vận chuyển sản phẩm có thể bị nhàu, quý khách vui lòng giặt trước khi sử dụng để cảm nhận sản phẩm tốt nhất \n- Đối với sản phẩm đa dạng về chất liệu, kiểu dáng cách bảo quản sản phẩm tốt nhất là giặt tay với bột (nước) giặt nhẹ để giữ được độ bền của vải, tránh bị phai màu từ các loại quần áo khác. \n- Đối với những sản phẩm có thể giặt máy, chỉ nên để ở chế độ giặt nhẹ, hoặc mức trung bình và nên phân loại sản phẩm cùng màu và cùng loại vải khi giặt. \n- Nên phơi sản phẩm ở nơi thoáng mát, tránh ánh nắng trực tiếp dễ bị phai bạc màu, nên làm khô quần áo bằng cách phơi ở những điểm đón gió sẽ giữ được màu vải tốt hơn.",
+      "category": "thoitrangnu",
+      "image": "https://cf.shopee.vn/file/9035dc26e64eb9f08a1e9529351c51ba",
+      "rating": {}
+    },
+    {
+      "id": 5,
+      "title": "Áo phông form rộng tay lỡ Hadez hình chữ H unisex",
+      "price": "154",
+      "description": "THÔNG TIN SẢN PHẨM\n- Sản phẩm: áo thun unisex DT Clothes bắt mắt\n- Mặc ở nhà, mặc đi chơi hoặc khi vận động thể thao. Phù hợp khi mix đồ với nhiều loại.\n- Thiết kế hiện đại, trẻ trung, năng động, dễ phối đồ.\n- Thiết kế Unisex sẽ mang đến một outfit năng động và cá tính dù không cần mix-match cầu kì.\n\nKh e sỉ sll giá siêu mềm đa dạng mẫu mã nhiều loại đồ unisex giá 2x \nlh hotline : 0963.19.50.25\n\n\n\n\nDo màn hình và điều kiện ánh sáng khác nhau, màu sắc thực tế của sản phẩm có thể chênh lệch khoảng2-3%\n\n#dtclothes #aothun #aothunnamnu #aothununisex #aophong #aonamnu #thoitrangnamnu #unisex #aofreesize #aothunoversize #Hades #aoxanhla",
+      "category": "",
+      "image": "https://cf.shopee.vn/file/sg-11134201-22090-suwtr6yu1vhvd6",
+      "rating": {}
+    },
+    {
+      "id": 6,
+      "title": "áo khoác dior thêu xanh trắng hàng vip",
+      "price": "249",
+      "description": "- Áo khoác chất vải bò kaki thể thao, không xù, không nhăn và không phai màu.\n- Đường may tỉ mỉ, sắc nét.\n- Thiết kế hiện đại, trẻ trung, năng động.\n- size S ;38-45kg, cao dưới 1m65\nBạn đã gửi\nsize :M,,46-55kg,dưới 1m74\nBạn đã gửi\nsize L,;57-64kg,dưới 1m77\nBạn đã gửi\nsize xl ; 65-73kg. cao dưới 1m80\nBạn đã gửi\nsize xxl ;73-76kg ,cao 1m8\nBạn đã gửi\nsize xxxl,76- 80kg,,,\n\n✅ HƯỚNG DẪN BẢO QUẢN VÀ SỬ DỤNG\n\n- Nên giặt tay thay vì giặt máy để đảm bảo độ bền của sản phẩm. \n- Sau khi giặt xong, chỉ cần phơi khô tự nhiên rồi sử dụng như bình thường thay vì phải là ủi. \n- Tránh giặt với nước nóng. Thay vào đó hãy sử dụng nước ấm hoặc nước lạnh nhé. \n- Nếu đồ có màu, hãy giặt với nước lạnh để ngăn không cho chúng bị bay màu. \n- Chỉ sử dụng nước giặt có nồng độ chất tẩy thấp. \n- Nên phơi tự nhiên trong không khí là cách tốt nhất nếu muốn làm khô.\n\n✅ CHÍNH SÁCH MUA HÀNG TẠI SHOP\n\n1. Trường hợp được chấp nhận:\n- Điều kiện áp dụng (trong vòng 03 ngày kể từ khi nhận sản phẩm). \n- Hàng hoá vẫn còn mới, chưa qua sử dụng.\n- Hàng hóa hư hỏng do vận chuyển hoặc do nhà sản xuất.\n- Hàng không đúng size, kiểu dáng như quý khách đặt hàng.\n- Không đủ số lượng, không đủ bộ như trong đơn hàng. \n2. Trường hợp không đủ điều kiện áp dụng chính sách: \n- Quá 03 ngày kể từ khi quý khách nhận hàng. \n- Gửi lại hàng không đúng mẫu mã, không phải hàng của shop. \n- Đặt nhầm sản phẩm, chủng loại, không thích, không hợp,...\n\n#thoitrangnam #fashion #ao #aokhoac #aokhoaccolong #aokhoactheuchunoi",
+      "category": "thoitrangnam",
+      "image": "https://cf.shopee.vn/file/sg-11134201-23010-ogwcs5wjgylv91",
+      "rating": {}
+    },
+    {
+      "id": 7,
+      "title": "iPhone 14 Pro Max 128GB | Chính hãng VN/A",
+      "price": 103,
+      "description": "Màn hình Dynamic Island - Sự biến mất của màn hình tai thỏ thay thế bằng thiết kế viên thuốc, OLED 6,7 inch, hỗ trợ always-on display\nCấu hình iPhone 14 Pro Max mạnh mẽ, hiệu năng cực khủng từ chipset A16 Bionic\nLàm chủ công nghệ nhiếp ảnh - Camera sau 48MP, cảm biến TOF sống động\nPin liền lithium-ion kết hợp cùng công nghệ sạc nhanh cải tiến\niPhone 14 Pro Max là mẫu flagship nổi bật nhất của Apple trong lần trở lại năm 2022 với nhiều cải tiến về công nghệ cũng như vẻ ngoài cao cấp, sang chảnh hợp với gu thẩm mỹ đại chúng. Những chiếc điện thoại đến từ nhà Táo Khuyết nhận được rất nhiều sự kỳ vọng của thị trường ngay từ khi chưa ra mắt. Vậy liệu những chiếc flagship đến từ công ty công nghệ hàng đầu thế giới này có làm bạn thất vọng? Cùng khám phá những điều thú vị về iPhone 14 Pro Max ở bài viết dưới đây nhé.\n\nƯu đãi hấp dẫn khi mua hàng - trả góp iPhone 14 series tại CellphoneS\nKhi lựa chọn mua iPhone 14 Series tại CellphoneS, quý khách hàng không chỉ nhận được sản phẩm chất lượng, chính hãng VN/A mmaf bên cạnh đó còn được trải nghiệm nhiều chương trình giảm giá hấp dẫn, trừ thẳng vào giá sản phẩm. Chi tiết ưu đãi cho khách hàng khi mua điện thoại iPhone 14 series tại CellphoneS như sau:\n\nƯu đãi khi mua trả góp 0% các sản phẩm iPhone 14 (thường/Plus/Pro/Pro Max):\n\n- Ưu đãi thành viên Smember\n- Giảm 5% khi thanh toán qua thẻ Kredivo (Tối đa 1 triệu)\n- Giảm ngay 1 triệu khi mua đơn hàng từ 20 triệu, thanh toán qua VNPAY-QR\n- Giảm ngay 1 triệu khi mua đơn hàng từ 19 triệu, thanh toán qua grab moca\n- Giảm 500.000 khi thanh toán qua thẻ tín dụng Home Credit\n- Trợ giá lên đời 500.000 đồng khi tham gia chương trình thu cũ đổi mới\n- Giảm ngay 1 triệu khi thanh toán qua thẻ tín dụng JCB, Viettinbank, mPOS, standardchartered, napas, VP Bank, OCB, VietCredit\n- Giảm ngay 2 triệu khi thanh toán qua thẻ tín dụng Citi, BIDV, Nam Á, Bản Việt, MSB, VIB\n- Nhận voucher 2 triệu khi mở thẻ tín dụng Citybank\n- Ưu đãi đến 6.6 triệu đồng khi mở thẻ TP Bank Evo\n\nLưu ý: Một số chương trình khuyến mãi có thể kết thúc trước hạn, quý khách vui lòng truy cập website hoặc liên hệ hotline 1800.2097 để được tư vấn.\n\nSo sánh điện thoại iPhone 14 Pro Max với iPhone 13 Pro Max\nCách nhau một thế hệ vậy điện thoại iPhone 14 Pro Max với iPhone 13 Pro Max có gì khác nhau? Nên chọn mua phiên bản iPhone nào thù hợp. Để tìm hiểu rõ hơn về điều này hãy cùng so sánh chi tiết ngay sau đây.",
+      "category": "",
+      "image": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/v/_/v_ng_18.png",
+      "rating": {
+        "rate": 332,
+        "count": 23
       }
     }
   ],
-  "checkout": [],
+  "checkout": [
+    {
+      "name": "trần quang đạt",
+      "address": "Quận 1 Thành Phố Hồ Chí Minh",
+      "phone": "0938937344",
+      "note": "Mong Shop Giao sớm để tôi còn làm quà 8-3 nhé",
+      "items": [
+        {
+          "id": 3,
+          "title": "Váy nhung phối bèo nơ thời trang nữ thu đông",
+          "price": 123,
+          "description": "- Màu sắc : \n-Size: S,M\n- Chất liệu : \n- Size :  ( <58 kg )\n- Hình ảnh : Kèm video ảnh thật trải sàn shop chụp \n\n🍏 HƯỚNG DẪN MUA HÀNG 🍏\n \n- B1 : Click vào sản phẩm và ấn chọn ngay & điền số lượng rồi chọn \"Thêm vào giỏ hàng\" \n- B2 : Vào phần xem shop để tìm mua thêm những sản phẩm ưng ý\n- B3: Vào phần \"Giỏ hàng\" check lại một lần nữa sản phẩm mình cần rồi chọn Mua ngay\n- B4: Check lại thông tin địa chỉ giao hàng\n- B5: Chọn hình thức thanh toán\n- B6: Nhập mã giảm giá (nếu có) và nhập mã miễn phí ship nhé! \n- B7: Click vào ô ĐẶT HÀNG ở phía cuối là okie nhé!\n\n🐭 CAM KẾT CỦA SHOP : \n+ Bao đổi trả hàng miễn phí khi sản phẩm kém chất lượng và không giống hình, nhầm size, số lượng . \n+ Khách hàng cũ : Mua lần thứ 2 trở đi sẽ được nhận mã giảm giá của shop \n\n🐠 LƯU Ý KHI SỬ DỤNG CÁC SẢN PHẨM CỦA SHOP\n- Trong quá trình đóng gói và vận chuyển sản phẩm có thể bị nhàu, quý khách vui lòng giặt trước khi sử dụng để cảm nhận sản phẩm tốt nhất \n- Đối với sản phẩm đa dạng về chất liệu, kiểu dáng cách bảo quản sản phẩm tốt nhất là giặt tay với bột (nước) giặt nhẹ để giữ được độ bền của vải, tránh bị phai màu từ các loại quần áo khác. \n- Đối với những sản phẩm có thể giặt máy, chỉ nên để ở chế độ giặt nhẹ, hoặc mức trung bình và nên phân loại sản phẩm cùng màu và cùng loại vải khi giặt. \n- Nên phơi sản phẩm ở nơi thoáng mát, tránh ánh nắng trực tiếp dễ bị phai bạc màu, nên làm khô quần áo bằng cách phơi ở những điểm đón gió sẽ giữ được màu vải tốt hơn. ",
+          "category": "thoitrangnu",
+          "image": "https://cf.shopee.vn/file/sg-11134201-22110-j53ywgdogyjvdf",
+          "rating": {
+            "rate": 5,
+            "count": 22
+          },
+          "quantity": 1,
+          "itemTotal": 123
+        }
+      ],
+      "id": 1
+    }
+  ],
   "QCimg": [
     {
       "id": 1,

@@ -27,41 +27,55 @@ const Checkout = () => {
   };
 
   return (
-    <div className="container">
-      {checkoutData.map((data) => (
-        <div key={data.id} className="d-inline-block">
-          <p className="d-inline me-2 ">
-            Tên khách hàng: <strong>{data.name}</strong>
-          </p>
-          <p className="d-inline me-2">
-            Địa chỉ giao hàng: <strong> {data.address}</strong>
-          </p>
-          <p className="d-inline me-2">
-            Số điện thoại: <strong>{data.phone}</strong>
-          </p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Tên khách hàng</th>
+      <th>Địa chỉ giao hàng</th>
+      <th>Số điện thoại</th>
+      <th>Sản phẩm</th>
+      <th>Giá</th>
+      <th>Số lượng</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {checkoutData.map((data) => (
+      <tr key={data.id}>
+        <td>{data.name}</td>
+        <td>{data.address}</td>
+        <td>{data.phone}</td>
+        <td>
           {data.items &&
             data.items.map((item) => (
-              <div key={item.id} className="d-inline">
-                <p className="d-inline me-2">
-                  Sản phẩm: <strong>{item.title}</strong>
-                </p>
-                <p className="d-inline me-2">
-                  Giá: <strong> {item.price}</strong>
-                </p>
-                <p className="d-inline me-5">
-                  Số lượng: <strong>{item.quantity}</strong>
-                </p>
+              <div key={item.id}>
+                <p>{item.title}</p>
               </div>
             ))}
-          <button
-            onClick={() => handleDelete(data.id)}
-            className="btn btn-primary mb-2"
-          >
-            Hoàn tất
-          </button>
-        </div>
-      ))}
-    </div>
+        </td>
+        <td>
+          {data.items &&
+            data.items.map((item) => (
+              <div key={item.id}>
+                <p>{item.price}</p>
+              </div>
+            ))}
+        </td>
+        <td>
+          {data.items &&
+            data.items.map((item) => (
+              <div key={item.id}>
+                <p>{item.quantity}</p>
+              </div>
+            ))}
+        </td>
+        <td>
+          <button class="btn btn-primary" onClick={() => handleDelete(data.id)}>Hoàn tất</button>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
   );
 };
 
