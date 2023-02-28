@@ -454,14 +454,14 @@ const ProductTTN = () => {
             </nav>
             {/* input search brand */}
             <div className="d-flex align-items-center mt-4">
-              <div className="d-flex align-items-center">
+            <NavLink className="d-flex align-items-center" to={"/home"}>
                 <img
                   className="brand-img mr-2"
                   src={`${process.env.PUBLIC_URL}/assets/images/brand.png`}
                   alt=""
                 />
                 <span className="text-brand">Shopee</span>
-              </div>
+              </NavLink>
               <div className="wrap-navbar-input">
                 <div>
                   <InputGroup className="mb-3">

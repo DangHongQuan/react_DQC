@@ -9,11 +9,13 @@ import { useParams } from "react-router-dom";
 
 const ProductDetails = (props) => {
   const [productData, setProductData] = useState([]);
+  const [img, setImg] = useState([]);
   const { addItem } = useCart();
   const { productId } = useParams();
 
   useEffect(() => {
     getResponse(productId);
+    getResponseimg(productId);
   }, [productId]);
 
   const getResponse = async (productId) => {
@@ -21,6 +23,12 @@ const ProductDetails = (props) => {
       (res) => res.json()
     );
     setProductData(await res);
+  };
+  const getResponseimg = async (productId) => {
+    const res = await fetch(
+      `http://localhost:8000/imgProducDistel/${productId}`
+    ).then((res) => res.json());
+    setImg(await res);
   };
   const addToCart = (item) => {
     addItem(item);
@@ -38,17 +46,17 @@ const ProductDetails = (props) => {
                 description: "img 1",
               },
               {
-                src: productData.image,
+                src: img.img1,
                 title: productData.title,
                 description: "img 2",
               },
               {
-                src: productData.image,
+                src: img.img2,
                 title: productData.title,
                 description: "img 3",
               },
               {
-                src: productData.image,
+                src: img.img3,
                 title: productData.title,
                 description: "img 4",
               },

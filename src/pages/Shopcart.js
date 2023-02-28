@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useCart } from "react-use-cart";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import {
   Button,
   Col,
@@ -12,7 +13,6 @@ import {
 } from "react-bootstrap";
 
 const Shopcart = (props) => {
- 
   const {
     isEmpty,
     items,
@@ -28,26 +28,27 @@ const Shopcart = (props) => {
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
   const [note, setNote] = useState("");
+  const naviate = useNavigate();
 
+  const handleCheckout = () => {
+    const data = { name, address, phone, note, items };
 
+    axios
+      .post("http://localhost:8000/checkout", data)
+      .then((response) => {
+        console.log(response.data);
+        // xử lý kết quả trả về
+        naviate("/home");
+        emptyCart();
+        alert("Thanh toán thành công")
+      })
+      .catch((error) => {
+        console.error(error);
+        // xử lý lỗi
+      });
 
-const handleCheckout = () => {
-  const data = { name, address, phone, note, items };
-
-  axios.post("http://localhost:8000/checkout", data)
-    .then((response) => {
-      console.log(response.data);
-      // xử lý kết quả trả về
-      emptyCart();
-    })
-    .catch((error) => {
-      console.error(error);
-      // xử lý lỗi
-    });
-
-  setShowModal(false);
-};
-
+    setShowModal(false);
+  };
 
   return (
     <Container>
@@ -92,7 +93,7 @@ const handleCheckout = () => {
                       {item.title}
                     </h6>
                   </td>
-                  <td>{item.price}</td>
+                  <td>{item.price}.000VNĐ</td>
                   <td>Số Lượng {item.quantity}</td>
                   <td>
                     <Button
@@ -130,13 +131,12 @@ const handleCheckout = () => {
             style={{ position: "fixed", bottom: 0 }}
           >
             <Col className="py-2">
-              <h4>Thành tiền:{cartTotal} đ</h4>
+              <h4>Thành tiền: {cartTotal}.000VNĐ</h4>
             </Col>
             <Col className="py-2">
               <Button variant="primary" onClick={() => setShowModal(true)}>
                 Thanh toán
               </Button>
-              
             </Col>
           </Row>
         )}

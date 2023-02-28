@@ -12,6 +12,9 @@ function AddProduct(props) {
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [image, setImage] = useState("");
+  const [img1, setImg1] = useState("");
+  const [img2, setImg2] = useState("");
+  const [img3, setImg3] = useState("");
   const [rate, setRate] = useState(0);
   const [count, setCount] = useState(0);
 
@@ -25,11 +28,19 @@ function AddProduct(props) {
       image,
       rating: { rate: parseInt(rate), count: parseInt(count) },
     };
+    const newImg = {
+      img1,
+      img2,
+      img3,
+    };
     setTitle("");
     setPrice("");
     setDescription("");
     setCategory("");
     setImage("");
+    setImg1("");
+    setImg2("");
+    setImg3("");
     setRate("");
     setCount("");
     delete newProduct.createdAt;
@@ -39,6 +50,15 @@ function AddProduct(props) {
       .then((response) => {
         console.log(response.data);
         props.onAddProduct(newProduct);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    axios
+      .post("http://localhost:8000/imgProducDistel", newImg)
+      .then((response) => {
+        console.log(response.data);
+        props.onAddProduct(newImg);
       })
       .catch((error) => {
         console.log(error);
@@ -338,12 +358,36 @@ function AddProduct(props) {
                       </select>
 
                       <br />
-                      <label>Link ảnh:</label>
+                      <label>Link ảnh Chính:</label>
                       <input
                         className="form-control  w-25"
                         type="text"
                         value={image}
                         onChange={(e) => setImage(e.target.value)}
+                      />
+                      <br />
+                      <label>Ảnh phụ 1</label>
+                      <input
+                        className="form-control  w-25"
+                        type="text"
+                        value={img1}
+                        onChange={(e) => setImg1(e.target.value)}
+                      />
+                      <br />
+                      <label>Ảnh phụ 2</label>
+                      <input
+                        className="form-control  w-25"
+                        type="text"
+                        value={img2}
+                        onChange={(e) => setImg2(e.target.value)}
+                      />
+                      <br />
+                      <label>Ảnh phụ 3</label>
+                      <input
+                        className="form-control  w-25"
+                        type="text"
+                        value={img3}
+                        onChange={(e) => setImg3(e.target.value)}
                       />
                       <br />
                       <label>Đánh giá:</label>
