@@ -93,6 +93,7 @@ function AddProduct(props) {
                       <label>Tên sản phẩm:</label>
                       <input
                         className="form-control w-100"
+                        required
                         type="text"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
@@ -100,6 +101,7 @@ function AddProduct(props) {
                       <br />
                       <label>Giá:</label>
                       <input
+                      required
                         className="form-control  w-100"
                         type="number"
                         value={price}
@@ -108,6 +110,7 @@ function AddProduct(props) {
                       <br />
                       <label>Mô tả:</label>
                       <textarea
+                      required
                         className="form-control  w-100"
                         rows={10} cols={100}
                         value={description}
@@ -139,6 +142,7 @@ function AddProduct(props) {
                       <br />
                       <label>Link ảnh Chính:</label>
                       <input
+                      required
                         className="form-control  w-100"
                         type="text"
                         value={image}
@@ -147,6 +151,7 @@ function AddProduct(props) {
                       <br />
                       <label>Ảnh phụ 1</label>
                       <input
+                      required
                         className="form-control  w-100"
                         type="text"
                         value={img1}
@@ -155,6 +160,7 @@ function AddProduct(props) {
                       <br />
                       <label>Ảnh phụ 2</label>
                       <input
+                      required
                         className="form-control  w-100"
                         type="text"
                         value={img2}

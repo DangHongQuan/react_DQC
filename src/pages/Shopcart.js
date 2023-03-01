@@ -1,16 +1,21 @@
 import React, { useState } from "react";
 import { useCart } from "react-use-cart";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { BiSearch } from "react-icons/bi";
+import Myconponent from "./Myconponent";
 import {
   Button,
   Col,
   Container,
   Form,
+  FormControl,
+  InputGroup,
   Modal,
   Row,
   Table,
 } from "react-bootstrap";
+import styled from "styled-components";
 
 const Shopcart = (props) => {
   const {
@@ -50,9 +55,223 @@ const Shopcart = (props) => {
     setShowModal(false);
   };
 
+  const StyledHeader = styled.div`
+  body {
+    background-color: #e1e1e1;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .header {
+    background: linear-gradient(-180deg, #f53d2d, #f63);
+    height: 150px;
+    width: 100%;
+    position: fixed;
+    color: #ffffff;
+    padding-top: 10px;
+    z-index: 999;
+  }
+
+  .container {
+    max-width: 1200px;
+    padding: 0;
+  }
+
+  .navbar {
+    padding: 0;
+  }
+
+  .navbar span {
+    font-size: 14px;
+  }
+
+  .icon-media {
+    width: 17px;
+    height: 17px;
+  }
+
+  .hr1 {
+    width: 1px;
+    height: 15px;
+    background-color: #ffffff;
+  }
+
+  .wrap-search {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 6px;
+  }
+
+  .wrap-icon-s {
+    position: absolute;
+    background: linear-gradient(-180deg, #f53d2d, #f63);
+    border-radius: 3px;
+    width: 60px;
+    height: 87%;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-control {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border: none;
+    background-color: transparent;
+  }
+
+  .form-control:focus {
+    box-shadow: none;
+    border-radius: 6px;
+  }
+
+  .icon-shop {
+    width: 30px;
+    height: 30px;
+    margin-left: 60px;
+  }
+
+  .brand-img {
+    width: 45px;
+    height: 55px;
+  }
+
+  .text-brand {
+    font-size: 30px;
+    font-weight: 400;
+  }
+
+  .under-input span {
+    font-size: 12px;
+    font-weight: 100;
+  }
+
+  .wrap-navbar-input {
+    margin-left: 50px;
+    width: 67%;
+  }
+`;
+const [searchInput, setSearchInput] = useState("");
   return (
-    <Container>
-      <h1 className="text-center my-5">
+<>
+<StyledHeader>
+        <div className="header fixed-top">
+          <div className="container">
+            {/* navbar  */}
+            <nav className="navbar d-flex justify-content-between align-items-center">
+              <div className="d-flex align-items-center">
+                <span>Tải ứng dụng</span>
+                <div className="hr1 mx-2" />
+                <span className="me-2">Kết nối</span>
+                <img
+                  className="icon-media me-2 ml-2"
+                  src={`${process.env.PUBLIC_URL}/assets/images/facebook.png`}
+                  alt=""
+                />
+                <img
+                  className="icon-media me-2"
+                  src={`${process.env.PUBLIC_URL}/assets/images/instagram.png`}
+                  alt=""
+                />
+                <img
+                  className="icon-media me-2"
+                  src={`${process.env.PUBLIC_URL}/assets/images/pendidikan.png`}
+                  alt=""
+                />
+                <img
+                  className="icon-media me-2"
+                  src={`${process.env.PUBLIC_URL}/assets/images/line.png`}
+                  alt=""
+                />
+              </div>
+              <div className="d-flex align-items-center">
+                <img
+                  className="icon-media me-2"
+                  src={`${process.env.PUBLIC_URL}/assets/images/notif.png`}
+                  alt=""
+                />
+                <span className="me-2">Thông báo</span>
+                <img
+                  className="icon-media me-2"
+                  src={`${process.env.PUBLIC_URL}/assets/images/bantuan.png`}
+                  alt=""
+                />
+                <span className="me-4">Hỗ trợ</span>
+                <Link to={"/login"} className="nav-link">
+                  Đăng nhập
+                </Link>
+                <div className="hr1 mx-2" />
+                <Link to={"/signup"} className="font-weight-bold">
+                  Đăng kí
+                </Link>
+              </div>
+            </nav>
+            {/* input search brand */}
+            <div className="d-flex align-items-center mt-4">
+            <Link className="d-flex align-items-center" to={"/home"}>
+                <img
+                  className="brand-img mr-2"
+                  src={`${process.env.PUBLIC_URL}/assets/images/brand.png`}
+                  alt=""
+                />
+                <span className="text-brand">Shopee</span>
+              </Link>
+              <div className="wrap-navbar-input">
+                <div>
+                  <InputGroup className="mb-3">
+                    <InputGroup.Text>
+                      <BiSearch size="2rem" />
+                    </InputGroup.Text>
+                    <FormControl
+                      placeholder="Nhanh tay săn voucher lên đến 50%"
+                      className="bg-white"
+                      value={searchInput}
+                      onChange={(e) => setSearchInput(e.target.value)}
+                    />
+                  </InputGroup>
+                </div>
+
+                <div className="under-input d-inline mt-2">
+                  <span className="me-2">Áo Khoác</span>
+                  <span className="me-2">Dép</span>
+                  <span className="me-2">LEGO</span>
+                  <span className="me-2">Túi xách</span>
+                  <span className="me-2">Ốp iPhone</span>
+                  <span className="me-2">Áo Croptop</span>
+                  <span className="me-2">Tai nghe Bluetoth</span>
+                  <span className="me-2">Son</span>
+                </div>
+              </div>
+
+              <Link to={"/shopcart"}>
+                {/* //cart */}
+                <Myconponent />
+                {/* <Myconponent />
+                <img
+                  className="icon-shop"
+                  src={`${process.env.PUBLIC_URL}/assets/images/shop.png`}
+                  alt=""
+                /> */}
+              </Link>
+            </div>
+          </div>
+        </div>
+      </StyledHeader>
+
+      <div className="content mt-5" >
+      <div className="container position-absolute top-50 start-50 translate-middle">
+      <Container className="mt-5 position-absolute top-50 start-50 translate-middle" >
+      <h1 className="text-center my-5 ">
         {isEmpty ? "Giỏ hàng trống" : "Sản phẩm trong giỏ hàng"}
       </h1>
       <Row className="justify-content-center">
@@ -197,6 +416,12 @@ const Shopcart = (props) => {
         </Modal.Footer>
       </Modal>
     </Container>
+    </div>
+        </div>
+</>
+
+
+
   );
 };
 

@@ -111,8 +111,14 @@ const Menu = () => {
             </li>
             <li className="nav-item">
               <Link className="nav-link" to={"/editqc"}>
-                <i className="fas fa-fw fa-table" />
+                <i className="bi bi-badge-ad-fill" />
                 <span>Quảng cáo</span>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to={"/"}>
+                <i className="bi bi-browser-chrome" />
+                <span>Xem Trang Web</span>
               </Link>
             </li>
             {/* Divider */}

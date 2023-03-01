@@ -115,6 +115,7 @@ const ProductAdmniList = (props) => {
           type="text"
           placeholder="Enter id"
           name="formTitle"
+          required
         />
       </Form.Group>
 
@@ -124,6 +125,7 @@ const ProductAdmniList = (props) => {
           type="text"
           placeholder="Enter image URL"
           name="formImage"
+          required
         />
       </Form.Group>
 
