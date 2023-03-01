@@ -50,6 +50,7 @@ const ProductListCard = (props) => {
   const handleDeleteProduct = async () => {
     try {
       await axios.delete(`http://localhost:8000/products/${productData.id}`);
+      await axios.delete(`http://localhost:8000/imgProducDistel/${productData.id}`);
       setProductData(null);
       window.location.reload();
     } catch (error) {
