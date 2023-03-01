@@ -78,6 +78,11 @@
       "address": "",
       "phone": "",
       "id": 1
+    },
+    {
+      "username": "chauvo",
+      "password": "chauvo",
+      "id": 2
     }
   ],
   "products": [
