@@ -147,18 +147,34 @@ const ProductAdmniList = (props) => {
               {/* End of Topbar */}
               {/* Begin Page Content */}
               <div className="container-fluid">
-                chỉnh sửa sản phẩm
+                <h1 className="text-center text-success">chỉnh sửa sản phẩm</h1>
+                
+                <table className="table">
+        <thead>
+   
+            <th>STT</th>
+            <th>Hình ảnh</th>
+            <th>Tên</th>
+            <th>Giá</th>
+            <th>Sửa</th>
+            <th>Xóa</th>
+         
+        </thead>
+        
+        
                 <SearchFilter
                   value={searchInput}
                   data={productData}
                   renderResults={(results) => (
-                    <Row className="justify-content-center">
+                    <tbody >
                       {results.map((item, i) => (
                         <ProductListCard data={item} key={i} />
                       ))}
-                    </Row>
+                    </tbody>
                   )}
                 ></SearchFilter>
+
+        </table>
               </div>
               {/* /.container-fluid */}
             </div>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Card, Button, Modal, Form } from "react-bootstrap";
 import axios from "axios";
-
+import "./login.css";
 const ProductListCard = (props) => {
   const [productData, setProductData] = useState(props.data);
   const [showEditPopup, setShowEditPopup] = useState(false);
@@ -64,50 +64,39 @@ const ProductListCard = (props) => {
   const { image, price, title, id } = productData;
 
   return (
-    <Card
-      style={{ width: "15rem", height: "auto" }}
-      className="text-center p-0 overflow-hidden shadow mx-auto mb-4 mt-3"
-    >
-      <div>{id}</div>
-      <div
-        style={{
-          background: "white",
-          height: "15rem",
-          overflow: "hidden",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          marginBottom: "inherit",
-        }}
-      >
-        <div style={{ width: "9rem" }}>
-          <Card.Img
-            variant="top"
-            src={image}
-            className="img-fluid w-100 h-100"
-          />
-        </div>
-      </div>
-      <Card.Body>
-        <Card.Title
-          style={{
-            fontWeight: "bold",
-            height: "2.5rem",
-            overflow: "hidden",
-          }}
-        >
-          {title}
-        </Card.Title>
-        <Card.Text>${price}</Card.Text>
-        <Button variant="primary" onClick={handleEditProduct}>
-          Edit
-        </Button>{" "}
-        <Button variant="danger" onClick={handleDeleteProduct}>
-          Delete
-        </Button>
+    <>
+
+
+          <tr>
+            <td>{id}</td>
+            <td>
+              <div style={{ width: "5rem" }}>
+                <Card.Img
+                  variant="top"
+                  src={image}
+                  className="img-fluid w-100 h-100"
+                />
+              </div>
+            </td>
+            <td>{title}</td>
+            <td>{price}</td>
+            <td>
+              <Button variant="primary" onClick={handleEditProduct}>
+                Edit
+              </Button>
+            </td>
+            <td>
+              <Button variant="danger" onClick={handleDeleteProduct}>
+                Delete
+              </Button>
+            </td>
+            </tr>
+   
+       
+
         <Modal show={showEditPopup} onHide={handleCloseEditPopup}>
           <Modal.Header closeButton>
-            <Modal.Title>Edit product</Modal.Title>
+<Modal.Title>Edit product</Modal.Title>
           </Modal.Header>
           {/* edit */}
           <Modal.Body>
@@ -188,7 +177,7 @@ const ProductListCard = (props) => {
                 <Form.Control
                   type="text"
                   placeholder="Enter image URL"
-                  value={editedProductData.image}
+value={editedProductData.image}
                   onChange={(event) =>
                     setEditedProductData({
                       ...editedProductData,
@@ -236,8 +225,8 @@ const ProductListCard = (props) => {
             </Button>
           </Modal.Footer>
         </Modal>
-      </Card.Body>
-    </Card>
+      
+    </>
   );
 };
 

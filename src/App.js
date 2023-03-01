@@ -8,6 +8,7 @@ import Layouts from "./admin_containers/Layouts";
 import ProductDetails from "./pages/ProductDetails";
 import AddProduct from "./admin_pages/AddProduct";
 import ProductAdminList from "./admin_pages/ProductAdminList";
+
 import CheckOurAdmin from "./admin_pages/CheckOurAdmin";
 import ProductTTN from "./page_danhmuc/ProductTTN";
 import EditQC_admin from "./admin_pages/EditQC_admin";
@@ -22,7 +23,7 @@ import Xemay from "./page_danhmuc/Homexemay";
 import Thethao from "./page_danhmuc/Homethethao";
 import Thietbigiadung from "./page_danhmuc/Homethietbigiadung";
 import Dashboard from "./admin_pages/Dashboard";
-
+import ProductListCard from "./admin_pages/ProducListCard";
 function App() {
   return (
     <BrowserRouter>
@@ -39,6 +40,7 @@ function App() {
         <Route path="/shopcart" element={<Shopcart />} />
         <Route path="/addProduct" element={<AddProduct />} />
         <Route path="/productAdminList" element={<ProductAdminList />} />
+        <Route path="/productListCard" element={<ProductListCard />} />
         <Route path="/checkout" element={<CheckOurAdmin />} />
         <Route path="/producTTN" element={<ProductTTN />} />
         <Route path="/editqc" element={<EditQC_admin />} />

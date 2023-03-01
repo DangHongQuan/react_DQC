@@ -1,4 +1,29 @@
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
 
+.table th, .table td {
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.table td img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 5rem;
+}
+
+.table td button {
+  margin: 0;
+}
 
 
 #bg-img{
