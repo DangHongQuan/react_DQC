@@ -76,7 +76,7 @@ const Thoitrangnu = (props) => {
                   onClick={() => addToCart(item)}
                 >
                   <BsCartPlus size="1.8rem" />
-                  Thêm giỏ hàng
+           
                 </Button>
               </Card.Body>
             </Card>

@@ -15,6 +15,38 @@ const ProductAdmniList = (props) => {
   const [searchInput, setSearchInput] = useState("");
   const [showEditPopup, setShowEditPopup] = useState(false);
 
+  // xử lý thêm quảng cáo
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  
+    // Lấy giá trị từ input
+    const id = event.target.formTitle.value;
+    const image = event.target.formImage.value;
+  
+    // Tạo đối tượng mới
+    const newQCImg = {
+      id: id,
+      image: image,
+    };
+  
+    // Gửi request POST đến địa chỉ http://localhost:8000/QCimg
+    fetch('http://localhost:8000/QCimg', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newQCImg),//chuyển đối tượng thành chuỗi
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Success:', data);
+        handleCloseEditPopup();
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  };
+  // kết thúc xử lý thêm quảng cáo
 
   const handleEditProduct = () => {
     setShowEditPopup(true);
@@ -71,44 +103,39 @@ const ProductAdmniList = (props) => {
               {/* /.container-fluid */}
             </div>
             {/* Thêm quảng cáo */}
-
             <Modal show={showEditPopup} onHide={handleCloseEditPopup}>
-          <Modal.Header closeButton>
-            <Modal.Title>Thêm Quảng Cáo</Modal.Title>
-          </Modal.Header>
-          {/* edit */}
-          <Modal.Body>
-            <Form>
-              <Form.Group controlId="formTitle">
-                <Form.Label>ID</Form.Label>
-                <Form.Control
-               
-                  type="text"
-                  placeholder="Enter id"
-                 
-                  
-                />
-              </Form.Group>
+  <Modal.Header closeButton>
+    <Modal.Title>Thêm Quảng Cáo</Modal.Title>
+  </Modal.Header>
+  <Modal.Body>
+    <Form onSubmit={handleSubmit}>
+      <Form.Group controlId="formTitle">
+        <Form.Label>ID</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Enter id"
+          name="formTitle"
+        />
+      </Form.Group>
 
-              <Form.Group controlId="formImage">
-                <Form.Label>Image</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Enter image URL"
-                
-                />
-              </Form.Group>
-            </Form>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleCloseEditPopup}>
-              Close
-            </Button>
-            <Button variant="primary"  >
-              Thêm Quảng Cáo
-            </Button>
-          </Modal.Footer>
-        </Modal>
+      <Form.Group controlId="formImage">
+        <Form.Label>Image</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Enter image URL"
+          name="formImage"
+        />
+      </Form.Group>
+
+      <Button variant="secondary" onClick={handleCloseEditPopup}>
+        Close
+      </Button>
+      <Button variant="primary" type="submit">
+        Thêm Quảng Cáo
+      </Button>
+    </Form>
+  </Modal.Body>
+</Modal>
             {/* Kết thúc thêm quảng cáo */}
             {/* Footer */}
             <footer className="sticky-footer bg-white">
