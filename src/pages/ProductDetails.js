@@ -540,7 +540,7 @@ const [searchInput, setSearchInput] = useState("");
             src={`${process.env.PUBLIC_URL}/assets/images/shape2.png`}
             alt=""
           />
-          <div className="container">
+          <div className="container" style={{backgroundColor: 'white'}}>
             {/* carousel */}
             <div className="row wrap-carousel">
               <div className="col-8 h-100 pr-1">
@@ -655,20 +655,24 @@ const [searchInput, setSearchInput] = useState("");
           />
         </Col>
         <Col xs={10} md={7} lg={7}>
-          <h1>{productData.title}</h1>
-          <Button
-            onClick={() => addToCart(productData)}
-            style={{ borderRadius: "0", border: 0 }}
-          >
-            <BsCartPlus size="1.8rem" />
-            Add to cart
-          </Button>
+          <h4>{productData.title}</h4>
+          <b className="h6 d-block mt-3" style={{ color:'#ee4d2d'}}>4.4 ⭐⭐⭐⭐⭐</b>
+         
           <br />
-          <h3>{productData.price}.000 VNĐ</h3>
-          <b className="h5">4.1 ⭐</b>
-          <p className="mt-3 h5" style={{ opacity: "0.8", fontWeight: "400" }}>
+          <h4 style={{ color:'#ee4d2d'}}>{productData.price}.000 VNĐ</h4>
+          <p className="d-inline" style={{color: '#757575'}}>Vận chuyển:</p><span className="d-inline ms-4"><img src={`${process.env.PUBLIC_URL}/assets/vanchuyenn.png`} alt="" style={{ width:'30px'}}/>  Miễn phí vận chuyển</span>
+          
+          <p className="mt-3 h6" style={{ opacity: "0.8", fontWeight: "400" }}>
             {productData.description}
           </p>
+          <Button
+            onClick={() => addToCart(productData)}
+            style={{ borderRadius: "0", border: '1px solid #ee4d2d', color: '#ee4d2d', backgroundColor: '#fff5f1'}}
+            className="mt-3"
+          >
+            <BsCartPlus size="1.8rem" />
+            Thêm Vào Giỏ Hàng
+          </Button>
         </Col>
       </Row>
     </Container>
