@@ -68,12 +68,13 @@ const Thoitrangnu = (props) => {
                 </Card.Title>
                 <Card.Title>
                   <small>
-                    Giá bán: <small>{item.price}.000đ</small>
+                    Giá bán: <small>{item.price}đ</small>
                   </small>
                 </Card.Title>
                 <Button
                   className="d-flex align-items-center m-auto border-0"
                   onClick={() => addToCart(item)}
+                  style={{backgroundColor: '#fc5a31', border: '0'}}
                 >
                   <BsCartPlus size="1.8rem" />
                   

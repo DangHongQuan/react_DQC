@@ -84,7 +84,7 @@ function AddProduct(props) {
               <div className="container-fluid">
                 <div className="ms-5">
                   <div>
-                    <h3 className="h1 text-center text-success ">Thêm sản phẩm mới</h3>
+                    <h3 className="h1 text-center text-primary ">Thêm Sản Phẩm Mới</h3>
                       <div className="row justify-content-center">
                         <div className="col-lg-8">
                           <div className="row">

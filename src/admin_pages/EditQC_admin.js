@@ -76,7 +76,7 @@ const ProductAdmniList = (props) => {
             <div id="content">
              <Headerchung/>
               <div className="container-fluid">
-                <h1 className="text-center text-success">chỉnh sửa Quảng Cáo</h1> 
+                <h1 className="text-center text-primary">Chỉnh Sửa Quảng Cáo</h1> 
                 <Button className="text-end mb-4 float-end" onClick={handleEditProduct} >Add Quảng Cáo</Button>
                 <table className="table">
         <thead>

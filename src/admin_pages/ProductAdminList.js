@@ -148,7 +148,7 @@ const ProductAdmniList = (props) => {
               {/* End of Topbar */}
               {/* Begin Page Content */}
               <div className="container-fluid">
-                <h1 className="text-center text-success">chỉnh sửa sản phẩm</h1>
+                <h1 className="text-center text-primary">Chỉnh Sửa Sản Phẩm</h1>
                 
                 <table className="table">
         <thead>
