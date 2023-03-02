@@ -479,16 +479,7 @@ const Home = () => {
                   </InputGroup>
                 </div>
 
-                <div className="under-input d-inline mt-2">
-                  <span className="me-2">Áo Khoác</span>
-                  <span className="me-2">Dép</span>
-                  <span className="me-2">LEGO</span>
-                  <span className="me-2">Túi xách</span>
-                  <span className="me-2">Ốp iPhone</span>
-                  <span className="me-2">Áo Croptop</span>
-                  <span className="me-2">Tai nghe Bluetoth</span>
-                  <span className="me-2">Son</span>
-                </div>
+              
               </div>
 
               <NavLink to={"/shopcart"}>

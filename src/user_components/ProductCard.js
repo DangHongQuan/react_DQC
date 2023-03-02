@@ -29,8 +29,8 @@ const ProductCard = (props) => {
       </Link>
         <Card.Body>
             <Card.Title style={{textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace:'nowrap'}}><small>{title}</small></Card.Title>
-            <Card.Title><small style={{textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace:'nowrap'}}>Giá bán: <small>{price}.000đ</small></small></Card.Title>
-            <Button className='mb-1 ' onClick={() => addToCart()}><BsCartPlus/></Button>
+            <Card.Title><small style={{textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace:'nowrap'}}>Giá bán: <small>{price}đ</small></small></Card.Title>
+            <Button className='mb-1 ' onClick={() => addToCart()} style={{backgroundColor: '#fc5a31', border: '0'}}><BsCartPlus/></Button>
         </Card.Body>
     </Card>
 

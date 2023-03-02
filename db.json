@@ -112,14 +112,11 @@
     {
       "id": 1,
       "title": "Trần Quang Đạt TEST",
-      "price": 2143,
+      "price": "100000",
       "description": "test xem sao đây có ",
       "category": "thoitrangnam",
       "image": "https://datgoldshop.com/images/anhgioithieu.jpg",
-      "rating": {
-        "rate": 342,
-        "count": 241214
-      }
+      "rating": {}
     },
     {
       "id": 3,

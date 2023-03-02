@@ -312,7 +312,7 @@ const [searchInput, setSearchInput] = useState("");
                       {item.title}
                     </h6>
                   </td>
-                  <td>{item.price}.000VNĐ</td>
+                  <td>{item.price}VNĐ</td>
                   <td>Số Lượng {item.quantity}</td>
                   <td>
                     <Button
@@ -350,7 +350,7 @@ const [searchInput, setSearchInput] = useState("");
             style={{ position: "fixed", bottom: 0 }}
           >
             <Col className="py-2">
-              <h4>Thành tiền: {cartTotal}.000VNĐ</h4>
+              <h4>Thành tiền: {cartTotal} VNĐ</h4>
             </Col>
             <Col className="py-2">
               <Button variant="primary" onClick={() => setShowModal(true)}>
