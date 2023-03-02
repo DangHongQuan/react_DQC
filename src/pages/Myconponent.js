@@ -23,7 +23,7 @@ function MyComponent() {
             src={`${process.env.PUBLIC_URL}/assets/images/shop.png`}
             alt=""
           />
-          Cart
+         
         </p>
       </div>
     </>
