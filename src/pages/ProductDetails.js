@@ -659,7 +659,7 @@ const [searchInput, setSearchInput] = useState("");
           <b className="h6 d-block mt-3" style={{ color:'#ee4d2d'}}>4.4 ⭐⭐⭐⭐⭐</b>
          
           <br />
-          <h4 style={{ color:'#ee4d2d'}}>{productData.price}.000 VNĐ</h4>
+          <h4 style={{ color:'#ee4d2d'}}>{productData.price} VNĐ</h4>
           <p className="d-inline" style={{color: '#757575'}}>Vận chuyển:</p><span className="d-inline ms-4"><img src={`${process.env.PUBLIC_URL}/assets/vanchuyenn.png`} alt="" style={{ width:'30px'}}/>  Miễn phí vận chuyển</span>
           
           <p className="mt-3 h6" style={{ opacity: "0.8", fontWeight: "400" }}>
