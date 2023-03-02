@@ -32,7 +32,7 @@ const ProducHomeTTN = (props) => {
         {products.map((item) => (
           <Col key={item.id}>
             <Card
-              style={{ height:"350px" }}
+              style={{ height:"370px" }}
               className="text-center p-0 overflow-hidden shadow mx-auto mb-4 mt-3"
             >
               <Link to={`/product-details/${item.id}`}>

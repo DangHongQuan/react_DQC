@@ -16,6 +16,7 @@ const ProductAdmniList = (props) => {
     const res = await fetch("http://localhost:8000/products").then((res) =>
       res.json()
     );
+    
     setProductData(await res);
   }
 
